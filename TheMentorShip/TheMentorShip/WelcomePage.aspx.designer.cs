@@ -11,7 +11,7 @@ namespace TheMentorShip
 {
 
 
-    public partial class NestedMasterPage
+    public partial class WelcomePage
     {
     }
 }
