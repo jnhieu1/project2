@@ -21,7 +21,7 @@
                 <tr>
                     <td>&nbsp;</td>
                     <td class="auto-style1">The Mentor Ship</td>
-                    <td>&nbsp;</td>
+                    <td>Sign in</td>
                 </tr>
                 <tr>
                     <td>&nbsp;</td>
@@ -39,7 +39,8 @@
             <br />
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
-        </div>
+            <br />
+            Made by BreadScrum</div>
     </form>
 </body>
 </html>
