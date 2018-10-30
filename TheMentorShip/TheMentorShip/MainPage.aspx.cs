@@ -19,5 +19,15 @@ namespace TheMentorShip
             int index = Int32.Parse(e.Item.Value);
             MultiView1.ActiveViewIndex = index;
         }
+        protected void Menu2_MenuItemClick(object sender, MenuEventArgs e)
+        {
+            int index = Int32.Parse(e.Item.Value);
+            MultiView2.ActiveViewIndex = index;
+        }
+        protected void Menu3_MenuItemClick(object sender, MenuEventArgs e)
+        {
+            int index = Int32.Parse(e.Item.Value);
+            MultiView3.ActiveViewIndex = index;
+        }
     }
 }

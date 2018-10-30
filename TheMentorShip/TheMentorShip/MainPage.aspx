@@ -27,7 +27,8 @@
             border:solid 1px black;
             padding:10px;
             margin:5px;
-            background-color:white;
+            
+            background-image: url(Image/ContentBackground.jpg);
         }
         
 
@@ -49,10 +50,44 @@
                     <div class="tabContents">
                         <asp:MultiView ID="MultiView1" ActiveViewIndex="0" runat="server">
                             <asp:View ID="View1" runat="server">
-                                <br />Find a Mentor
+                                
+                                <asp:Menu ID="Menu2" Orientation="Horizontal" StaticMenuItemStyle-CssClass="tab" Font-Size="Large"
+                                    StaticSelectedStyle-CssClass="selectedTab" StaticMenuItemStyle-HorizontalPadding="10px" StaticSelectedStyle-BackColor="cornflowerblue" StaticSelectedStyle-ForeColor="White" CssClass="tabs" runat="server" OnMenuItemClick="Menu2_MenuItemClick">
+                                    <Items>
+                                        <asp:MenuItem Text="Jobs" Value="0"></asp:MenuItem>
+                                        <asp:MenuItem Text="Skills" Value="1"></asp:MenuItem>
+                                    </Items>
+                                </asp:Menu>
+                                <div class="tabContents">
+                                <asp:MultiView ID="MultiView2" ActiveViewIndex="0" runat="server">
+                                    <asp:View ID="View3" runat="server">
+                                        <br />Jobs
+                                    </asp:View>
+                                    <asp:View ID="View4" runat="server">
+                                        <br />Skills
+                                    </asp:View>
+                                </asp:MultiView>
+                                </div>
                             </asp:View>
+                            
                             <asp:View ID="View2" runat="server">
-                                <br />Be a Mentor
+                                <asp:Menu ID="Menu3" Orientation="Horizontal" StaticMenuItemStyle-CssClass="tab" Font-Size="Large"
+                                    StaticSelectedStyle-CssClass="selectedTab" StaticMenuItemStyle-HorizontalPadding="10px" StaticSelectedStyle-BackColor="cornflowerblue" StaticSelectedStyle-ForeColor="White" CssClass="tabs" runat="server" OnMenuItemClick="Menu3_MenuItemClick">
+                                    <Items>
+                                        <asp:MenuItem Text="Profile" Value="0"></asp:MenuItem>
+                                        <asp:MenuItem Text="Edit" Value="1"></asp:MenuItem>
+                                    </Items>
+                                </asp:Menu>
+                                <div class="tabContents">
+                                <asp:MultiView ID="MultiView3" ActiveViewIndex="0" runat="server">
+                                    <asp:View ID="View5" runat="server">
+                                        <br />Profile
+                                    </asp:View>
+                                    <asp:View ID="View6" runat="server">
+                                        <br />Edit
+                                    </asp:View>
+                                </asp:MultiView>
+                                </div>
                             </asp:View>
                         </asp:MultiView>
                     </div>

@@ -128,6 +128,7 @@
     <Content Include="Image\TopBackground.jpg" />
     <Content Include="MainPage.aspx" />
     <Content Include="MasterPage.Master" />
+    <Content Include="SettingPage.aspx" />
     <Content Include="WelcomePage.aspx" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -206,6 +207,13 @@
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SettingPage.aspx.cs">
+      <DependentUpon>SettingPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SettingPage.aspx.designer.cs">
+      <DependentUpon>SettingPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
