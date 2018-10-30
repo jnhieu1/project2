@@ -12,6 +12,10 @@
             background-image: url(Image/TopBackground.jpg);
             background-repeat: repeat-x;
         }
+        div#content { 
+            background-image: url(Image/ContentBackground.jpg);
+            
+        }
         div#bottom { 
             background-image: url(Image/TopBackground.jpg);
             background-repeat: repeat-x;
@@ -59,11 +63,13 @@
             <br />
             <br />
             </div>
+            <div id="body">
             <div id="content">
 
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
             
+            </div>
             </div>
             <div id="bottom" class="auto-style4">
                 <br />
