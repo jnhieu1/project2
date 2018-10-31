@@ -43,7 +43,7 @@
                     <asp:Menu ID="Menu1" Orientation="Horizontal" StaticMenuItemStyle-CssClass="tab" Font-Size="Large"
                         StaticSelectedStyle-CssClass="selectedTab" StaticMenuItemStyle-HorizontalPadding="10px" StaticSelectedStyle-BackColor="cornflowerblue" StaticSelectedStyle-ForeColor="White" CssClass="tabs" runat="server" OnMenuItemClick="Menu1_MenuItemClick">
                         <Items>
-                            <asp:MenuItem Text="Find a Mentor" Value="0"></asp:MenuItem>
+                            <asp:MenuItem Text="Find a Mentor" Value="0" Selected="true"></asp:MenuItem>
                             <asp:MenuItem Text="Be a Mentor" Value="1"></asp:MenuItem>
                         </Items>
                     </asp:Menu>
@@ -54,7 +54,7 @@
                                 <asp:Menu ID="Menu2" Orientation="Horizontal" StaticMenuItemStyle-CssClass="tab" Font-Size="Large"
                                     StaticSelectedStyle-CssClass="selectedTab" StaticMenuItemStyle-HorizontalPadding="10px" StaticSelectedStyle-BackColor="cornflowerblue" StaticSelectedStyle-ForeColor="White" CssClass="tabs" runat="server" OnMenuItemClick="Menu2_MenuItemClick">
                                     <Items>
-                                        <asp:MenuItem Text="Jobs" Value="0"></asp:MenuItem>
+                                        <asp:MenuItem Text="Jobs" Value="0" Selected="true"></asp:MenuItem>
                                         <asp:MenuItem Text="Skills" Value="1"></asp:MenuItem>
                                     </Items>
                                 </asp:Menu>
@@ -74,7 +74,7 @@
                                 <asp:Menu ID="Menu3" Orientation="Horizontal" StaticMenuItemStyle-CssClass="tab" Font-Size="Large"
                                     StaticSelectedStyle-CssClass="selectedTab" StaticMenuItemStyle-HorizontalPadding="10px" StaticSelectedStyle-BackColor="cornflowerblue" StaticSelectedStyle-ForeColor="White" CssClass="tabs" runat="server" OnMenuItemClick="Menu3_MenuItemClick">
                                     <Items>
-                                        <asp:MenuItem Text="Profile" Value="0"></asp:MenuItem>
+                                        <asp:MenuItem Text="Profile" Value="0" Selected="true"></asp:MenuItem>
                                         <asp:MenuItem Text="Edit" Value="1"></asp:MenuItem>
                                     </Items>
                                 </asp:Menu>

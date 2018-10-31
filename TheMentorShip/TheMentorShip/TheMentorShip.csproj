@@ -125,6 +125,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Image\ContentBackground.JPG" />
+    <Content Include="Image\logo.png" />
     <Content Include="Image\TopBackground.jpg" />
     <Content Include="MainPage.aspx" />
     <Content Include="MasterPage.Master" />
