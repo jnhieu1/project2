@@ -32,6 +32,27 @@
         }
         
 
+        .auto-style5 {
+            text-align: left;
+        }
+        
+
+        .auto-style6 {
+            text-align: right;
+        }
+        
+
+        .auto-style7 {
+            text-align: right;
+            height: 20px;
+        }
+        
+        
+
+        .auto-style8 {}
+        
+        
+
     </style>
 
     <div>
@@ -65,6 +86,40 @@
                                     </asp:View>
                                     <asp:View ID="View4" runat="server">
                                         <br />Skills
+                                        <table style="width: 100%;">
+                                            <tr>
+                                                <td style="width:25%;" >
+                                                    <table style="width: 100%;">
+                                                        <tr>
+                                                            <td>Filter</td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <asp:TextBox ID="searchTextBox" runat="server"></asp:TextBox>
+                                                                <asp:Button ID="searchBUtton" runat="server" Text="Search" />
+                                                            </td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <asp:CheckBoxList ID="filterCheckBoxList" runat="server" CssClass="auto-style5">
+                                                                    <asp:ListItem Selected="True">Available</asp:ListItem>
+                                                                    <asp:ListItem>Communication</asp:ListItem>
+                                                                    <asp:ListItem>Public Speaking</asp:ListItem>
+                                                                    <asp:ListItem>Leadership</asp:ListItem>
+                                                                </asp:CheckBoxList>
+
+                                                            </td>
+                                                            
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <td style="width:75%; text-align: center;">search result</td>
+                                                
+                                            </tr>
+                                            
+                                        </table>
                                     </asp:View>
                                 </asp:MultiView>
                                 </div>
@@ -84,7 +139,67 @@
                                         <br />Profile
                                     </asp:View>
                                     <asp:View ID="View6" runat="server">
-                                        <br />Edit
+                                        <table style="width: 100%;">
+                                            <tr>
+                                                <td style="width:20%;">
+                                                    <table style="width: 100%; height:inherit; margin-top: 0px;">
+                                                        <tr>
+                                                            <td>
+                                                                <asp:Image ID="personalImage" runat="server" ImageUrl="~/Image/defaultIcon.jpg" />
+                                                            </td>                                                          
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                Top Endorsements
+                                                                <asp:BulletedList ID="BulletedList1" runat="server" CssClass="auto-style8">
+                                                                    <asp:ListItem>Leadership</asp:ListItem>
+                                                                    <asp:ListItem>Communication</asp:ListItem>
+                                                                    <asp:ListItem>Experience</asp:ListItem>
+                                                                </asp:BulletedList>
+                                                            </td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td>See all</td>
+                                                            
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <td style="width:75%;">
+                                                    <table style="width: 100%; height:inherit; margin-top: 0px;">
+                                                        <tr>
+                                                            <td style="width:15%" class="auto-style6">
+                                                                First Name:
+                                                                <br /> Last Name:
+                                                                <br /> Phone Number:
+
+                                                            </td>
+                                                            <td>&nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="auto-style7">
+                                                                Biography:
+                                                            </td>
+                                                            <td>
+                                                                <p>I graduated from Arizona State University with a degree in Computer Information Systems. I have worked at this company for 3 years as a software developer and I have been the Manager of Information Systems for 5 years. My experience has allowed me to improve my leadership and communication skills. I have gained knowledge and would now like to share this with my peers.</p>
+                                                            </td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="auto-style7">
+                                                                
+                                                            </td>
+                                                            <td></td>
+                                                            <td style="width:25%;">Save</td>
+                                                        </tr>
+                                                        
+                                                    </table>
+                                                </td>
+                                                
+                                            </tr>
+                                            
+                                        </table>
                                     </asp:View>
                                 </asp:MultiView>
                                 </div>

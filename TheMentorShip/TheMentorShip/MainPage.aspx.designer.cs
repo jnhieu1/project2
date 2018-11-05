@@ -76,6 +76,33 @@ namespace TheMentorShip {
         protected global::System.Web.UI.WebControls.View View4;
         
         /// <summary>
+        /// searchTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox searchTextBox;
+        
+        /// <summary>
+        /// searchBUtton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button searchBUtton;
+        
+        /// <summary>
+        /// filterCheckBoxList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList filterCheckBoxList;
+        
+        /// <summary>
         /// View2 control.
         /// </summary>
         /// <remarks>
@@ -119,5 +146,23 @@ namespace TheMentorShip {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.View View6;
+        
+        /// <summary>
+        /// personalImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image personalImage;
+        
+        /// <summary>
+        /// BulletedList1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.BulletedList BulletedList1;
     }
 }
