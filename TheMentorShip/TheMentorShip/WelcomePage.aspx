@@ -37,8 +37,8 @@
         </tr>
         <tr>
             <td>&nbsp;</td>
-            <td style="width:25%;"><asp:Button ID="findAMentor" runat="server" Text="Find A Mentor" Height="77px" Width="80%" CssClass="newStyle3" Font-Bold="True"/></td>
-            <td style="width:25%;"><asp:Button ID="beAMentor" runat="server" Text="Be A Mentor" align="right" Height="77px" Width="80%" CssClass="newStyle3" Font-Bold="True"/></td>
+            <td style="width:25%;"><asp:Button ID="findAMentor" runat="server" Text="Find A Mentor" Height="77px" Width="80%" CssClass="newStyle3" Font-Bold="True" OnClick="findAMentor_Click"/></td>
+            <td style="width:25%;"><asp:Button ID="beAMentor" runat="server" Text="Be A Mentor" align="right" Height="77px" Width="80%" CssClass="newStyle3" Font-Bold="True" OnClick="beAMentor_Click"/></td>
             <td>&nbsp;</td>
         </tr>
         <tr>

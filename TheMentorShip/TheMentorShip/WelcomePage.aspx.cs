@@ -13,5 +13,19 @@ namespace TheMentorShip
         {
 
         }
+
+        protected void beAMentor_Click(object sender, EventArgs e)
+        {
+            Response.BufferOutput = true;
+            Session["Tab"] = "1";
+            Response.Redirect("MainPage.aspx");
+        }
+
+        protected void findAMentor_Click(object sender, EventArgs e)
+        {
+            Response.BufferOutput = true;
+            Session["Tab"] = "0";
+            Response.Redirect("MainPage.aspx");
+        }
     }
 }

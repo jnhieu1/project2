@@ -11,7 +11,17 @@ namespace TheMentorShip
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            string tab = (string)(Session["Tab"]);
+            if(tab == "0")
+            {
+                Menu1.Items[0].Selected = true;
+                MultiView1.ActiveViewIndex = 0;
+            }
+            else
+            {
+                Menu1.Items[1].Selected = true;
+                MultiView1.ActiveViewIndex = 1;
+            }
         }
 
         protected void Menu1_MenuItemClick(object sender, MenuEventArgs e)
