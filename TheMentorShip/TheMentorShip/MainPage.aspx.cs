@@ -43,5 +43,31 @@ namespace TheMentorShip
             int index = Int32.Parse(e.Item.Value);
             MultiView3.ActiveViewIndex = index;
         }
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if ((DropDownList1.SelectedIndex == DropDownList2.SelectedIndex || DropDownList1.SelectedIndex == DropDownList3.SelectedIndex)
+                && DropDownList1.SelectedIndex != 0)
+            {
+                DropDownList1.SelectedIndex = 0;
+            }
+        }
+
+        protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if((DropDownList1.SelectedIndex == DropDownList2.SelectedIndex || DropDownList2.SelectedIndex == DropDownList3.SelectedIndex)
+                && DropDownList2.SelectedIndex != 0)
+            {
+                DropDownList2.SelectedIndex = 0;
+            }
+        }
+
+        protected void DropDownList3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if ((DropDownList3.SelectedIndex == DropDownList2.SelectedIndex || DropDownList3.SelectedIndex == DropDownList1.SelectedIndex)
+                && DropDownList3.SelectedIndex != 0)
+            {
+                DropDownList3.SelectedIndex = 0;
+            }
+        }
     }
 }
