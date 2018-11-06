@@ -83,6 +83,8 @@
                                 <asp:MultiView ID="MultiView2" ActiveViewIndex="0" runat="server">
                                     <asp:View ID="View3" runat="server">
                                         <br />Jobs
+
+
                                     </asp:View>
                                     <asp:View ID="View4" runat="server">
                                         <br />Skills
@@ -115,7 +117,35 @@
                                                         </tr>
                                                     </table>
                                                 </td>
-                                                <td style="width:75%; text-align: center;">search result</td>
+                                                <td style="width:75%; text-align: center;">
+                                                    <table style="width:100%; height:inherit">
+                                                    <tr>
+                                                        <td style="width:25%; text-align: left;">John Doe, Manager</td>
+                                                        <td>&nbsp;</td>
+                                                        <td>&nbsp;</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td style="width:50%;">Leadership, Communication</td>
+                                                        <td>
+                                                            <asp:Button ID="Button1" runat="server" Text="Email" />
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="width:25%; text-align: left;">John Doe, Director</td>
+                                                        <td>&nbsp;</td>
+                                                        <td>&nbsp;</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td style="width:50%;">Smart, Leadership, Has Experience</td>
+                                                        <td>
+                                                            <asp:Button ID="Button2" runat="server" Text="Email" />
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                    </table>
+                                                </td>
                                                 
                                             </tr>
                                             
