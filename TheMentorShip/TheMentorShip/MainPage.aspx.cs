@@ -12,15 +12,19 @@ namespace TheMentorShip
         protected void Page_Load(object sender, EventArgs e)
         {
             string tab = (string)(Session["Tab"]);
-            if(tab == "0")
+            if((bool)Session["MainLoaded"] == false)
             {
-                Menu1.Items[0].Selected = true;
-                MultiView1.ActiveViewIndex = 0;
-            }
-            else
-            {
-                Menu1.Items[1].Selected = true;
-                MultiView1.ActiveViewIndex = 1;
+                if (tab == "0")
+                {
+                    Menu1.Items[0].Selected = true;
+                    MultiView1.ActiveViewIndex = 0;
+                }
+                else
+                {
+                    Menu1.Items[1].Selected = true;
+                    MultiView1.ActiveViewIndex = 1;
+                }
+                Session["MainLoaded"] = true;
             }
         }
 
