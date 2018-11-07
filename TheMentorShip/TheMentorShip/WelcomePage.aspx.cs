@@ -12,6 +12,7 @@ namespace TheMentorShip
         protected void Page_Load(object sender, EventArgs e)
         {
             Session["MainLoaded"] = false;
+            Session["FromSetting"] = false;
         }
 
         protected void beAMentor_Click(object sender, EventArgs e)
