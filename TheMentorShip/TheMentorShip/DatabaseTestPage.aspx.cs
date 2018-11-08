@@ -20,7 +20,7 @@ namespace TheMentorShip
         protected void createButton_Click(object sender, EventArgs e)
         {
             string sqlConnectString = System.Configuration.ConfigurationManager.ConnectionStrings["myDB"].ConnectionString;
-            string sqlSelect = "insert into TESTTABLE (fName, lName) values @ufName, @ulName);";
+            string sqlSelect = "insert into TESTTABLE (fName, lName) values (@ufName, @ulName);";
 
             SqlConnection sqlConnection = new SqlConnection(sqlConnectString);
             SqlCommand sqlCommand = new SqlCommand(sqlSelect, sqlConnection);
