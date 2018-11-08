@@ -108,7 +108,7 @@
                                                         <tr>
                                                             <td>
                                                                 <asp:TextBox ID="searchTextBox" runat="server"></asp:TextBox>
-                                                                <asp:Button ID="searchBUtton" runat="server" Text="Search" />
+                                                                <asp:Button ID="searchBUtton" runat="server" Text="Search" OnClick="searchBUtton_Click" />
                                                             </td>
                                                             
                                                         </tr>
@@ -127,33 +127,31 @@
                                                     </table>
                                                 </td>
                                                 <td style="width:75%; text-align: center;">
-                                                    <table style="width:100%; height:inherit">
+                                                    <table id="resultTable" style="width:100%; height:inherit">
                                                     <tr>
                                                         <td style="width:25%; text-align: left;">John Doe, Manager</td>
-                                                        <td>&nbsp;</td>
-                                                        <td>&nbsp;</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>&nbsp;</td>
-                                                        <td style="width:50%;">Leadership, Communication</td>
-                                                        <td>
-                                                            <asp:Button ID="Button1" runat="server" Text="Email" />
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width:25%; text-align: left;">John Doe, Director</td>
-                                                        <td>&nbsp;</td>
-                                                        <td>&nbsp;</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>&nbsp;</td>
-                                                        <td style="width:50%;">Smart, Leadership, Has Experience</td>
-                                                        <td>
-                                                            <asp:Button ID="Button2" runat="server" Text="Email" />
-                                                        </td>
+                                                        <td style="width:50%;"><span style="border:2px solid black; border-radius: 25px;">Leadership</span> <span style="border:2px solid black; border-radius: 25px;">Communication</span></td>
+                                                        
+                                                        <td>Email</td>
                                                     </tr>
                                                     
+                                                    
+                                                    
                                                     </table>
+                                                    <asp:GridView ID="searchResultGridView" runat="server" AutoGenerateColumns="false">
+                                                        <Columns>
+                                                            <asp:BoundField DataField="EFName" HeaderText ="First Name" />
+                                                            <asp:BoundField DataField="ELName" HeaderText ="Last Name" />
+                                                            <asp:TemplateField>
+                                                                <ItemTemplate>
+                                                                    <asp:LinkButton ID="showDetail" Text="Detail" runat="server" CommandArgument='<%# Eval("EmployeeID") %>' />
+                                                                    <%--OnClick=""--%>
+                                                                </ItemTemplate>
+                                                                
+                                                            </asp:TemplateField>
+                                                        </Columns>
+                                                    </asp:GridView>
+                                                    <asp:Label ID="resultLabel" runat="server" Text="Label"></asp:Label>
                                                 </td>
                                                 
                                             </tr>

@@ -103,22 +103,22 @@ namespace TheMentorShip {
         protected global::System.Web.UI.WebControls.CheckBoxList filterCheckBoxList;
         
         /// <summary>
-        /// Button1 control.
+        /// searchResultGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.GridView searchResultGridView;
         
         /// <summary>
-        /// Button2 control.
+        /// resultLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Label resultLabel;
         
         /// <summary>
         /// View2 control.
