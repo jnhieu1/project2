@@ -26,6 +26,12 @@ namespace TheMentorShip
                 }
                 Session["MainLoaded"] = true;
             }
+            else if((bool)Session["FromSetting"] == true)
+            {
+                Menu1.Items[1].Selected = true;
+                MultiView1.ActiveViewIndex = 1;
+                Session["FromSetting"] = false;
+            }
         }
 
         protected void Menu1_MenuItemClick(object sender, MenuEventArgs e)
@@ -68,6 +74,11 @@ namespace TheMentorShip
             {
                 DropDownList3.SelectedIndex = 0;
             }
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("SettingPage.aspx");
         }
     }
 }

@@ -205,7 +205,7 @@
                                                             <td class="auto-style9">
                                                                 First Name:
                                                                 <br /> Last Name:
-                                                                <br /> Phone Number:
+                                                                <br /> Phone Number:<br /> Job Title:
 
                                                             </td>
                                                             <td class="auto-style13">&nbsp;</td>
@@ -225,7 +225,9 @@
                                                                 
                                                             </td>
                                                             <td class="auto-style13"></td>
-                                                            <td style="width:25%;">Save</td>
+                                                            <td style="width:25%;">
+                                                                <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Settings" />
+                                                            </td>
                                                         </tr>
                                                         
                                                     </table>
@@ -302,7 +304,7 @@
                                                             <td class="auto-style9">
                                                                 First Name:
                                                                 <br /> Last Name:
-                                                                <br /> Phone Number:
+                                                                <br /> Phone Number:<br /> Job Title:
 
                                                             </td>
                                                             <td>
@@ -310,9 +312,13 @@
                                                                 <br />
                                                                 <asp:TextBox ID="TextBox3" runat="server" Width="98%"></asp:TextBox>
                                                                 <br />
-                                                                <asp:TextBox ID="TextBox4" runat="server" Width="98%"></asp:TextBox>
+                                                                <asp:TextBox ID="TextBox5" runat="server" Width="98%"></asp:TextBox>
+                                                                <br />
+                                                                <asp:TextBox ID="TextBox6" runat="server" Width="98%"></asp:TextBox>
                                                             </td>
-                                                            <td>&nbsp;</td>
+                                                            <td>
+                                                                <asp:CheckBox ID="CheckBox2" runat="server" Text="Mentoring Enabled" />
+                                                            </td>
                                                         </tr>
                                                         <tr>
                                                             <td class="auto-style10">

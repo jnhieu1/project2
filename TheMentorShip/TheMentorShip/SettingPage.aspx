@@ -34,7 +34,9 @@
                 </div>
 
             </td>
-            <td class="break">&nbsp;</td>
+            <td class="break">
+                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Back" />
+            </td>
         </tr>
     </table>
 </asp:Content>
