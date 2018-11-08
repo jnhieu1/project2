@@ -133,7 +133,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td>&nbsp;</td>
-                                                        <td style="width:50%;">Leadership, Communication</td>
+                                                        <td style="width:50%;"><span style="border:2px solid black; border-radius: 25px;">Leadership</span> <span style="border:2px solid black; border-radius: 25px;">Communication</span></td>
                                                         <td>
                                                             <asp:Button ID="Button1" runat="server" Text="Email" />
                                                         </td>
