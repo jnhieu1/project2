@@ -4,11 +4,20 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Data;
+using System.Configuration;
 
 namespace TheMentorShip
 {
     public partial class MainPage : System.Web.UI.Page
     {
+        public static class Globals
+        {
+            //public static string dbConnectionString = "server=cis425.wpcarey.asu.edu;uid=sxiao13;pwd=blueFARM56;database=groupb05;";
+
+            //public static MySql.Data.MySqlClient.MySqlConnection conn = new MySql.Data.MySqlClient.MySqlConnection(dbConnectionString);
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             string tab = (string)(Session["Tab"]);
@@ -79,6 +88,37 @@ namespace TheMentorShip
         protected void Button4_Click(object sender, EventArgs e)
         {
             Response.Redirect("SettingPage.aspx");
+        }
+
+        protected void searchBUtton_Click(object sender, EventArgs e)
+        {
+            string sqlConnectString = System.Configuration.ConfigurationManager.ConnectionStrings["myDB"].ConnectionString;
+            string sqlSelect = "select * from employees where EmployeeID = 1454;";
+
+            SqlConnection sqlConnection = new SqlConnection(sqlConnectString);
+            //SqlCommand sqlCommand = new SqlCommand(sqlSelect, sqlConnection);
+
+            SqlDataAdapter sqlDa = new SqlDataAdapter(sqlSelect, sqlConnection);
+            DataTable dtbl = new DataTable();
+            sqlDa.Fill(dtbl);
+            searchResultGridView.DataSource = dtbl;
+            searchResultGridView.DataBind();
+
+            sqlConnection.Open();
+            //sqlCommand.ExecuteNonQuery();
+
+            //var reader = sqlCommand.ExecuteReader();
+            //int count = 0;
+
+            //while (reader.Read())
+            //{
+            //    string result = Convert.ToString(reader["EFName"]);
+            //    resultLabel.Text = result;
+                
+            //}
+            
+            sqlConnection.Close();
+            
         }
     }
 }
