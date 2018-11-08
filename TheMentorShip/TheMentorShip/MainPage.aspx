@@ -5,10 +5,11 @@
     <style>
         .break{
             width:10%;
-            background-image: url(Image/ContentBackground.jpg);
+            /*background-image: url(Image/ContentBackground.jpg);*/
+            background-color: white;
         }
         .tabs{
-            
+
             position:relative;
             top:1px;
             left:7px;
@@ -20,22 +21,23 @@
             margin:1px;
         }
         .selectedTab{
-            background-color:cornflowerblue;
             border-bottom:solid 1px black;
         }
         .tabContents{
             border:solid 1px black;
             padding:10px;
             margin:5px;
-            
-            background-image: url(Image/ContentBackground.jpg);
+            /*background-image: url(Image/ContentBackground.jpg);*/
+            background-color: white;
         }
-        
+
+        table#table1 {
+            height: 150px;
+        }
 
         .auto-style5 {
             text-align: left;
         }
-        
 
         
         .auto-style8 {}
@@ -58,21 +60,21 @@
             width: 494px;
         }
         
-        
+   
 
     </style>
 
     <div>
         
-        <table style="width:100%;">
+        <table id="table1" style="width:100%;">
             <tr>
                 <td class="break">&nbsp;</td>
                 <td>
                     <asp:Menu ID="Menu1" Orientation="Horizontal" StaticMenuItemStyle-CssClass="tab" Font-Size="Large"
-                        StaticSelectedStyle-CssClass="selectedTab" StaticMenuItemStyle-HorizontalPadding="10px" StaticSelectedStyle-BackColor="cornflowerblue" StaticSelectedStyle-ForeColor="White" CssClass="tabs" runat="server" OnMenuItemClick="Menu1_MenuItemClick">
+                        StaticSelectedStyle-CssClass="selectedTab" StaticMenuItemStyle-HorizontalPadding="10px" StaticSelectedStyle-BackColor="#A8A8A8" StaticSelectedStyle-ForeColor="White" CssClass="tabs" runat="server" OnMenuItemClick="Menu1_MenuItemClick">
                         <Items>
-                            <asp:MenuItem Text="Find a Mentor" Value="0" Selected="true"></asp:MenuItem>
-                            <asp:MenuItem Text="Be a Mentor" Value="1"></asp:MenuItem>
+                            <asp:MenuItem Text="Find a mentor" Value="0" Selected="true"></asp:MenuItem>
+                            <asp:MenuItem Text="Be a mentor" Value="1"></asp:MenuItem>
                         </Items>
                     </asp:Menu>
                     <div class="tabContents">
@@ -80,7 +82,7 @@
                             <asp:View ID="View1" runat="server">
                                 
                                 <asp:Menu ID="Menu2" Orientation="Horizontal" StaticMenuItemStyle-CssClass="tab" Font-Size="Large"
-                                    StaticSelectedStyle-CssClass="selectedTab" StaticMenuItemStyle-HorizontalPadding="10px" StaticSelectedStyle-BackColor="cornflowerblue" StaticSelectedStyle-ForeColor="White" CssClass="tabs" runat="server" OnMenuItemClick="Menu2_MenuItemClick">
+                                    StaticSelectedStyle-CssClass="selectedTab" StaticMenuItemStyle-HorizontalPadding="10px" StaticSelectedStyle-BackColor="#A8A8A8" StaticSelectedStyle-ForeColor="White" CssClass="tabs" runat="server" OnMenuItemClick="Menu2_MenuItemClick">
                                     <Items>
                                         <asp:MenuItem Text="Jobs" Value="0" Selected="true"></asp:MenuItem>
                                         <asp:MenuItem Text="Skills" Value="1"></asp:MenuItem>
@@ -164,7 +166,7 @@
                             
                             <asp:View ID="View2" runat="server">
                                 <asp:Menu ID="Menu3" Orientation="Horizontal" StaticMenuItemStyle-CssClass="tab" Font-Size="Large"
-                                    StaticSelectedStyle-CssClass="selectedTab" StaticMenuItemStyle-HorizontalPadding="10px" StaticSelectedStyle-BackColor="cornflowerblue" StaticSelectedStyle-ForeColor="White" CssClass="tabs" runat="server" OnMenuItemClick="Menu3_MenuItemClick">
+                                    StaticSelectedStyle-CssClass="selectedTab" StaticMenuItemStyle-HorizontalPadding="10px" StaticSelectedStyle-BackColor="#808080" StaticSelectedStyle-ForeColor="White" CssClass="tabs" runat="server" OnMenuItemClick="Menu3_MenuItemClick">
                                     <Items>
                                         <asp:MenuItem Text="Profile" Value="0" Selected="true"></asp:MenuItem>
                                         <asp:MenuItem Text="Edit" Value="1"></asp:MenuItem>
@@ -205,7 +207,7 @@
                                                             <td class="auto-style9">
                                                                 First Name:
                                                                 <br /> Last Name:
-                                                                <br /> Phone Number:<br /> Job Title:
+                                                                <br /> Phone Number:
 
                                                             </td>
                                                             <td class="auto-style13">&nbsp;</td>
@@ -225,9 +227,7 @@
                                                                 
                                                             </td>
                                                             <td class="auto-style13"></td>
-                                                            <td style="width:25%;">
-                                                                <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Settings" />
-                                                            </td>
+                                                            <td style="width:25%;">Save</td>
                                                         </tr>
                                                         
                                                     </table>
@@ -304,7 +304,7 @@
                                                             <td class="auto-style9">
                                                                 First Name:
                                                                 <br /> Last Name:
-                                                                <br /> Phone Number:<br /> Job Title:
+                                                                <br /> Phone Number:
 
                                                             </td>
                                                             <td>
@@ -312,13 +312,9 @@
                                                                 <br />
                                                                 <asp:TextBox ID="TextBox3" runat="server" Width="98%"></asp:TextBox>
                                                                 <br />
-                                                                <asp:TextBox ID="TextBox5" runat="server" Width="98%"></asp:TextBox>
-                                                                <br />
-                                                                <asp:TextBox ID="TextBox6" runat="server" Width="98%"></asp:TextBox>
+                                                                <asp:TextBox ID="TextBox4" runat="server" Width="98%"></asp:TextBox>
                                                             </td>
-                                                            <td>
-                                                                <asp:CheckBox ID="CheckBox2" runat="server" Text="Mentoring Enabled" />
-                                                            </td>
+                                                            <td>&nbsp;</td>
                                                         </tr>
                                                         <tr>
                                                             <td class="auto-style10">

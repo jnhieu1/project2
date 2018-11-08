@@ -127,6 +127,7 @@
     <Content Include="Image\ContentBackground.JPG" />
     <Content Include="Image\defaultIcon.jpg" />
     <Content Include="Image\logo.png" />
+    <Content Include="Image\logoNew.png" />
     <Content Include="Image\TopBackground.jpg" />
     <Content Include="MainPage.aspx" />
     <Content Include="MasterPage.Master" />

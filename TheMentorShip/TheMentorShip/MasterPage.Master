@@ -10,16 +10,24 @@
     <style type="text/css">
         
         div#top { 
-            background-image: url(Image/TopBackground.jpg);
+            /*background-image: url(Image/header.jpg);*/
+            background-color: #3895D3;
             background-repeat: repeat-x;
+            height: 225px;
         }
         div#content { 
-            background-image: url(Image/ContentBackground.jpg);
-            
+            /*background-image: url(Image/ContentBackground.jpg);*/
+            background-color: white;
         }
         div#bottom { 
-            background-image: url(Image/TopBackground.jpg);
+            /*background-image: url(Image/TopBackground.jpg);*/
+            background-color: #3895D3;
             background-repeat: repeat-x;
+            display: block;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 95px;
         }
         .auto-style1 {
             text-align: center;
@@ -32,11 +40,16 @@
         }
         .newStyle2 {
             font-family: "Times New Roman";
+            color: white;
         }
         .auto-style4 {
-            font-size: large;
+            font-size: 15px;
             text-align: center;
+            color: white;
+            font-family: "Trebuchet MS";
         }
+
+
     </style>
 </head>
 <body>
@@ -50,16 +63,14 @@
                     <td class="auto-style2" style="width:25%;">&nbsp;</td>
                     <td class="auto-style1">
                         <%--<h1 class="auto-style3"><em>The Mentor Ship</em></h1>--%>
-                        <asp:Image ID="Image1" runat="server" ImageUrl="~/Image/logo.png" Height="140px" Width="398px" />
+                        <asp:Image ID="Image1" runat="server" ImageUrl="~/Image/logoNew.png" Height="223px" Width="500px" />
                     </td>
                     <td style="width:25%;" class="auto-style1">
-                        <h4><span class="newStyle2">Sign in</span></h4>
+                       <%-- <h4><span class="newStyle2">Sign in</span></h4>--%>
                     </td>
                 </tr>
                 
             </table>
-            <br />
-            <br />
             </div>
             <div id="body">
             <div id="content">
@@ -72,7 +83,9 @@
             <div id="bottom" class="auto-style4">
                 <br />
                 <br />
-                <strong><em>Made by BreadScrum</em></strong>
+                <br />
+                <br />
+                <%--<strong>--%><em>Made by Breadscrums</em><%--</strong>--%>
 
             </div>
     </form>
