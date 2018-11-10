@@ -99,7 +99,7 @@
                                         <br />Skills
                                         <table style="width: 100%;">
                                             <tr>
-                                                <td style="width:25%;" >
+                                                <td style="width:30%;" >
                                                     <table style="width: 100%;">
                                                         <tr>
                                                             <td>Filter</td>
@@ -115,10 +115,16 @@
                                                         <tr>
                                                             <td>
                                                                 <asp:CheckBoxList ID="filterCheckBoxList" runat="server" CssClass="auto-style5">
-                                                                    <asp:ListItem Selected="True">Available</asp:ListItem>
                                                                     <asp:ListItem>Communication</asp:ListItem>
-                                                                    <asp:ListItem>Public Speaking</asp:ListItem>
+                                                                    <asp:ListItem Value="PublicSpeaking">Public Speaking</asp:ListItem>
                                                                     <asp:ListItem>Leadership</asp:ListItem>
+                                                                    <asp:ListItem Value="TimeManagement">Time Management</asp:ListItem>
+                                                                    <asp:ListItem>Teamwork Skills</asp:ListItem>
+                                                                    <asp:ListItem Value="Persuasion_Negotiation">Persuasion/Negotiation</asp:ListItem>
+                                                                    <asp:ListItem>Networking</asp:ListItem>
+                                                                    <asp:ListItem Value="ConflictResolution">Conflict Resolution</asp:ListItem>
+                                                                    <asp:ListItem Value="PresentationSkills">Presentation Skills</asp:ListItem>
+                                                                    <asp:ListItem Value="Mentoring_Coaching">Mentoring/Coaching</asp:ListItem>
                                                                 </asp:CheckBoxList>
 
                                                             </td>
@@ -126,21 +132,10 @@
                                                         </tr>
                                                     </table>
                                                 </td>
-                                                <td style="width:75%; text-align: center;">
-                                                    <table id="resultTable" style="width:100%; height:inherit">
-                                                    <tr>
-                                                        <td style="width:25%; text-align: left;">John Doe, Manager</td>
-                                                        <td style="width:50%;"><span style="border:2px solid black; border-radius: 25px;">Leadership</span> <span style="border:2px solid black; border-radius: 25px;">Communication</span></td>
-                                                        
-                                                        <td>Email</td>
-                                                    </tr>
-                                                    
-                                                    
-                                                    
-                                                    </table>
+                                                <td style="width:70%;">
                                                     <asp:GridView ID="searchResultGridView" runat="server" AutoGenerateColumns="false">
                                                         <Columns>
-                                                            <asp:BoundField DataField="EFName" HeaderText ="First Name" />
+                                                            <asp:BoundField DataField="EFName" HeaderText ="Full Name" />
                                                             <asp:BoundField DataField="ELName" HeaderText ="Last Name" />
                                                             <asp:TemplateField>
                                                                 <ItemTemplate>
@@ -151,7 +146,7 @@
                                                             </asp:TemplateField>
                                                         </Columns>
                                                     </asp:GridView>
-                                                    <asp:Label ID="resultLabel" runat="server" Text="Label"></asp:Label>
+                                                    
                                                 </td>
                                                 
                                             </tr>

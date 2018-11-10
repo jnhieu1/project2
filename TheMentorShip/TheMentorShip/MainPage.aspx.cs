@@ -92,6 +92,18 @@ namespace TheMentorShip
 
         protected void searchBUtton_Click(object sender, EventArgs e)
         {
+            string searchName = searchTextBox.Text;
+            //int filterIndex = 0;
+            string searchSoftSkill = "";
+
+            foreach (ListItem softSkill in filterCheckBoxList.Items)
+            {
+                if (softSkill.Selected)
+                {
+                    searchSoftSkill += "or" + softSkill.Value + "= 1";
+                }
+            }
+
             string sqlConnectString = System.Configuration.ConfigurationManager.ConnectionStrings["myDB"].ConnectionString;
             string sqlSelect = "select * from employees where EmployeeID = 1454;";
 
