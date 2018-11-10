@@ -40,10 +40,7 @@
         }
 
         
-        .auto-style8 {}
         
-        
-
         .auto-style9 {
             text-align: right;
             width: 18%;
@@ -53,13 +50,7 @@
             height: 20px;
             width: 18%;
         }
-        .auto-style12 {
-            width: 480px;
-        }
-        .auto-style13 {
-            width: 494px;
-        }
-        
+                
    
 
     </style>
@@ -84,14 +75,16 @@
                                 <asp:Menu ID="Menu2" Orientation="Horizontal" StaticMenuItemStyle-CssClass="tab" Font-Size="Large"
                                     StaticSelectedStyle-CssClass="selectedTab" StaticMenuItemStyle-HorizontalPadding="10px" StaticSelectedStyle-BackColor="#A8A8A8" StaticSelectedStyle-ForeColor="White" CssClass="tabs" runat="server" OnMenuItemClick="Menu2_MenuItemClick">
                                     <Items>
-                                        <asp:MenuItem Text="Jobs" Value="0" Selected="true"></asp:MenuItem>
+                                        <asp:MenuItem Text="Departments" Value="0" Selected="true"></asp:MenuItem>
                                         <asp:MenuItem Text="Skills" Value="1"></asp:MenuItem>
                                     </Items>
+                                    <StaticMenuItemStyle CssClass="tab" HorizontalPadding="10px" />
+                                    <StaticSelectedStyle BackColor="#A8A8A8" CssClass="selectedTab" ForeColor="White" />
                                 </asp:Menu>
                                 <div class="tabContents">
                                 <asp:MultiView ID="MultiView2" ActiveViewIndex="0" runat="server">
                                     <asp:View ID="View3" runat="server">
-                                        <br />Jobs
+                                        <br />Departments
 
 
                                     </asp:View>
@@ -161,75 +154,13 @@
                                 <asp:Menu ID="Menu3" Orientation="Horizontal" StaticMenuItemStyle-CssClass="tab" Font-Size="Large"
                                     StaticSelectedStyle-CssClass="selectedTab" StaticMenuItemStyle-HorizontalPadding="10px" StaticSelectedStyle-BackColor="#808080" StaticSelectedStyle-ForeColor="White" CssClass="tabs" runat="server" OnMenuItemClick="Menu3_MenuItemClick">
                                     <Items>
-                                        <asp:MenuItem Text="Profile" Value="0" Selected="true"></asp:MenuItem>
-                                        <asp:MenuItem Text="Edit" Value="1"></asp:MenuItem>
+                                        <asp:MenuItem Text="Profile" Value="0"></asp:MenuItem>
                                     </Items>
+                                    <StaticMenuItemStyle CssClass="tab" HorizontalPadding="10px" />
+                                    <StaticSelectedStyle BackColor="Gray" CssClass="selectedTab" ForeColor="White" />
                                 </asp:Menu>
                                 <div class="tabContents">
                                 <asp:MultiView ID="MultiView3" ActiveViewIndex="0" runat="server">
-                                    <asp:View ID="View5" runat="server">
-                                                                                <table style="width: 100%;">
-                                            <tr>
-                                                <td style="width:20%;">
-                                                    <table style="width: 100%; height:inherit; margin-top: 0px;">
-                                                        <tr>
-                                                            <td>
-                                                                <asp:Image ID="Image1" runat="server" ImageUrl="~/Image/defaultIcon.jpg" />
-                                                            </td>                                                          
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                Top Endorsements
-                                                                <asp:BulletedList ID="BulletedList2" runat="server" CssClass="auto-style8">
-                                                                    <asp:ListItem>Leadership</asp:ListItem>
-                                                                    <asp:ListItem>Communication</asp:ListItem>
-                                                                    <asp:ListItem>Experience</asp:ListItem>
-                                                                </asp:BulletedList>
-                                                            </td>
-                                                            
-                                                        </tr>
-                                                        <tr>
-                                                            <td>See all</td>
-                                                            
-                                                        </tr>
-                                                    </table>
-                                                </td>
-                                                <td style="width:75%;">
-                                                    <table style="width: 100%; height:inherit; margin-top: 0px;">
-                                                        <tr>
-                                                            <td class="auto-style9">
-                                                                First Name:
-                                                                <br /> Last Name:
-                                                                <br /> Phone Number:
-
-                                                            </td>
-                                                            <td class="auto-style13">&nbsp;</td>
-                                                            <td>&nbsp;</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="auto-style10">
-                                                                Biography:
-                                                            </td>
-                                                            <td class="auto-style13">
-                                                                <p class="auto-style12">I graduated from Arizona State University with a degree in Computer Information Systems. I have worked at this company for 3 years as a software developer and I have been the Manager of Information Systems for 5 years. My experience has allowed me to improve my leadership and communication skills. I have gained knowledge and would now like to share this with my peers.</p>
-                                                            </td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="auto-style10">
-                                                                
-                                                            </td>
-                                                            <td class="auto-style13"></td>
-                                                            <td style="width:25%;">Save</td>
-                                                        </tr>
-                                                        
-                                                    </table>
-                                                </td>
-                                                
-                                            </tr>
-                                            
-                                        </table>
-                                    </asp:View>
                                     <asp:View ID="View6" runat="server">
                                         <table style="width: 100%;">
                                             <tr>
@@ -326,7 +257,8 @@
                                                             </td>
                                                             <td></td>
                                                             <td style="width:25%;">
-                                                                <asp:Button ID="Button3" runat="server" Text="Save" />
+                                                                <asp:Button ID="Button3" runat="server" Text="Save" Width="45%" />
+                                                                <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Settings" Width="45%" />
                                                             </td>
                                                         </tr>
                                                         
