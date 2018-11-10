@@ -95,17 +95,40 @@ namespace TheMentorShip
             string searchName = searchTextBox.Text;
             //int filterIndex = 0;
             string searchSoftSkill = "";
+            DataTable resultTable = new DataTable();
+            resultTable.Clear();
+            resultTable.Columns.Add("EmployeeID");
+            resultTable.Columns.Add("Name");
+            resultTable.Columns.Add("Position");
+            resultTable.Columns.Add("SoftSkills");
+            string resultEmployeeID = "";
+            string resultName = "";
+            string resultSoftSkills = "";
+            string resultPosition = "";
+
+            string sqlSelect = "";
+            
+
 
             foreach (ListItem softSkill in filterCheckBoxList.Items)
             {
                 if (softSkill.Selected)
                 {
-                    searchSoftSkill += "or" + softSkill.Value + "= 1";
+                    searchSoftSkill += "and " + softSkill.Value + " = 1";
+                    
                 }
             }
 
             string sqlConnectString = System.Configuration.ConfigurationManager.ConnectionStrings["myDB"].ConnectionString;
-            string sqlSelect = "select * from employees where EmployeeID = 1454;";
+            if (searchName != "")
+            {
+                sqlSelect = "select * from employees inner join mentoringskills ON employees.EmployeeID = mentoringskills.EmployeeID where available = 1" + searchSoftSkill + "and ELName ='" + searchName + "';";
+            }
+            else
+            {
+                sqlSelect = "select * from employees inner join mentoringskills ON employees.EmployeeID = mentoringskills.EmployeeID where available = 1" + searchSoftSkill + ";";
+            }
+            //string sqlSelect = "select * from employees inner join mentoringskills ON employees.EmployeeID = mentoringskills.EmployeeID where available = 1" + searchSoftSkill + ";";
 
             SqlConnection sqlConnection = new SqlConnection(sqlConnectString);
             //SqlCommand sqlCommand = new SqlCommand(sqlSelect, sqlConnection);
@@ -113,8 +136,113 @@ namespace TheMentorShip
             SqlDataAdapter sqlDa = new SqlDataAdapter(sqlSelect, sqlConnection);
             DataTable dtbl = new DataTable();
             sqlDa.Fill(dtbl);
-            searchResultGridView.DataSource = dtbl;
+            DataRow[] row = dtbl.Select();
+
+            
+
+            for (int i = 0; i < row.Length; i++)
+            {
+                resultSoftSkills = "";
+
+                resultEmployeeID = dtbl.Rows[i]["EmployeeID"].ToString();
+                resultName = dtbl.Rows[i]["EFName"].ToString() + " " +dtbl.Rows[i]["ELName"].ToString();
+                resultPosition = dtbl.Rows[i]["Position"].ToString();
+                if (Convert.ToInt32(dtbl.Rows[i]["Leadership"]) != 0)
+                {
+                    resultSoftSkills += "Leadership";
+                    if(resultSoftSkills != "")
+                    {
+                        resultSoftSkills += ", ";
+                    }  
+                }
+                if (Convert.ToInt32(dtbl.Rows[i]["Communication"]) != 0)
+                {
+                    resultSoftSkills += "Communication";
+                    if (resultSoftSkills != "")
+                    {
+                        resultSoftSkills += ", ";
+                    }
+                }
+                if (Convert.ToInt32(dtbl.Rows[i]["PublicSpeaking"]) != 0)
+                {
+                    resultSoftSkills += "Public Speaking";
+                    if (resultSoftSkills != "")
+                    {
+                        resultSoftSkills += ", ";
+                    }
+                }
+                if (Convert.ToInt32(dtbl.Rows[i]["TimeManagement"]) != 0)
+                {
+                    resultSoftSkills += "Time Management";
+                    if (resultSoftSkills != "")
+                    {
+                        resultSoftSkills += ", ";
+                    }
+                }
+                if (Convert.ToInt32(dtbl.Rows[i]["TeamworkSkills"]) != 0)
+                {
+                    resultSoftSkills += "Teamwork Skills";
+                    if (resultSoftSkills != "")
+                    {
+                        resultSoftSkills += ", ";
+                    }
+                }
+                if (Convert.ToInt32(dtbl.Rows[i]["Persuasion_Negotiation"]) != 0)
+                {
+                    resultSoftSkills += "Persuasion/Negotiation";
+                    if (resultSoftSkills != "")
+                    {
+                        resultSoftSkills += ", ";
+                    }
+                }
+                if (Convert.ToInt32(dtbl.Rows[i]["Networking"]) != 0)
+                {
+                    resultSoftSkills += "Networking";
+                    if (resultSoftSkills != "")
+                    {
+                        resultSoftSkills += ", ";
+                    }
+                }
+                if (Convert.ToInt32(dtbl.Rows[i]["ConflictResolution"]) != 0)
+                {
+                    resultSoftSkills += "Conflicat Resolution";
+                    if (resultSoftSkills != "")
+                    {
+                        resultSoftSkills += ", ";
+                    }
+                }
+                if (Convert.ToInt32(dtbl.Rows[i]["PresentationSkills"]) != 0)
+                {
+                    resultSoftSkills += "Presentation Skills";
+                    if (resultSoftSkills != "")
+                    {
+                        resultSoftSkills += ", ";
+                    }
+                }
+                if (Convert.ToInt32(dtbl.Rows[i]["Mentoring_Coaching"]) != 0)
+                {
+                    resultSoftSkills += "Mentoring/Coaching";
+                    if (resultSoftSkills != "")
+                    {
+                        resultSoftSkills += ", ";
+                    }
+                }
+
+                DataRow resultRow = resultTable.NewRow();
+                resultRow["EmployeeID"] = resultEmployeeID;
+                resultRow["Name"] = resultName;
+                resultRow["Position"] = resultPosition;
+                resultRow["SoftSkills"] = resultSoftSkills;
+                resultTable.Rows.Add(resultRow);
+            }
+            searchResultGridView.DataSource = resultTable;
             searchResultGridView.DataBind();
+
+            if(row.Length == 0)
+            {
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "Alert", "<script type=\"text/javascript\">alert('No Results Found');</script>");
+            }
+
 
             sqlConnection.Open();
             //sqlCommand.ExecuteNonQuery();

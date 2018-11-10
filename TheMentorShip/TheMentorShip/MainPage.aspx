@@ -92,7 +92,7 @@
                                         <br />Skills
                                         <table style="width: 100%;">
                                             <tr>
-                                                <td style="width:30%;" >
+                                                <td style="width:22%;" >
                                                     <table style="width: 100%;">
                                                         <tr>
                                                             <td>Filter</td>
@@ -112,7 +112,7 @@
                                                                     <asp:ListItem Value="PublicSpeaking">Public Speaking</asp:ListItem>
                                                                     <asp:ListItem>Leadership</asp:ListItem>
                                                                     <asp:ListItem Value="TimeManagement">Time Management</asp:ListItem>
-                                                                    <asp:ListItem>Teamwork Skills</asp:ListItem>
+                                                                    <asp:ListItem Value="TeamworkSkills">Teamwork Skills</asp:ListItem>
                                                                     <asp:ListItem Value="Persuasion_Negotiation">Persuasion/Negotiation</asp:ListItem>
                                                                     <asp:ListItem>Networking</asp:ListItem>
                                                                     <asp:ListItem Value="ConflictResolution">Conflict Resolution</asp:ListItem>
@@ -128,8 +128,9 @@
                                                 <td style="width:70%;">
                                                     <asp:GridView ID="searchResultGridView" runat="server" AutoGenerateColumns="false">
                                                         <Columns>
-                                                            <asp:BoundField DataField="EFName" HeaderText ="Full Name" />
-                                                            <asp:BoundField DataField="ELName" HeaderText ="Last Name" />
+                                                            <asp:BoundField DataField="Name" HeaderText ="Full Name" />
+                                                            <asp:BoundField DataField="Position" HeaderText ="Position" />
+                                                            <asp:BoundField DataField="SoftSkills" HeaderText ="Soft Skills" />
                                                             <asp:TemplateField>
                                                                 <ItemTemplate>
                                                                     <asp:LinkButton ID="showDetail" Text="Detail" runat="server" CommandArgument='<%# Eval("EmployeeID") %>' />
