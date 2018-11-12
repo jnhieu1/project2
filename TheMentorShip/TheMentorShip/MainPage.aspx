@@ -125,19 +125,13 @@
                                                         </tr>
                                                     </table>
                                                 </td>
-                                                <td style="width:70%;">
-                                                    <asp:GridView ID="searchResultGridView" runat="server" AutoGenerateColumns="false">
+                                                <td ID="tableDataForSearchResults" runat="server" style="width:70%;">
+                                                    <asp:GridView ID="searchResultGridView" runat="server" AutoGenerateColumns="False" OnRowDataBound="searchResultGridView_RowDataBound">
                                                         <Columns>
                                                             <asp:BoundField DataField="Name" HeaderText ="Full Name" />
                                                             <asp:BoundField DataField="Position" HeaderText ="Position" />
                                                             <asp:BoundField DataField="SoftSkills" HeaderText ="Soft Skills" />
-                                                            <asp:TemplateField>
-                                                                <ItemTemplate>
-                                                                    <asp:LinkButton ID="showDetail" Text="Detail" runat="server" CommandArgument='<%# Eval("EmployeeID") %>' />
-                                                                    <%--OnClick=""--%>
-                                                                </ItemTemplate>
-                                                                
-                                                            </asp:TemplateField>
+                                                            <asp:HyperLinkField NavigateUrl="~/SearchResultProfile.aspx" />
                                                         </Columns>
                                                     </asp:GridView>
                                                     

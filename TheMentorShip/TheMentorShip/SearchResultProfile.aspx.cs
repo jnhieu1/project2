@@ -11,12 +11,12 @@ namespace TheMentorShip
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            string employeeId = Request.QueryString.Get("EmployeeID");
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            
+            Response.Redirect("MainPage.aspx");
         }
     }
 }

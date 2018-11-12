@@ -13,6 +13,8 @@ namespace TheMentorShip
         {
             Session["MainLoaded"] = false;
             Session["FromSetting"] = false;
+            Session["ProfileNumber"] = 0;
+            Session["EmployeeID"] = 0;
         }
 
         protected void beAMentor_Click(object sender, EventArgs e)
