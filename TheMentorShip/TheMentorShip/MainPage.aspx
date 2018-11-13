@@ -85,8 +85,56 @@
                                 <asp:MultiView ID="MultiView2" ActiveViewIndex="0" runat="server">
                                     <asp:View ID="View3" runat="server">
                                         <br />Departments
+                                        <table style="width: 100%;">
+                                            <tr>
+                                                <td style="width:22%;" >
+                                                    <table style="width: 100%;">
+                                                        <tr>
+                                                            <td>Filter</td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+                                                                <asp:Button ID="Button1" runat="server" Text="Search" OnClick="searchBUtton_Click" />
+                                                            </td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <asp:CheckBoxList ID="CheckBoxList1" runat="server" CssClass="auto-style5">
+                                                                    <asp:ListItem>Communication</asp:ListItem>
+                                                                    <asp:ListItem Value="PublicSpeaking">Public Speaking</asp:ListItem>
+                                                                    <asp:ListItem>Leadership</asp:ListItem>
+                                                                    <asp:ListItem Value="TimeManagement">Time Management</asp:ListItem>
+                                                                    <asp:ListItem Value="TeamworkSkills">Teamwork Skills</asp:ListItem>
+                                                                    <asp:ListItem Value="Persuasion_Negotiation">Persuasion/Negotiation</asp:ListItem>
+                                                                    <asp:ListItem>Networking</asp:ListItem>
+                                                                    <asp:ListItem Value="ConflictResolution">Conflict Resolution</asp:ListItem>
+                                                                    <asp:ListItem Value="PresentationSkills">Presentation Skills</asp:ListItem>
+                                                                    <asp:ListItem Value="Mentoring_Coaching">Mentoring/Coaching</asp:ListItem>
+                                                                </asp:CheckBoxList>
 
-
+                                                            </td>
+                                                            
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <td ID="Td1" runat="server" style="width:70%;">
+                                                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowDataBound="searchResultGridView_RowDataBound">
+                                                        <Columns>
+                                                            <asp:BoundField DataField="Name" HeaderText ="Full Name" />
+                                                            <asp:BoundField DataField="Position" HeaderText ="Position" />
+                                                            <asp:BoundField DataField="SoftSkills" HeaderText ="Soft Skills" />
+                                                            <asp:HyperLinkField NavigateUrl="~/SearchResultProfile.aspx" />
+                                                        </Columns>
+                                                    </asp:GridView>
+                                                    
+                                                </td>
+                                                
+                                            </tr>
+                                            
+                                        </table>
                                     </asp:View>
                                     <asp:View ID="View4" runat="server">
                                         <br />Skills
@@ -233,7 +281,9 @@
                                                                 <br />
                                                                 <asp:TextBox ID="TextBox4" runat="server" Width="98%"></asp:TextBox>
                                                             </td>
-                                                            <td>&nbsp;</td>
+                                                            <td class="auto-style1">
+                                                                <asp:CheckBox ID="CheckBox1" runat="server" Text="Be Mentor" />
+                                                            </td>
                                                         </tr>
                                                         <tr>
                                                             <td class="auto-style10">

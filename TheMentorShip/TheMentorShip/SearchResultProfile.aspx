@@ -14,17 +14,61 @@
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                Top Endorsements
-                                                                <asp:BulletedList ID="BulletedList2" runat="server" CssClass="auto-style8">
-                                                                    <asp:ListItem>Leadership</asp:ListItem>
-                                                                    <asp:ListItem>Communication</asp:ListItem>
-                                                                    <asp:ListItem>Experience</asp:ListItem>
-                                                                </asp:BulletedList>
+                                                                <strong>Top Endorsements
+                                                                </strong>
+                                                                <br />
+                                                                <asp:Label ID="FirstEndorsement" runat="server"></asp:Label>
+                                                                <br />
+                                                                <asp:Label ID="SecondEndorsement" runat="server"></asp:Label>
+                                                                <br />
+                                                                <asp:Label ID="ThirdEndorsement" runat="server"></asp:Label>
                                                             </td>
                                                             
                                                         </tr>
                                                         <tr>
-                                                            <td>See all</td>
+                                                            <td><strong>Endorse:</strong><br />
+                                                                <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+                                                                    <asp:ListItem>None</asp:ListItem>
+                                                                    <asp:ListItem>Leadership</asp:ListItem>
+                                                                    <asp:ListItem>Communication</asp:ListItem>
+                                                                    <asp:ListItem Value="PublicSpeaking">Public Speaking</asp:ListItem>
+                                                                    <asp:ListItem Value="TimeManagement">Time Management</asp:ListItem>
+                                                                    <asp:ListItem Value="TeamworkSkills">Teamwork Skills</asp:ListItem>
+                                                                    <asp:ListItem Value="Persuasion_Negotiation">Persuasion/Negotiation</asp:ListItem>
+                                                                    <asp:ListItem>Networking</asp:ListItem>
+                                                                    <asp:ListItem Value="ConflictResolution">Conflict Resolution</asp:ListItem>
+                                                                    <asp:ListItem Value="PresentationSkills">Presentation Skills</asp:ListItem>
+                                                                    <asp:ListItem Value="Mentoring_Coaching">Mentoring/Coaching</asp:ListItem>
+                                                                </asp:DropDownList>
+                                                                <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged">
+                                                                    <asp:ListItem>None</asp:ListItem>
+                                                                    <asp:ListItem>Leadership</asp:ListItem>
+                                                                    <asp:ListItem>Communication</asp:ListItem>
+                                                                    <asp:ListItem Value="PublicSpeaking">Public Speaking</asp:ListItem>
+                                                                    <asp:ListItem Value="TimeManagement">Time Management</asp:ListItem>
+                                                                    <asp:ListItem Value="TeamworkSkills">Teamwork Skills</asp:ListItem>
+                                                                    <asp:ListItem Value="Persuasion_Negotiation">Persuasion/Negotiation</asp:ListItem>
+                                                                    <asp:ListItem>Networking</asp:ListItem>
+                                                                    <asp:ListItem Value="ConflictResolution">Conflict Resolution</asp:ListItem>
+                                                                    <asp:ListItem Value="PresentationSkills">Presentation Skills</asp:ListItem>
+                                                                    <asp:ListItem Value="Mentoring_Coaching">Mentoring/Coaching</asp:ListItem>
+                                                                </asp:DropDownList>
+                                                                <asp:DropDownList ID="DropDownList3" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DropDownList3_SelectedIndexChanged">
+                                                                    <asp:ListItem>None</asp:ListItem>
+                                                                    <asp:ListItem>Leadership</asp:ListItem>
+                                                                    <asp:ListItem>Communication</asp:ListItem>
+                                                                    <asp:ListItem Value="PublicSpeaking">Public Speaking</asp:ListItem>
+                                                                    <asp:ListItem Value="TimeManagement">Time Management</asp:ListItem>
+                                                                    <asp:ListItem Value="TeamworkSkills">Teamwork Skills</asp:ListItem>
+                                                                    <asp:ListItem Value="Persuasion_Negotiation">Persuasion/Negotiation</asp:ListItem>
+                                                                    <asp:ListItem>Networking</asp:ListItem>
+                                                                    <asp:ListItem Value="ConflictResolution">Conflict Resolution</asp:ListItem>
+                                                                    <asp:ListItem Value="PresentationSkills">Presentation Skills</asp:ListItem>
+                                                                    <asp:ListItem Value="Mentoring_Coaching">Mentoring/Coaching</asp:ListItem>
+                                                                </asp:DropDownList>
+                                                                <br />
+                                                                <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" style="height: 29px" Text="Save" />
+                                                            </td>
                                                             
                                                         </tr>
                                                     </table>
@@ -32,21 +76,36 @@
                                                 <td style="width:75%;">
                                                     <table style="width: 100%; height:inherit; margin-top: 0px;">
                                                         <tr>
-                                                            <td class="auto-style9">
-                                                                First Name:
-                                                                <br /> Last Name:
-                                                                <br /> Phone Number:
-
+                                                            <td class="auto-style1">
+                                                                <strong>Employee Info</strong></td>
+                                                            <td class="auto-style13">
+                                                                <strong>First Name:</strong>
+                                                                <asp:Label ID="FirstName" runat="server"></asp:Label>
+                                                                <br />
+                                                                <strong>Last Name:</strong>
+                                                                <asp:Label ID="LastName" runat="server"></asp:Label>
+                                                                <br />
+                                                                <strong>Phone Number:</strong>
+                                                                <asp:Label ID="PhoneNumber" runat="server"></asp:Label>
+                                                                <br />
+                                                                <strong>Department: </strong>
+                                                                <asp:Label ID="Department" runat="server"></asp:Label>
+&nbsp;-
+                                                                <asp:Label ID="JobTitle" runat="server"></asp:Label>
+                                                                <br />
+                                                                <strong>Location:</strong>
+                                                                <asp:Label ID="Location" runat="server"></asp:Label>
                                                             </td>
-                                                            <td class="auto-style13">&nbsp;</td>
                                                             <td>&nbsp;</td>
                                                         </tr>
                                                         <tr>
-                                                            <td class="auto-style10">
-                                                                Biography:
+                                                            <td class="auto-style1">
+                                                                <strong>Biography</strong>
                                                             </td>
                                                             <td class="auto-style13">
-                                                                <p class="auto-style12">I graduated from Arizona State University with a degree in Computer Information Systems. I have worked at this company for 3 years as a software developer and I have been the Manager of Information Systems for 5 years. My experience has allowed me to improve my leadership and communication skills. I have gained knowledge and would now like to share this with my peers.</p>
+                                                                <p class="auto-style12">
+                                                                    <asp:Label ID="Biography" runat="server"></asp:Label>
+                                                                </p>
                                                             </td>
                                                             <td></td>
                                                         </tr>
