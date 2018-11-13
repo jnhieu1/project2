@@ -106,25 +106,23 @@
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
-                                                                <asp:Button ID="Button1" runat="server" Text="Search" OnClick="searchBUtton_Click" />
+                                                                <asp:TextBox ID="searchDepartmentTextbox" runat="server"></asp:TextBox>
+                                                                <asp:Button ID="Button1" runat="server" Text="Search" OnClick="SearchResultButtonClick" />
                                                             </td>
                                                             
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <asp:CheckBoxList ID="CheckBoxList1" runat="server" CssClass="auto-style5">
-                                                                    <asp:ListItem>Communication</asp:ListItem>
-                                                                    <asp:ListItem Value="PublicSpeaking">Public Speaking</asp:ListItem>
-                                                                    <asp:ListItem>Leadership</asp:ListItem>
-                                                                    <asp:ListItem Value="TimeManagement">Time Management</asp:ListItem>
-                                                                    <asp:ListItem Value="TeamworkSkills">Teamwork Skills</asp:ListItem>
-                                                                    <asp:ListItem Value="Persuasion_Negotiation">Persuasion/Negotiation</asp:ListItem>
-                                                                    <asp:ListItem>Networking</asp:ListItem>
-                                                                    <asp:ListItem Value="ConflictResolution">Conflict Resolution</asp:ListItem>
-                                                                    <asp:ListItem Value="PresentationSkills">Presentation Skills</asp:ListItem>
-                                                                    <asp:ListItem Value="Mentoring_Coaching">Mentoring/Coaching</asp:ListItem>
-                                                                </asp:CheckBoxList>
+                                                                <asp:DropDownList ID="DepartmentDropDown" runat="server">
+                                                                    <asp:ListItem>None</asp:ListItem>
+                                                                    <asp:ListItem>Accounting</asp:ListItem>
+                                                                    <asp:ListItem>Finance</asp:ListItem>
+                                                                    <asp:ListItem Value="InformationTechnology">Information Technology</asp:ListItem>
+                                                                    <asp:ListItem Value="CustomerService">Customer Service</asp:ListItem>
+                                                                    <asp:ListItem>Executive</asp:ListItem>
+                                                                    <asp:ListItem>Insurance</asp:ListItem>
+                                                                    <asp:ListItem>Banking</asp:ListItem>
+                                                                </asp:DropDownList>
 
                                                             </td>
                                                             
@@ -132,7 +130,7 @@
                                                     </table>
                                                 </td>
                                                 <td ID="Td1" runat="server" style="width:70%;">
-                                                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowDataBound="searchResultGridView_RowDataBound">
+                                                    <asp:GridView ID="DepartmentGridview" runat="server" AutoGenerateColumns="False" OnRowDataBound="searchResultGridView_RowDataBound">
                                                         <Columns>
                                                             <asp:BoundField DataField="Name" HeaderText ="Full Name" />
                                                             <asp:BoundField DataField="Position" HeaderText ="Position" />
@@ -151,7 +149,7 @@
                                         <br />Skills
                                         <table style="width: 100%;">
                                             <tr>
-                                                <td id="filterTable" style="width:22%; vertical-align:top;" >
+                                                <td ID="filterTable" style="width:22%; vertical-align:top;" >
                                                     <table style="width: 100%; position:relative; height:100%; ">
                                                         <tr>
                                                             <td>Filter</td>
