@@ -49,6 +49,11 @@
             font-family: "Trebuchet MS";
         }
 
+        #bottom1{
+            background-color: #3895D3;
+        }
+
+
 
     </style>
 </head>
@@ -79,15 +84,14 @@
             </asp:ContentPlaceHolder>
             
             </div>
-            </div>
-            <div id="bottom" class="auto-style4">
+
+        <footer id="bottom1" class="auto-style4">
                 <br />
                 <br />
                 <br />
                 <br />
                 <%--<strong>--%><em>Made by Breadscrums</em><%--</strong>--%>
-
-            </div>
+        </footer>
     </form>
 </body>
 </html>
