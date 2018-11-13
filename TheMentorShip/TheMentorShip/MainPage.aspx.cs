@@ -59,7 +59,27 @@ namespace TheMentorShip
                 //    (HyperLinkField)(searchResultGridView.Rows[i].Cells[3])
                 //}
                 postBack = false;
+
             }
+
+            string sqlConnectString = System.Configuration.ConfigurationManager.ConnectionStrings["myDB"].ConnectionString;
+
+            SqlConnection sqlConnection = new SqlConnection(sqlConnectString);
+
+            string sqlSelect = "select * from Employees where EmployeeID = 9999";
+
+            SqlDataAdapter sqlDa = new SqlDataAdapter(sqlSelect, sqlConnection);
+
+            DataTable dtbl = new DataTable();
+
+            sqlDa.Fill(dtbl);
+
+            fNameLabel.Text = dtbl.Rows[0]["EFName"].ToString();
+            lNameLable.Text = dtbl.Rows[0]["ELName"].ToString();
+            jobTitleLabel.Text = dtbl.Rows[0]["Position"].ToString();
+            phoneNumLabel.Text = dtbl.Rows[0]["CellPhone"].ToString();
+            locationLabel.Text = dtbl.Rows[0]["OfficeLocation"].ToString();
+            departmentLabel.Text = dtbl.Rows[0]["Department"].ToString();
         }
 
         protected void Menu1_MenuItemClick(object sender, MenuEventArgs e)
@@ -77,32 +97,32 @@ namespace TheMentorShip
             int index = Int32.Parse(e.Item.Value);
             MultiView3.ActiveViewIndex = index;
         }
-        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if ((DropDownList1.SelectedIndex == DropDownList2.SelectedIndex || DropDownList1.SelectedIndex == DropDownList3.SelectedIndex)
-                && DropDownList1.SelectedIndex != 0)
-            {
-                DropDownList1.SelectedIndex = 0;
-            }
-        }
+        //protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    if ((DropDownList1.SelectedIndex == DropDownList2.SelectedIndex || DropDownList1.SelectedIndex == DropDownList3.SelectedIndex)
+        //        && DropDownList1.SelectedIndex != 0)
+        //    {
+        //        DropDownList1.SelectedIndex = 0;
+        //    }
+        //}
 
-        protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if((DropDownList1.SelectedIndex == DropDownList2.SelectedIndex || DropDownList2.SelectedIndex == DropDownList3.SelectedIndex)
-                && DropDownList2.SelectedIndex != 0)
-            {
-                DropDownList2.SelectedIndex = 0;
-            }
-        }
+        //protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    if((DropDownList1.SelectedIndex == DropDownList2.SelectedIndex || DropDownList2.SelectedIndex == DropDownList3.SelectedIndex)
+        //        && DropDownList2.SelectedIndex != 0)
+        //    {
+        //        DropDownList2.SelectedIndex = 0;
+        //    }
+        //}
 
-        protected void DropDownList3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if ((DropDownList3.SelectedIndex == DropDownList2.SelectedIndex || DropDownList3.SelectedIndex == DropDownList1.SelectedIndex)
-                && DropDownList3.SelectedIndex != 0)
-            {
-                DropDownList3.SelectedIndex = 0;
-            }
-        }
+        //protected void DropDownList3_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    if ((DropDownList3.SelectedIndex == DropDownList2.SelectedIndex || DropDownList3.SelectedIndex == DropDownList1.SelectedIndex)
+        //        && DropDownList3.SelectedIndex != 0)
+        //    {
+        //        DropDownList3.SelectedIndex = 0;
+        //    }
+        //}
 
         protected void Button4_Click(object sender, EventArgs e)
         {
@@ -673,6 +693,188 @@ namespace TheMentorShip
                 ClientScript.RegisterClientScriptBlock(this.GetType(), "Alert", "<script type=\"text/javascript\">alert('No Results Found');</script>");
             }
 
+        }
+
+        protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            //if (CheckBox1.Checked)
+            //{
+            //    skillsyouwantMentor.Visible = true;
+            //    Communication.Visible = true;
+            //    PublicSpeaking.Visible = true;
+            //    Leadership.Visible = true;
+            //    TimeManagement.Visible = true;
+            //    TeamworkSkills.Visible = true;
+            //    Persuation_Negotiation.Visible = true;
+            //    Networking.Visible = true;
+            //    ConflictResolution.Visible = true;
+            //    PresentationSkills.Visible = true;
+            //    Mentoring_Coaching.Visible = true;
+            //}
+            //else
+            //{
+            //    skillsyouwantMentor.Visible = false;
+            //    Communication.Visible = false;
+            //    PublicSpeaking.Visible = false;
+            //    Leadership.Visible = false;
+            //    TimeManagement.Visible = false;
+            //    TeamworkSkills.Visible = false;
+            //    Persuation_Negotiation.Visible = false;
+            //    Networking.Visible = false;
+            //    ConflictResolution.Visible = false;
+            //    PresentationSkills.Visible = false;
+            //    Mentoring_Coaching.Visible = false;
+            //}
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            string sqlConnectString = System.Configuration.ConfigurationManager.ConnectionStrings["myDB"].ConnectionString;
+
+            SqlConnection sqlConnection = new SqlConnection(sqlConnectString);
+
+            sqlConnection.Open();
+
+            string sqlSelect;
+
+            if (CheckBox1.Checked)
+            {
+                sqlSelect = "update Mentoringskills set Available = 1 where EmployeeID = 9999";
+            }
+            else
+            {
+                sqlSelect = "update Mentoringskills set Available = 0 where EmployeeID = 9999";
+            }
+
+            SqlCommand sqlDa = new SqlCommand(sqlSelect, sqlConnection);
+            sqlDa.ExecuteNonQuery();
+
+            //sqlSelect = "update employees set bio = " + TextBox1.Text + "where EmployeeID = 9999";
+
+            //sqlDa = new SqlCommand(sqlSelect, sqlConnection);
+            //sqlDa.ExecuteNonQuery();
+
+
+            if (Communication.Checked)
+            {
+                sqlSelect = "update Mentoringskills set Communication = 1 where EmployeeID = 9999";
+                sqlDa = new SqlCommand(sqlSelect, sqlConnection);
+                sqlDa.ExecuteNonQuery();
+            }
+            else
+            {
+                sqlSelect = "update Mentoringskills set Communication = 0 where EmployeeID = 9999";
+                sqlDa = new SqlCommand(sqlSelect, sqlConnection);
+                sqlDa.ExecuteNonQuery();
+            }
+            if (PublicSpeaking.Checked == true)
+            {
+                sqlSelect = "update Mentoringskills set PublicSpeaking = 1 where EmployeeID = 9999";
+                sqlDa = new SqlCommand(sqlSelect, sqlConnection);
+                sqlDa.ExecuteNonQuery();
+            }
+            else
+            {
+                sqlSelect = "update Mentoringskills set PublicSpeaking = 0 where EmployeeID = 9999";
+                sqlDa = new SqlCommand(sqlSelect, sqlConnection);
+                sqlDa.ExecuteNonQuery();
+            }
+            if (Leadership.Checked)
+            {
+                sqlSelect = "update Mentoringskills set Leadership = 1 where EmployeeID = 9999";
+                sqlDa = new SqlCommand(sqlSelect, sqlConnection);
+                sqlDa.ExecuteNonQuery();
+            }
+            else
+            {
+                sqlSelect = "update Mentoringskills set Leadership = 0 where EmployeeID = 9999";
+                sqlDa = new SqlCommand(sqlSelect, sqlConnection);
+                sqlDa.ExecuteNonQuery();
+            }
+            if (TimeManagement.Checked)
+            {
+                sqlSelect = "update Mentoringskills set TimeManagement = 1 where EmployeeID = 9999";
+                sqlDa = new SqlCommand(sqlSelect, sqlConnection);
+                sqlDa.ExecuteNonQuery();
+            }
+            else
+            {
+                sqlSelect = "update Mentoringskills set TimeManagement = 0 where EmployeeID = 9999";
+                sqlDa = new SqlCommand(sqlSelect, sqlConnection);
+                sqlDa.ExecuteNonQuery();
+            }
+            if (TeamworkSkills.Checked)
+            {
+                sqlSelect = "update Mentoringskills set TeamworkSkills = 1 where EmployeeID = 9999";
+                sqlDa = new SqlCommand(sqlSelect, sqlConnection);
+                sqlDa.ExecuteNonQuery();
+            }
+            else
+            {
+                sqlSelect = "update Mentoringskills set TeamworkSkills = 0 where EmployeeID = 9999";
+                sqlDa = new SqlCommand(sqlSelect, sqlConnection);
+                sqlDa.ExecuteNonQuery();
+            }
+            if (Persuation_Negotiation.Checked)
+            {
+                sqlSelect = "update Mentoringskills set Persuasion_Negotiation = 1 where EmployeeID = 9999";
+                sqlDa = new SqlCommand(sqlSelect, sqlConnection);
+                sqlDa.ExecuteNonQuery();
+            }
+            else
+            {
+                sqlSelect = "update Mentoringskills set Persuasion_Negotiation = 0 where EmployeeID = 9999";
+                sqlDa = new SqlCommand(sqlSelect, sqlConnection);
+                sqlDa.ExecuteNonQuery();
+            }
+            if (Networking.Checked)
+            {
+                sqlSelect = "update Mentoringskills set Networking = 1 where EmployeeID = 9999";
+                sqlDa = new SqlCommand(sqlSelect, sqlConnection);
+                sqlDa.ExecuteNonQuery();
+            }
+            else
+            {
+                sqlSelect = "update Mentoringskills set Networking = 0 where EmployeeID = 9999";
+                sqlDa = new SqlCommand(sqlSelect, sqlConnection);
+                sqlDa.ExecuteNonQuery();
+            }
+            if (ConflictResolution.Checked)
+            {
+                sqlSelect = "update Mentoringskills set ConflictResolution = 1 where EmployeeID = 9999";
+                sqlDa = new SqlCommand(sqlSelect, sqlConnection);
+                sqlDa.ExecuteNonQuery();
+            }
+            else
+            {
+                sqlSelect = "update Mentoringskills set ConflictResolution = 0 where EmployeeID = 9999";
+                sqlDa = new SqlCommand(sqlSelect, sqlConnection);
+                sqlDa.ExecuteNonQuery();
+            }
+            if (PresentationSkills.Checked)
+            {
+                sqlSelect = "update Mentoringskills set PresentationSkills = 1 where EmployeeID = 9999";
+                sqlDa = new SqlCommand(sqlSelect, sqlConnection);
+                sqlDa.ExecuteNonQuery();
+            }
+            else
+            {
+                sqlSelect = "update Mentoringskills set PresentationSkills = 0 where EmployeeID = 9999";
+                sqlDa = new SqlCommand(sqlSelect, sqlConnection);
+                sqlDa.ExecuteNonQuery();
+            }
+            if (Mentoring_Coaching.Checked)
+            {
+                sqlSelect = "update Mentoringskills set Mentoring_Coaching = 1 where EmployeeID = 9999";
+                sqlDa = new SqlCommand(sqlSelect, sqlConnection);
+                sqlDa.ExecuteNonQuery();
+            }
+            else
+            {
+                sqlSelect = "update Mentoringskills set Mentoring_Coaching = 0 where EmployeeID = 9999";
+                sqlDa = new SqlCommand(sqlSelect, sqlConnection);
+                sqlDa.ExecuteNonQuery();
+            }
         }
     }
 }
