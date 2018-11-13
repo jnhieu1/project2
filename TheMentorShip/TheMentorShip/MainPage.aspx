@@ -64,6 +64,10 @@
             overflow: auto;
         }
 
+        .auto-style11 {
+            height: 44px;
+        }
+
     </style>
 
     <div>
@@ -109,8 +113,8 @@
                                                                     <asp:ListItem>None</asp:ListItem>
                                                                     <asp:ListItem>Accounting</asp:ListItem>
                                                                     <asp:ListItem>Finance</asp:ListItem>
-                                                                    <asp:ListItem Value="InformationTechnology">Information Technology</asp:ListItem>
-                                                                    <asp:ListItem Value="CustomerService">Customer Service</asp:ListItem>
+                                                                    <asp:ListItem Value="Information Technology">Information Technology</asp:ListItem>
+                                                                    <asp:ListItem Value="Customer Service">Customer Service</asp:ListItem>
                                                                     <asp:ListItem>Executive</asp:ListItem>
                                                                     <asp:ListItem>Insurance</asp:ListItem>
                                                                     <asp:ListItem>Banking</asp:ListItem>
@@ -249,47 +253,28 @@
                                                             </td>                                                          
                                                         </tr>
                                                         <tr>
-                                                            <td>
-                                                                Top Three Endorsements:<br />
-                                                                <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" AutoPostBack ="true">
-                                                                    <asp:ListItem>None</asp:ListItem>
-                                                                    <asp:ListItem>Leadership</asp:ListItem>
-                                                                    <asp:ListItem>Communication</asp:ListItem>
-                                                                    <asp:ListItem>Public Speaking</asp:ListItem>
-                                                                    <asp:ListItem>Time Management</asp:ListItem>
-                                                                    <asp:ListItem>Teamwork Skills</asp:ListItem>
-                                                                    <asp:ListItem>Persuasion/Negotiation</asp:ListItem>
-                                                                    <asp:ListItem>Networking</asp:ListItem>
-                                                                    <asp:ListItem>Conflict Resolution</asp:ListItem>
-                                                                    <asp:ListItem>Presentation Skills</asp:ListItem>
-                                                                    <asp:ListItem>Mentoring/Coaching</asp:ListItem>
-                                                                </asp:DropDownList>
-                                                                <asp:DropDownList ID="DropDownList2" runat="server" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged" AutoPostBack ="true">
-                                                                    <asp:ListItem>None</asp:ListItem>
-                                                                    <asp:ListItem>Leadership</asp:ListItem>
-                                                                    <asp:ListItem>Communication</asp:ListItem>
-                                                                    <asp:ListItem>Public Speaking</asp:ListItem>
-                                                                    <asp:ListItem>Time Management</asp:ListItem>
-                                                                    <asp:ListItem>Teamwork Skills</asp:ListItem>
-                                                                    <asp:ListItem>Persuasion/Negotiation</asp:ListItem>
-                                                                    <asp:ListItem>Networking</asp:ListItem>
-                                                                    <asp:ListItem>Conflict Resolution</asp:ListItem>
-                                                                    <asp:ListItem>Presentation Skills</asp:ListItem>
-                                                                    <asp:ListItem>Mentoring/Coaching</asp:ListItem>
-                                                                </asp:DropDownList>
-                                                                <asp:DropDownList ID="DropDownList3" runat="server" OnSelectedIndexChanged="DropDownList3_SelectedIndexChanged" AutoPostBack="true">
-                                                                    <asp:ListItem>None</asp:ListItem>
-                                                                    <asp:ListItem>Leadership</asp:ListItem>
-                                                                    <asp:ListItem>Communication</asp:ListItem>
-                                                                    <asp:ListItem>Public Speaking</asp:ListItem>
-                                                                    <asp:ListItem>Time Management</asp:ListItem>
-                                                                    <asp:ListItem>Teamwork Skills</asp:ListItem>
-                                                                    <asp:ListItem>Persuasion/Negotiation</asp:ListItem>
-                                                                    <asp:ListItem>Networking</asp:ListItem>
-                                                                    <asp:ListItem>Conflict Resolution</asp:ListItem>
-                                                                    <asp:ListItem>Presentation Skills</asp:ListItem>
-                                                                    <asp:ListItem>Mentoring/Coaching</asp:ListItem>
-                                                                </asp:DropDownList>
+                                                            <td class="auto-style11">
+                                                                <asp:Label ID="skillsyouwantMentor" runat="server" Text="Skills you want to Mentor in:"></asp:Label>
+                                                                <br />
+                                                                <asp:CheckBox ID="Communication" runat="server" Text="Communication" />
+                                                                <br />
+                                                                <asp:CheckBox ID="PublicSpeaking" runat="server" Text="Public Speaking" />
+                                                                <br />
+                                                                <asp:CheckBox ID="Leadership" runat="server" Text="Leadership" />
+                                                                <br />
+                                                                <asp:CheckBox ID="TimeManagement" runat="server" Text="Time Management" />
+                                                                <br />
+                                                                <asp:CheckBox ID="TeamworkSkills" runat="server" Text="Teamwork Skills" />
+                                                                <br />
+                                                                <asp:CheckBox ID="Persuation_Negotiation" runat="server" Text="Persuation/Negotiation" />
+                                                                <br />
+                                                                <asp:CheckBox ID="Networking" runat="server" Text="Networking" />
+                                                                <br />
+                                                                <asp:CheckBox ID="ConflictResolution" runat="server" Text="Conflict Resolution" />
+                                                                <br />
+                                                                <asp:CheckBox ID="PresentationSkills" runat="server" Text="Presentation Skills" />
+                                                                <br />
+                                                                <asp:CheckBox ID="Mentoring_Coaching" runat="server" Text="Mentoring/Coaching" />
                                                             </td>
                                                             
                                                         </tr>
@@ -304,25 +289,37 @@
                                                     <table style="width: 100%; height:inherit; margin-top: 0px;">
                                                         <tr>
                                                             <td class="auto-style9">
-                                                                First Name:
-                                                                <br /> Last Name:
-                                                                <br /> Phone Number:
-
-                                                            </td>
+                                                                <br />
+                                                                <br />
+                                                                <strong>Employee Info</strong>
+                                                                <br />
+                                                                <br />
+                                                                &nbsp;</td>
                                                             <td>
-                                                                <asp:TextBox ID="TextBox2" runat="server" Width="98%"></asp:TextBox>
+                                                                <strong>First Name:</strong>
+                                                                <asp:Label ID="fNameLabel" runat="server" Text="[FirstName]"></asp:Label>
                                                                 <br />
-                                                                <asp:TextBox ID="TextBox3" runat="server" Width="98%"></asp:TextBox>
+                                                                <strong>Last Name:</strong>
+                                                                <asp:Label ID="lNameLable" runat="server" Text="[LastName]"></asp:Label>
                                                                 <br />
-                                                                <asp:TextBox ID="TextBox4" runat="server" Width="98%"></asp:TextBox>
+                                                                <strong>Phone Number:</strong>
+                                                                <asp:Label ID="phoneNumLabel" runat="server" Text="[PhoneNumber]"></asp:Label>
+                                                                <br />
+                                                                <strong>Department:</strong>
+                                                                <asp:Label ID="departmentLabel" runat="server" Text="[Department]"></asp:Label>
+                                                                &nbsp;-
+                                                                <asp:Label ID="jobTitleLabel" runat="server" Text="[JobTitle]"></asp:Label>
+                                                                <br />
+                                                                <strong>Location:</strong>
+                                                                <asp:Label ID="locationLabel" runat="server" Text="[Location]"></asp:Label>
                                                             </td>
                                                             <td class="auto-style1">
-                                                                <asp:CheckBox ID="CheckBox1" runat="server" Text="Currently available<br/> to mentor" />
+                                                                <asp:CheckBox ID="CheckBox1" runat="server" Text="Currently available<br/> to mentor" OnCheckedChanged="CheckBox1_CheckedChanged" />
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td class="auto-style10">
-                                                                Biography:
+                                                                <strong>Biography:</strong>
                                                             </td>
                                                             <td>
                                                                 <p>
@@ -339,9 +336,8 @@
                                                             </td>
                                                             <td></td>
                                                             <td style="width:25%;">
-                                                           
-                                                                <asp:Button ID="Button3" runat="server" Text="Save" Width="45%" Height="35px" BackColor="White" />  &nbsp;
-                                                                <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Settings" Width="45%" Height="35px" BackColor="White" />
+                                                                <asp:Button ID="Button3" runat="server" Text="Save" Width="45%" OnClick="Button3_Click" Height="35px" BackColor="White" /> &nbsp;
+                                                                <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Settings" Width="45%" Height="35px" BackColor="White"/>
                                                             </td>
                                                         </tr>
                                                         
