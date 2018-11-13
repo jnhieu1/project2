@@ -6,7 +6,8 @@
         <style>
             .break{
                 width:10%;
-                background-image: url(Image/ContentBackground.jpg);
+                /* background-image: url(Image/ContentBackground.jpg); */
+                background-color: white;
             }
             .newStyle3 {
                 font-family: "Times New Roman";
@@ -16,27 +17,52 @@
             <td class="break">&nbsp;</td>
             <td>
                 <div>
-                    <h1><span class="newStyle3"><em>Setting</em></span></h1>
+                    &nbsp;
+                    <h1><span class="newStyle3"><em>Settings</em></span></h1>
+           
                 </div>
                 <div>
+                    &nbsp;
                     <p>
-                        Account
+                        > Account
                     </p>
+      <br />
                     <p>
-                        Privacy
+                        > Privacy
                     </p>
+                    <br />
                     <p>
-                        Security
+                        > Security
                     </p>
+                    <br />
                     <p>
-                        Notifications
+                        > Notifications
                     </p>
+                    <br />
                 </div>
 
             </td>
+            
             <td class="break">
-                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Back" />
+                
             </td>
+
         </tr>
     </table>
-</asp:Content>
+    <table>
+        </table>
+    <table>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                
+            </td>
+            <td><asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Back" Align="Right" Height="40px" Width="85px" BackColor="White"/> </td>
+        </tr>
+    </table>
+   
+    <br /><br />
+    </asp:Content>

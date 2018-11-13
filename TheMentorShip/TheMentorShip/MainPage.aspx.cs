@@ -674,5 +674,10 @@ namespace TheMentorShip
             }
 
         }
+
+        protected void DepartmentGridview_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

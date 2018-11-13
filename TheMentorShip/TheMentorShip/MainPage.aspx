@@ -95,24 +95,16 @@
                                 <div class="tabContents">
                                 <asp:MultiView ID="MultiView2" ActiveViewIndex="0" runat="server">
                                     <asp:View ID="View3" runat="server">
-                                        <br />Departments
+                                        <br /><strong>Choose a department from<br />the pulldown menu below:</strong>
+                                       
                                         <table style="width: 100%;">
                                             <tr>
                                                 <td style="width:22%;" >
                                                     <table style="width: 100%;">
-                                                        <tr>
-                                                            <td>Filter</td>
-                                                            
-                                                        </tr>
-                                                        <tr>
+                                                        <tr><td>&nbsp;</td></tr>
+                                                             <tr>
                                                             <td>
-                                                                <asp:TextBox ID="searchDepartmentTextbox" runat="server"></asp:TextBox>
-                                                                <asp:Button ID="Button1" runat="server" Text="Search" OnClick="SearchResultButtonClick" />
-                                                            </td>
-                                                            
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
+                                                               
                                                                 <asp:DropDownList ID="DepartmentDropDown" runat="server">
                                                                     <asp:ListItem>None</asp:ListItem>
                                                                     <asp:ListItem>Accounting</asp:ListItem>
@@ -127,15 +119,37 @@
                                                             </td>
                                                             
                                                         </tr>
+                                                        <tr>
+                                                            <td><asp:Button ID="Button1" runat="server" Text="Search" OnClick="SearchResultButtonClick" Height="30px" Width="74px" BackColor="White" />
+                                                                
+                                                            </td>
+
+                                                        </tr>
+                                                                                                               
+                                                        <tr>
+                                                            <td> &nbsp;</td>
+</tr>
+                                                            <tr>
+                                                            <td>Search by name:</td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <asp:TextBox ID="searchDepartmentTextbox" runat="server"></asp:TextBox>
+                      
+                                                            </td>
+                                                            
+                                                        </tr>
+                                                   
                                                     </table>
                                                 </td>
-                                                <td ID="Td1" runat="server" style="width:70%;">
-                                                    <asp:GridView ID="DepartmentGridview" runat="server" AutoGenerateColumns="False" OnRowDataBound="searchResultGridView_RowDataBound">
+                                                <td ID="Td1" runat="server" style="width:70%; position:relative;">
+                                                    <asp:GridView ID="DepartmentGridview" runat="server" AutoGenerateColumns="False" OnRowDataBound="searchResultGridView_RowDataBound" OnSelectedIndexChanged="DepartmentGridview_SelectedIndexChanged">
                                                         <Columns>
-                                                            <asp:BoundField DataField="Name" HeaderText ="Full Name" />
-                                                            <asp:BoundField DataField="Position" HeaderText ="Position" />
-                                                            <asp:BoundField DataField="SoftSkills" HeaderText ="Soft Skills" />
-                                                            <asp:HyperLinkField NavigateUrl="~/SearchResultProfile.aspx" />
+                                                            <asp:BoundField DataField="Name" HeaderText ="Full Name" ItemStyle-Width="120"/>
+                                                            <asp:BoundField DataField="Position" HeaderText ="Position" ItemStyle-Width="100"/>
+                                                            <asp:BoundField DataField="SoftSkills" HeaderText ="Soft Skills" ItemStyle-Width="350" />
+                                                            <asp:HyperLinkField NavigateUrl="~/SearchResultProfile.aspx" HeaderText="View profile" ItemStyle-Width="70"/>
                                                         </Columns>
                                                     </asp:GridView>
                                                     
@@ -144,24 +158,28 @@
                                             </tr>
                                             
                                         </table>
+                                        &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; 
                                     </asp:View>
                                     <asp:View ID="View4" runat="server">
-                                        <br />Skills
+                                        <br /><strong>Select desired skills or<br />search by name below</strong>
                                         <table style="width: 100%;">
                                             <tr>
                                                 <td ID="filterTable" style="width:22%; vertical-align:top;" >
                                                     <table style="width: 100%; position:relative; height:100%; ">
+                                                        &nbsp;
                                                         <tr>
-                                                            <td>Filter</td>
-                                                            
+                                                            <td>Search by name:</td>
+                                                           
                                                         </tr>
                                                         <tr>
                                                             <td>
-                                                                <asp:TextBox ID="searchTextBox" runat="server"></asp:TextBox>
-                                                                <asp:Button ID="searchBUtton" runat="server" Text="Search" OnClick="searchBUtton_Click" />
+                                                                <asp:TextBox ID="searchTextBox" runat="server" Width="150"></asp:TextBox>
+                                                                <asp:Button ID="searchBUtton" runat="server" Text="Search" OnClick="searchBUtton_Click" Width="156"/>
+                                                                &nbsp;&nbsp;&nbsp;&nbsp;
                                                             </td>
-                                                            
+                                                          
                                                         </tr>
+                                                        &nbsp;
                                                         <tr>
                                                             <td>
                                                                 <asp:CheckBoxList ID="filterCheckBoxList" runat="server" CssClass="auto-style5">
@@ -188,10 +206,10 @@
                                                 <td ID="tableDataForSearchResults" runat="server" style="width:70%; position:relative;">
                                                     <asp:GridView ID="searchResultGridView" runat="server" AutoGenerateColumns="False" OnRowDataBound="searchResultGridView_RowDataBound">
                                                         <Columns>
-                                                            <asp:BoundField DataField="Name" HeaderText ="Full Name" />
-                                                            <asp:BoundField DataField="Position" HeaderText ="Position" />
-                                                            <asp:BoundField DataField="SoftSkills" HeaderText ="Soft Skills" />
-                                                            <asp:HyperLinkField NavigateUrl="~/SearchResultProfile.aspx" />
+                                                            <asp:BoundField DataField="Name" HeaderText ="Full Name" ItemStyle-Width="125"/>
+                                                            <asp:BoundField DataField="Position" HeaderText ="Position" ItemStyle-Width="100" />
+                                                            <asp:BoundField DataField="SoftSkills" HeaderText ="Soft Skills" ItemStyle-Width="350"/>
+                                                            <asp:HyperLinkField NavigateUrl="~/SearchResultProfile.aspx" HeaderText ="View profile" ItemStyle-Width="65"/>
                                                         </Columns>
                                                     </asp:GridView>
 
@@ -227,7 +245,7 @@
                                                     <table style="width: 100%; height:inherit; margin-top: 0px;">
                                                         <tr>
                                                             <td>
-                                                                <asp:Image ID="personalImage" runat="server" ImageUrl="~/Image/defaultIcon.jpg" />
+                                                                <asp:Image ID="personalImage" runat="server" ImageUrl="~/Image/defaultIcon.jpg" Width="180" />
                                                             </td>                                                          
                                                         </tr>
                                                         <tr>
@@ -276,7 +294,8 @@
                                                             
                                                         </tr>
                                                         <tr>
-                                                            <td>See all</td>
+                                                            <td> &nbsp;</td>
+                                                           
                                                             
                                                         </tr>
                                                     </table>
@@ -298,7 +317,7 @@
                                                                 <asp:TextBox ID="TextBox4" runat="server" Width="98%"></asp:TextBox>
                                                             </td>
                                                             <td class="auto-style1">
-                                                                <asp:CheckBox ID="CheckBox1" runat="server" Text="Be Mentor" />
+                                                                <asp:CheckBox ID="CheckBox1" runat="server" Text="Currently available<br/> to mentor" />
                                                             </td>
                                                         </tr>
                                                         <tr>
@@ -308,18 +327,21 @@
                                                             <td>
                                                                 <p>
                                                                     <asp:TextBox ID="TextBox1" runat="server" Height="109px" Width=98%></asp:TextBox>
+                                                                    
                                                                 </p>
                                                             </td>
                                                             <td></td>
                                                         </tr>
+                                                        <td>&nbsp;</td>
                                                         <tr>
                                                             <td class="auto-style10">
                                                                 
                                                             </td>
                                                             <td></td>
                                                             <td style="width:25%;">
-                                                                <asp:Button ID="Button3" runat="server" Text="Save" Width="45%" />
-                                                                <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Settings" Width="45%" />
+                                                           
+                                                                <asp:Button ID="Button3" runat="server" Text="Save" Width="45%" Height="35px" BackColor="White" />  &nbsp;
+                                                                <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Settings" Width="45%" Height="35px" BackColor="White" />
                                                             </td>
                                                         </tr>
                                                         
@@ -327,7 +349,8 @@
                                                 </td>
                                                 
                                             </tr>
-                                            
+                                            <tr><td> &nbsp;</td></tr>
+                                                        <tr><td> &nbsp;</td></tr>
                                         </table>
                                     </asp:View>
                                 </asp:MultiView>
@@ -340,7 +363,15 @@
             </tr>
             
         </table>
-        
+    
+        <table>
+            <tr><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr><td>&nbsp;</td></tr>
+        </table>
         
         
     </div>
