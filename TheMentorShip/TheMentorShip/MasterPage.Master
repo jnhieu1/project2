@@ -49,6 +49,12 @@
             font-family: "Trebuchet MS";
         }
 
+        html, body{
+            position: relative;
+            height: 100%;
+            overflow: auto;
+        }
+
         #bottom1{
             background-color: #3895D3;
         }
@@ -85,13 +91,16 @@
             
             </div>
 
-        <footer id="bottom1" class="auto-style4">
+        
+    </form>
+
+    <footer id="bottom1" class="auto-style4">
                 <br />
                 <br />
                 <br />
                 <br />
                 <%--<strong>--%><em>Made by Breadscrums</em><%--</strong>--%>
         </footer>
-    </form>
+
 </body>
 </html>

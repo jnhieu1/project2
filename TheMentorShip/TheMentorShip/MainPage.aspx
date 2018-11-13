@@ -50,8 +50,19 @@
             height: 20px;
             width: 18%;
         }
-                
-   
+
+        #searchResultDiv{
+            display:inline;
+            float: right;
+        }
+
+        #View4{
+            overflow: auto;
+        }
+
+        #MultiView2{
+            overflow: auto;
+        }
 
     </style>
 
@@ -140,8 +151,8 @@
                                         <br />Skills
                                         <table style="width: 100%;">
                                             <tr>
-                                                <td style="width:22%;" >
-                                                    <table style="width: 100%;">
+                                                <td id="filterTable" style="width:22%; vertical-align:top;" >
+                                                    <table style="width: 100%; position:relative; height:100%; ">
                                                         <tr>
                                                             <td>Filter</td>
                                                             
@@ -173,7 +184,10 @@
                                                         </tr>
                                                     </table>
                                                 </td>
-                                                <td ID="tableDataForSearchResults" runat="server" style="width:70%;">
+                                                
+
+                                               
+                                                <td ID="tableDataForSearchResults" runat="server" style="width:70%; position:relative;">
                                                     <asp:GridView ID="searchResultGridView" runat="server" AutoGenerateColumns="False" OnRowDataBound="searchResultGridView_RowDataBound">
                                                         <Columns>
                                                             <asp:BoundField DataField="Name" HeaderText ="Full Name" />
@@ -182,12 +196,16 @@
                                                             <asp:HyperLinkField NavigateUrl="~/SearchResultProfile.aspx" />
                                                         </Columns>
                                                     </asp:GridView>
+
                                                     
                                                 </td>
+                                                
+                                                
                                                 
                                             </tr>
                                             
                                         </table>
+
                                     </asp:View>
                                 </asp:MultiView>
                                 </div>
