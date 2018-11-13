@@ -350,7 +350,7 @@ namespace TheMentorShip
                 resultTable.Rows.Add(resultRow);
                 //gridViewMaster.Controls.Add(tmp);
             }
-            resultTable.DefaultView.Sort = "Indor desc";
+            //resultTable.DefaultView.Sort = "Indor desc";
             searchResultGridView.DataSource = resultTable;
 
             //for(int i = 1; i < hyperLinks.Count(); i++)
