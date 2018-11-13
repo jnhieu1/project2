@@ -80,6 +80,7 @@ namespace TheMentorShip
             phoneNumLabel.Text = dtbl.Rows[0]["CellPhone"].ToString();
             locationLabel.Text = dtbl.Rows[0]["OfficeLocation"].ToString();
             departmentLabel.Text = dtbl.Rows[0]["Department"].ToString();
+            TextBox1.Text = dtbl.Rows[0]["bio"].ToString();
         }
 
         protected void Menu1_MenuItemClick(object sender, MenuEventArgs e)
@@ -749,10 +750,10 @@ namespace TheMentorShip
             SqlCommand sqlDa = new SqlCommand(sqlSelect, sqlConnection);
             sqlDa.ExecuteNonQuery();
 
-            //sqlSelect = "update employees set bio = " + TextBox1.Text + "where EmployeeID = 9999";
+            sqlSelect = "update employees set bio = '" + TextBox1.Text + "' where EmployeeID = 9999";
 
-            //sqlDa = new SqlCommand(sqlSelect, sqlConnection);
-            //sqlDa.ExecuteNonQuery();
+            sqlDa = new SqlCommand(sqlSelect, sqlConnection);
+            sqlDa.ExecuteNonQuery();
 
 
             if (Communication.Checked)
