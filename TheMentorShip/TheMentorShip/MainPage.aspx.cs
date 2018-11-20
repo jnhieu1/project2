@@ -10,12 +10,50 @@ using System.Configuration;
 
 namespace TheMentorShip
 {
+
+
     public partial class MainPage : System.Web.UI.Page
     {
-        int count = 0;
-        bool postBack = false;
-        List<string> employeeId = new List<string>();
+        //int count = 0;
+        //bool postBack = false;
+        List<Employee> employees  = new List<Employee>();
         List<HyperLink> hyperLinks = new List<HyperLink>();
+
+
+        [Serializable]
+        public class Employee
+        {
+            //Private variables
+            private string resultEmployeeID;
+            private string resultName;
+            private string resultSoftSkills;
+            private string resultPosition;
+            private int endorsementNum;
+
+            //Properties
+            public string ResultEmployeeID { get => resultEmployeeID; set => resultEmployeeID = value; }
+            public string ResultName { get => resultName; set => resultName = value; }
+            public string ResultSoftSkills { get => resultSoftSkills; set => resultSoftSkills = value; }
+            public string ResultPosition { get => resultPosition; set => resultPosition = value; }
+            public int EndorsementNum { get => endorsementNum; set => endorsementNum = value; }
+
+            //Constructors
+            public Employee()
+            {
+
+            }
+
+            public Employee(string resultEmployeeID, string resultName, string resultSoftSkills, string resultPosition, int endorsement)
+            {
+                ResultEmployeeID = resultEmployeeID;
+                ResultName = resultName;
+                ResultSoftSkills = resultSoftSkills;
+                ResultPosition = resultPosition;
+                EndorsementNum = endorsement;
+            }
+        }
+
+        List<Employee> searchResultList = new List<Employee>();
 
         public static class Globals
         {
@@ -46,41 +84,78 @@ namespace TheMentorShip
                 MultiView1.ActiveViewIndex = 1;
                 Session["FromSetting"] = false;
             }
-            else if(postBack)
+            else if((bool)Session["Searched"] == true && MultiView2.ActiveViewIndex == 0)
             {
-                for(int i =1; i < hyperLinks.Count() + 1; i ++)
-                {
-                    searchResultGridView.Rows[i].Cells[3].Controls.Clear();
-                    searchResultGridView.Rows[i].Cells[3].Controls.Add(hyperLinks[i-1]);
-                }
-                hyperLinks.Clear();
-                //for(int i = 1; i < employeeId.Count(); i++)
-                //{
-                //    (HyperLinkField)(searchResultGridView.Rows[i].Cells[3])
-                //}
-                postBack = false;
+                employees = (List<Employee>)ViewState["EmployeeList"];
 
+                if (employees != null)
+                {
+                    if (employees.Count() > 0)
+                    {
+                        DataTable resultTable = new DataTable();
+                        resultTable.Columns.Add("EmployeeID");
+                        resultTable.Columns.Add("Name");
+                        resultTable.Columns.Add("Position");
+                        resultTable.Columns.Add("SoftSkills");
+                        resultTable.Columns.Add("Indor");
+
+                        for (int i = 0; i < employees.Count(); i++)
+                        {
+                            HyperLink tmp = new HyperLink();
+                            tmp.ID = "hyperlink";
+                            tmp.Text = "Profile";
+                            tmp.NavigateUrl = "SearchResultProfile.apsx?C=" + employees[i].ResultEmployeeID;
+
+                            DataRow resultRow = resultTable.NewRow();
+                            //resultRow["EmployeeID"] = resultEmployeeID;
+                            resultRow["Name"] = employees[i].ResultName;
+                            resultRow["Position"] = employees[i].ResultPosition;
+                            resultRow["SoftSkills"] = employees[i].ResultSoftSkills;
+                            //resultRow["Indor"] = indorNumber;
+
+                            //employeeId.Add(resultEmployeeID);
+                            resultRow["EmployeeID"] = tmp;
+
+                            resultTable.Rows.Add(resultRow);
+                            //gridViewMaster.Controls.Add(tmp);
+                        }
+                        //resultTable.DefaultView.Sort = "Indor desc";
+                        searchResultGridView.DataSource = resultTable;
+                    }
+                }
+                //for(int i =1; i < hyperLinks.Count() + 1; i ++)
+                //{
+                //    searchResultGridView.Rows[i].Cells[3].Controls.Clear();
+                //    searchResultGridView.Rows[i].Cells[3].Controls.Add(hyperLinks[i-1]);
+                //}
+                //hyperLinks.Clear();
+                ////for(int i = 1; i < employeeId.Count(); i++)
+                ////{
+                ////    (HyperLinkField)(searchResultGridView.Rows[i].Cells[3])
+                ////}
+                //postBack = false;
+                Session["Searched"] = false;
             }
 
-            string sqlConnectString = System.Configuration.ConfigurationManager.ConnectionStrings["myDB"].ConnectionString;
+            //string sqlConnectString = System.Configuration.ConfigurationManager.ConnectionStrings["myDB"].ConnectionString;
 
-            SqlConnection sqlConnection = new SqlConnection(sqlConnectString);
+            //SqlConnection sqlConnection = new SqlConnection(sqlConnectString);
 
-            string sqlSelect = "select * from Employees where EmployeeID = 9999";
+            //string sqlSelect = "select * from Employees where EmployeeID = 9999";
 
-            SqlDataAdapter sqlDa = new SqlDataAdapter(sqlSelect, sqlConnection);
+            //SqlDataAdapter sqlDa = new SqlDataAdapter(sqlSelect, sqlConnection);
 
-            DataTable dtbl = new DataTable();
+            //DataTable dtbl = new DataTable();
 
-            sqlDa.Fill(dtbl);
+            //sqlDa.Fill(dtbl);
 
-            fNameLabel.Text = dtbl.Rows[0]["EFName"].ToString();
-            lNameLable.Text = dtbl.Rows[0]["ELName"].ToString();
-            jobTitleLabel.Text = dtbl.Rows[0]["Position"].ToString();
-            phoneNumLabel.Text = dtbl.Rows[0]["CellPhone"].ToString();
-            locationLabel.Text = dtbl.Rows[0]["OfficeLocation"].ToString();
-            departmentLabel.Text = dtbl.Rows[0]["Department"].ToString();
-            TextBox1.Text = dtbl.Rows[0]["bio"].ToString();
+            //fNameLabel.Text = dtbl.Rows[0]["EFName"].ToString();
+            //lNameLable.Text = dtbl.Rows[0]["ELName"].ToString();
+            //jobTitleLabel.Text = dtbl.Rows[0]["Position"].ToString();
+            //phoneNumLabel.Text = dtbl.Rows[0]["CellPhone"].ToString();
+            //locationLabel.Text = dtbl.Rows[0]["OfficeLocation"].ToString();
+            //departmentLabel.Text = dtbl.Rows[0]["Department"].ToString();
+            //TextBox1.Text = dtbl.Rows[0]["bio"].ToString();
         }
 
         protected void Menu1_MenuItemClick(object sender, MenuEventArgs e)
@@ -132,10 +207,12 @@ namespace TheMentorShip
 
         protected void searchBUtton_Click(object sender, EventArgs e)
         {
-            count = 0;
+            searchResultList.Clear();
+
+            //count = 0;
             Session["ProfileNumber"] = 0;
 
-            employeeId.Clear();
+            employees.Clear();
 
             //System.Web.UI.HtmlControls.HtmlTableCell tc2 = null;
 
@@ -164,7 +241,6 @@ namespace TheMentorShip
             
 
             string sqlSelect = "";
-            
 
 
             foreach (ListItem softSkill in filterCheckBoxList.Items)
@@ -346,6 +422,16 @@ namespace TheMentorShip
                     }
                 }
 
+                Employee tmpEmp = new Employee();
+
+                tmpEmp.EndorsementNum = indorNumber;
+                tmpEmp.ResultEmployeeID = resultEmployeeID;
+                tmpEmp.ResultName = resultName;
+                tmpEmp.ResultPosition = resultPosition;
+                tmpEmp.ResultSoftSkills = resultSoftSkills;
+
+                employees.Add(tmpEmp);
+
                 //LinkButton tmp = new LinkButton();
                 //tmp.Text = "Profile";
                 //tmp.Attributes.Add("EmployeeID", resultEmployeeID);
@@ -363,7 +449,7 @@ namespace TheMentorShip
                 resultRow["SoftSkills"] = resultSoftSkills;
                 resultRow["Indor"] = indorNumber;
 
-                employeeId.Add(resultEmployeeID);
+                //employeeId.Add(resultEmployeeID);
                 resultRow["EmployeeID"] = tmp;
 
                 //hyperLinks.Add(tmp);
@@ -371,7 +457,12 @@ namespace TheMentorShip
                 resultTable.Rows.Add(resultRow);
                 //gridViewMaster.Controls.Add(tmp);
             }
-            //resultTable.DefaultView.Sort = "Indor desc";
+            employees.Sort(delegate (Employee x, Employee y)
+            {
+                return y.EndorsementNum.CompareTo(x.EndorsementNum);
+            });
+
+            resultTable.DefaultView.Sort = "Indor desc";
             searchResultGridView.DataSource = resultTable;
 
             //for(int i = 1; i < hyperLinks.Count(); i++)
@@ -403,60 +494,63 @@ namespace TheMentorShip
             
             sqlConnection.Close();
 
-            postBack = true;
+            //postBack = true;
+            Session["Searched"] = true;
+
+            ViewState["EmployeeList"] = employees;
         }
 
         protected void searchResultGridView_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-            GridView tmp = sender as GridView;
-            Table tmp2 = (Table)tmp.Controls[0];
+            //GridView tmp = sender as GridView;
+            //Table tmp2 = (Table)tmp.Controls[0];
 
-            try
-            {
-                switch (e.Row.RowType)
-                {
-                    case DataControlRowType.Header:
-                        //...
-                        break;
-                    case DataControlRowType.DataRow:
-                        if (tmp.ID == "searchResultGridView")
-                        {
-                            HyperLink tmpLink = new HyperLink();
-                            tmpLink.NavigateUrl = "SearchResultProfile.aspx?EmployeeID=" + employeeId[count];
-                            tmpLink.Text = "Profile";
-                            tmp2.Rows[count + 1].Cells[3].Controls.Add(tmpLink);
-                            hyperLinks.Add(tmpLink);
-                            //tmp.Rows[i].Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(searchResultGridView, "Select$" + tmp.Rows[i].RowIndex);
-                            //tmp.Rows[i].Attributes.Add("EmployeeID", employeeId[i]);
-                            //e.Row.Attributes.Add("EmployeeID", employeeID[i]);
-                            count++;
-                        }
-                        else if(tmp.ID == "DepartmentGridview")
-                        {
-                            HyperLink tmpLink = new HyperLink();
-                            tmpLink.NavigateUrl = "SearchResultProfile.aspx?EmployeeID=" + employeeId[count];
-                            tmpLink.Text = "Profile";
-                            tmp2.Rows[count + 1].Cells[3].Controls.Add(tmpLink);
-                            hyperLinks.Add(tmpLink);
-                            count++;
-                        }
+            //try
+            //{
+            //    switch (e.Row.RowType)
+            //    {
+            //        case DataControlRowType.Header:
+            //            //...
+            //            break;
+            //        case DataControlRowType.DataRow:
+            //            if (tmp.ID == "searchResultGridView")
+            //            {
+            //                HyperLink tmpLink = new HyperLink();
+            //                tmpLink.NavigateUrl = "SearchResultProfile.aspx?EmployeeID=" + employeeId[count];
+            //                tmpLink.Text = "Profile";
+            //                tmp2.Rows[count + 1].Cells[3].Controls.Add(tmpLink);
+            //                hyperLinks.Add(tmpLink);
+            //                //tmp.Rows[i].Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(searchResultGridView, "Select$" + tmp.Rows[i].RowIndex);
+            //                //tmp.Rows[i].Attributes.Add("EmployeeID", employeeId[i]);
+            //                //e.Row.Attributes.Add("EmployeeID", employeeID[i]);
+            //                count++;
+            //            }
+            //            else if (tmp.ID == "DepartmentGridview")
+            //            {
+            //                HyperLink tmpLink = new HyperLink();
+            //                tmpLink.NavigateUrl = "SearchResultProfile.aspx?EmployeeID=" + employeeId[count];
+            //                tmpLink.Text = "Profile";
+            //                tmp2.Rows[count + 1].Cells[3].Controls.Add(tmpLink);
+            //                hyperLinks.Add(tmpLink);
+            //                count++;
+            //            }
 
-                        if (count == employeeId.Count())
-                        {
-                            employeeId.Clear();
-                        }
-                        break;
-                }
-            }
-            catch
-            {
-                //...throw
-            }
+            //            if (count == employeeId.Count())
+            //            {
+            //                employeeId.Clear();
+            //            }
+            //            break;
+            //    }
+            //}
+            //catch
+            //{
+            //    //...throw
+            //}
         }
 
         protected void SearchResultButtonClick(object sender, EventArgs e)
         {
-            employeeId.Clear();
+            employees.Clear();
 
             //System.Web.UI.HtmlControls.HtmlTableCell tc2 = null;
 
@@ -468,6 +562,8 @@ namespace TheMentorShip
             //        tc2.Controls.Clear();
             //    }
             //}
+
+            Employee tmpEmp = new Employee();
 
             string searchName = searchDepartmentTextbox.Text;
             string searchDepartment = " and Department = '" + DepartmentDropDown.SelectedValue + "'";
@@ -652,6 +748,14 @@ namespace TheMentorShip
                     }
                 }
 
+                tmpEmp.EndorsementNum = indorNumber;
+                tmpEmp.ResultEmployeeID = resultEmployeeID;
+                tmpEmp.ResultName = resultName;
+                tmpEmp.ResultPosition = resultPosition;
+                tmpEmp.ResultSoftSkills = resultSoftSkills;
+
+                employees.Add(tmpEmp);
+
                 //LinkButton tmp = new LinkButton();
                 //tmp.Text = "Profile";
                 //tmp.Attributes.Add("EmployeeID", resultEmployeeID);
@@ -669,7 +773,7 @@ namespace TheMentorShip
                 resultRow["SoftSkills"] = resultSoftSkills;
                 resultRow["Indor"] = indorNumber;
 
-                employeeId.Add(resultEmployeeID);
+                //employeeId.Add(resultEmployeeID);
                 resultRow["EmployeeID"] = tmp;
 
                 //hyperLinks.Add(tmp);
@@ -677,6 +781,7 @@ namespace TheMentorShip
                 resultTable.Rows.Add(resultRow);
                 //gridViewMaster.Controls.Add(tmp);
             }
+
             //resultTable.DefaultView.Sort = "Indor desc";
             DepartmentGridview.DataSource = resultTable;
 
@@ -881,6 +986,26 @@ namespace TheMentorShip
         protected void DepartmentGridview_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        public void SortSearchResults(List<Employee> employees)
+        {
+
+        }
+
+        protected void searchResultGridView_DataBound(object sender, EventArgs e)
+        {
+            GridView tmp = searchResultGridView;
+            Table tmp2 = (Table)tmp.Controls[0];
+
+            for (int i = 0; i < employees.Count(); i++)
+            {
+                HyperLink tmpLink = new HyperLink();
+                tmpLink.NavigateUrl = "SearchResultProfile.aspx?EmployeeID=" + employees[i].ResultEmployeeID;
+                tmpLink.Text = "Profile";
+                tmp2.Rows[i + 1].Cells[3].Controls.Add(tmpLink);
+                hyperLinks.Add(tmpLink);
+            }
         }
     }
 }

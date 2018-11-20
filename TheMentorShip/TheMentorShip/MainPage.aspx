@@ -170,45 +170,44 @@
                                             <tr>
                                                 <td ID="filterTable" style="width:22%; vertical-align:top;" >
                                                     <table style="width: 100%; position:relative; height:100%; ">
-                                                        &nbsp;
-                                                        <tr>
-                                                            <td>Search by name:</td>
-                                                           
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <asp:TextBox ID="searchTextBox" runat="server" Width="150"></asp:TextBox>
-                                                                <asp:Button ID="searchBUtton" runat="server" Text="Search" OnClick="searchBUtton_Click" Width="156"/>
-                                                                &nbsp;&nbsp;&nbsp;&nbsp;
-                                                            </td>
-                                                          
-                                                        </tr>
-                                                        &nbsp;
-                                                        <tr>
-                                                            <td>
-                                                                <asp:CheckBoxList ID="filterCheckBoxList" runat="server" CssClass="auto-style5">
-                                                                    <asp:ListItem>Communication</asp:ListItem>
-                                                                    <asp:ListItem Value="PublicSpeaking">Public Speaking</asp:ListItem>
-                                                                    <asp:ListItem>Leadership</asp:ListItem>
-                                                                    <asp:ListItem Value="TimeManagement">Time Management</asp:ListItem>
-                                                                    <asp:ListItem Value="TeamworkSkills">Teamwork Skills</asp:ListItem>
-                                                                    <asp:ListItem Value="Persuasion_Negotiation">Persuasion/Negotiation</asp:ListItem>
-                                                                    <asp:ListItem>Networking</asp:ListItem>
-                                                                    <asp:ListItem Value="ConflictResolution">Conflict Resolution</asp:ListItem>
-                                                                    <asp:ListItem Value="PresentationSkills">Presentation Skills</asp:ListItem>
-                                                                    <asp:ListItem Value="Mentoring_Coaching">Mentoring/Coaching</asp:ListItem>
-                                                                </asp:CheckBoxList>
-
-                                                            </td>
-                                                            
-                                                        </tr>
+                                                        <caption>
+                                                            &nbsp;
+                                                            <tr>
+                                                                <td>Search by name:</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <asp:TextBox ID="searchTextBox" runat="server" Width="150"></asp:TextBox>
+                                                                    <asp:Button ID="searchBUtton" runat="server" OnClick="searchBUtton_Click" Text="Search" Width="156" />
+                                                                    &nbsp;&nbsp;&nbsp;&nbsp; </td>
+                                                            </tr>
+                                                            <caption>
+                                                                &nbsp;
+                                                                <tr>
+                                                                    <td>
+                                                                        <asp:CheckBoxList ID="filterCheckBoxList" runat="server" CssClass="auto-style5">
+                                                                            <asp:ListItem>Communication</asp:ListItem>
+                                                                            <asp:ListItem Value="PublicSpeaking">Public Speaking</asp:ListItem>
+                                                                            <asp:ListItem>Leadership</asp:ListItem>
+                                                                            <asp:ListItem Value="TimeManagement">Time Management</asp:ListItem>
+                                                                            <asp:ListItem Value="TeamworkSkills">Teamwork Skills</asp:ListItem>
+                                                                            <asp:ListItem Value="Persuasion_Negotiation">Persuasion/Negotiation</asp:ListItem>
+                                                                            <asp:ListItem>Networking</asp:ListItem>
+                                                                            <asp:ListItem Value="ConflictResolution">Conflict Resolution</asp:ListItem>
+                                                                            <asp:ListItem Value="PresentationSkills">Presentation Skills</asp:ListItem>
+                                                                            <asp:ListItem Value="Mentoring_Coaching">Mentoring/Coaching</asp:ListItem>
+                                                                        </asp:CheckBoxList>
+                                                                    </td>
+                                                                </tr>
+                                                            </caption>
+                                                        </caption>
                                                     </table>
                                                 </td>
                                                 
 
                                                
                                                 <td ID="tableDataForSearchResults" runat="server" style="width:70%; position:relative;">
-                                                    <asp:GridView ID="searchResultGridView" runat="server" AutoGenerateColumns="False" OnRowDataBound="searchResultGridView_RowDataBound">
+                                                    <asp:GridView ID="searchResultGridView" runat="server" AutoGenerateColumns="False" OnRowDataBound="searchResultGridView_RowDataBound" OnDataBound="searchResultGridView_DataBound">
                                                         <Columns>
                                                             <asp:BoundField DataField="Name" HeaderText ="Full Name" ItemStyle-Width="125"/>
                                                             <asp:BoundField DataField="Position" HeaderText ="Position" ItemStyle-Width="100" />

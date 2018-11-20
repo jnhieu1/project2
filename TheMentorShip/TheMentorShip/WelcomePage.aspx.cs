@@ -15,6 +15,7 @@ namespace TheMentorShip
             Session["FromSetting"] = false;
             Session["ProfileNumber"] = 0;
             Session["EmployeeID"] = 0;
+            Session["Searched"] = false;
         }
 
         protected void beAMentor_Click(object sender, EventArgs e)
