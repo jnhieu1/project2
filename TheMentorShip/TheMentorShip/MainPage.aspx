@@ -67,6 +67,16 @@
         .auto-style11 {
             height: 44px;
         }
+        .errorMessage {
+            color: red;
+            text-align: center;
+            font-weight: bold;
+        }
+        .successMessage {
+            color: green;
+            text-align: center;
+            font-weight: bold;
+        }
 
     </style>
 
@@ -328,16 +338,24 @@
                                                             </td>
                                                             <td></td>
                                                         </tr>
-                                                        <td>&nbsp;</td>
                                                         <tr>
-                                                            <td class="auto-style10">
+                                                            <td>
                                                                 
+                                                                &nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>
+                                                                <asp:Label ID="errorMessageProfile" CssClass="errorMessage" runat="server" Text="Label" Visible="False"></asp:Label>
+                                                                <asp:Label ID="successMessageProfile" CssClass="successMessage" runat="server" Text="Label" Visible="False"></asp:Label>
                                                             </td>
-                                                            <td></td>
-                                                            <td style="width:25%;">
-                                                                <asp:Button ID="Button3" runat="server" Text="Save" Width="45%" OnClick="Button3_Click" Height="35px" BackColor="White" /> &nbsp;
-                                                                <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Settings" Width="45%" Height="35px" BackColor="White"/>
-                                                            </td>
+                                                            <tr>
+                                                                <td class="auto-style10"></td>
+                                                                <td></td>
+                                                                <td style="width:25%;">
+                                                                    <asp:Button ID="Button3" runat="server" BackColor="White" Height="35px" OnClick="Button3_Click" Text="Save" Width="45%" />
+                                                                    &nbsp;
+                                                                    <asp:Button ID="Button4" runat="server" BackColor="White" Height="35px" OnClick="Button4_Click" Text="Settings" Width="45%" />
+                                                                </td>
+                                                            </tr>
                                                         </tr>
                                                         
                                                     </table>
