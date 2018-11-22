@@ -1026,5 +1026,10 @@ namespace TheMentorShip
                 hyperLinks.Add(tmpLink);
             }
         }
+
+        protected void searchResultGridView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -4,7 +4,7 @@
 
         
         .newStyle3 {
-            font-family: "Times New Roman";
+            font-family: "Comfortaa";
             font-size: 120%;
             background-color: white;
             border: solid;
@@ -12,9 +12,9 @@
             color: #585858;
         }
         
-        .auto-style5 {
+        /*.auto-style5 {*/
             text-align: center;
-            font-family: "Times New Roman";
+            font-family: "Comfortaa";
             font-size: x-large;
             background-color: white;
         }
@@ -44,8 +44,8 @@
         </tr>
         <tr>
             <td>&nbsp;</td>
-            <td style="width:25%;"><asp:Button ID="findAMentor" runat="server" Text="FIND A MENTOR" Height="280px" Width="82%" CssClass="newStyle3" Font-Bold="True" OnClick="findAMentor_Click"/></td>
-            <td style="width:25%;"><asp:Button ID="beAMentor" runat="server" Text="BE A MENTOR" align="right" Height="280px" Width="82%" CssClass="newStyle3" Font-Bold="True" OnClick="beAMentor_Click"/></td>
+            <td style="width:25%;"><asp:Button ID="findAMentor" runat="server" Text="FIND A MENTOR" Height="320px" Width="82%" CssClass="newStyle3" Font-Bold="True" OnClick="findAMentor_Click"/></td>
+            <td style="width:25%;"><asp:Button ID="beAMentor" runat="server" Text="BE A MENTOR" align="right" Height="320px" Width="82%" CssClass="newStyle3" Font-Bold="True" OnClick="beAMentor_Click"/></td>
             <td>&nbsp;</td>
         </tr>
         <tr>

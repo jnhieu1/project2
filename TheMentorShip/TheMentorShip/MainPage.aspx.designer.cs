@@ -67,6 +67,15 @@ namespace TheMentorShip {
         protected global::System.Web.UI.WebControls.View View3;
         
         /// <summary>
+        /// searchDepartmentTextbox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox searchDepartmentTextbox;
+        
+        /// <summary>
         /// DepartmentDropDown control.
         /// </summary>
         /// <remarks>
@@ -83,15 +92,6 @@ namespace TheMentorShip {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
-        
-        /// <summary>
-        /// searchDepartmentTextbox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox searchDepartmentTextbox;
         
         /// <summary>
         /// Td1 control.

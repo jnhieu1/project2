@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<%--    <style>
+    <%--    <style>
             .auto-style1
     {
         border: solid;
@@ -94,9 +94,9 @@
                                                 </td>
                                                 
                                                 <td style="width:75%;">
-                                                    <table style="width: 100%; height:300px; margin-top: 0px; border: solid; border-color: grey;">
+                                                    <table style="width: 100%; height:300px; margin-top: 0px; ">
                                                         <tr>
-                                                            <td class="auto-style1" style="border: solid; border-width: 2.5px; border-color: grey; width: 200px;">
+                                                            <td class="auto-style1" style=" width: 200px;">
                                                                 <strong>Employee<br />Information</strong></td>
                                                             <td class="auto-style13">
                                                                 <strong>First Name:</strong>
@@ -119,8 +119,8 @@
                                                             <td>&nbsp;</td>
                                                         </tr>
                                                         <tr>
-                                                            <td class="auto-style1" style="border: solid; border-width: 2.5px; border-color: grey; text-align: center; width: 200px"  >
-                                                                <strong>Biography <br /><br /></strong></td>
+                                                            <td class="auto-style1" style="text-align: center; width: 200px"  >
+                                                              <strong>Biography</strong></td>
                                                             <td class="auto-style13">
                                                                 <p class="auto-style12">
                                                                     <asp:Label ID="Biography" runat="server"></asp:Label>

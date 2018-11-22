@@ -4,6 +4,7 @@
 
 <html>
 <head runat="server">
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -13,7 +14,8 @@
             /*background-image: url(Image/header.jpg);*/
             background-color: #3895D3;
             background-repeat: repeat-x;
-            height: 225px;
+            height: 185px;
+            top: 0;
         }
         div#content { 
             /*background-image: url(Image/ContentBackground.jpg);*/
@@ -27,7 +29,7 @@
             position: absolute;
             bottom: 0;
             width: 100%;
-            height: 95px;
+            height: 30px;
         }
         .auto-style1 {
             text-align: center;
@@ -36,17 +38,17 @@
             width: 181px;
         }
         .newStyle1 {
-            font-family: "Times New Roman";
+            font-family: Comfortaa;
         }
         .newStyle2 {
-            font-family: "Times New Roman";
+            font-family: Comfortaa;
             color: white;
         }
         .auto-style4 {
             font-size: 15px;
             text-align: center;
             color: white;
-            font-family: "Trebuchet MS";
+            font-family: "Comfortaa";
         }
 
         html, body{
@@ -57,6 +59,7 @@
 
         #bottom1{
             background-color: #3895D3;
+            height: 65px;
         }
 
 
@@ -64,20 +67,41 @@
     </style>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"><img style ="width: 40px; height: 40px" src="/Image/blueLogoPic.png"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="WelcomePage.aspx">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="MainPage.aspx">Find A Mentor</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="MainPage.aspx">Be A Mentor</a>
+      </li>
+    </ul>
+  </div>
+</nav>
     <form id="form1" runat="server">
         <div id="top">
-            <br />
-            <br />
+       
             
-            <table style="width:100%;">
+            <table style="width:100%; ">
                 <tr>
-                    <td class="auto-style2" style="width:25%;">&nbsp;</td>
-                    <td class="auto-style1">
+                    <td class="auto-style2" style="width:25%;" >
+                         
+                    </td>
+                    <td class="auto-style1" style="top:0px;">
                         <%--<h1 class="auto-style3"><em>The Mentor Ship</em></h1>--%>
-                        <asp:Image ID="Image1" runat="server" ImageUrl="~/Image/logoNew.png" Height="223px" Width="500px" />
+                        <asp:Image ID="Image1" runat="server" ImageUrl="~/Image/logoNew.png" Height="220px" Width="460px" />
                     </td>
                     <td style="width:25%;" class="auto-style1">
                        <%-- <h4><span class="newStyle2">Sign in</span></h4>--%>
+                       
                     </td>
                 </tr>
                 
@@ -95,9 +119,6 @@
     </form>
 
     <footer id="bottom1" class="auto-style4">
-                <br />
-                <br />
-                <br />
                 <br />
                 <%--<strong>--%><em>Made by Breadscrums</em><%--</strong>--%>
         </footer>

@@ -10,7 +10,7 @@
                 background-color: white;
             }
             .newStyle3 {
-                font-family: "Times New Roman";
+                font-family: 'Comfortaa';
             }
         </style>
         <tr>
