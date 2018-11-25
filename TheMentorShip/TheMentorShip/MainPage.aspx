@@ -274,6 +274,7 @@
                                                             <asp:BoundField DataField="Name" HeaderText ="Full Name" ItemStyle-Width="125"/>
                                                             <asp:BoundField DataField="Position" HeaderText ="Position" ItemStyle-Width="100" />
                                                             <asp:BoundField DataField="SoftSkills" HeaderText ="Soft Skills" ItemStyle-Width="350"/>
+                                                            <asp:BoundField DataField="Location" HeaderText ="Location" ItemStyle-Width="100"/>
                                                             <asp:HyperLinkField NavigateUrl="~/SearchResultProfile.aspx" HeaderText ="View profile" ItemStyle-Width="70"/>
                                                         </Columns>
                                                     </asp:GridView>

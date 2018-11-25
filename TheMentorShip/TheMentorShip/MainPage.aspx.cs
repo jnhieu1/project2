@@ -29,6 +29,7 @@ namespace TheMentorShip
             private string resultSoftSkills;
             private string resultPosition;
             private int endorsementNum;
+            private string location;
 
             //Properties
             public string ResultEmployeeID { get => resultEmployeeID; set => resultEmployeeID = value; }
@@ -36,6 +37,7 @@ namespace TheMentorShip
             public string ResultSoftSkills { get => resultSoftSkills; set => resultSoftSkills = value; }
             public string ResultPosition { get => resultPosition; set => resultPosition = value; }
             public int EndorsementNum { get => endorsementNum; set => endorsementNum = value; }
+            public string Location { get => location; set => location = value; }
 
             //Constructors
             public Employee()
@@ -43,13 +45,14 @@ namespace TheMentorShip
 
             }
 
-            public Employee(string resultEmployeeID, string resultName, string resultSoftSkills, string resultPosition, int endorsement)
+            public Employee(string resultEmployeeID, string resultName, string resultSoftSkills, string resultPosition, int endorsement, string location)
             {
                 ResultEmployeeID = resultEmployeeID;
                 ResultName = resultName;
                 ResultSoftSkills = resultSoftSkills;
                 ResultPosition = resultPosition;
                 EndorsementNum = endorsement;
+                Location = location;
             }
         }
 
@@ -97,6 +100,7 @@ namespace TheMentorShip
                         resultTable.Columns.Add("Name");
                         resultTable.Columns.Add("Position");
                         resultTable.Columns.Add("SoftSkills");
+                        resultTable.Columns.Add("Location");
                         resultTable.Columns.Add("Indor");
 
                         for (int i = 0; i < employees.Count(); i++)
@@ -111,6 +115,8 @@ namespace TheMentorShip
                             resultRow["Name"] = employees[i].ResultName;
                             resultRow["Position"] = employees[i].ResultPosition;
                             resultRow["SoftSkills"] = employees[i].ResultSoftSkills;
+                            resultRow["Location"] = employees[i].Location;
+
                             //resultRow["Indor"] = indorNumber;
 
                             //employeeId.Add(resultEmployeeID);
@@ -233,11 +239,13 @@ namespace TheMentorShip
             resultTable.Columns.Add("Name");
             resultTable.Columns.Add("Position");
             resultTable.Columns.Add("SoftSkills");
+            resultTable.Columns.Add("Location");
             resultTable.Columns.Add("Indor");
             string resultEmployeeID = "";
             string resultName = "";
             string resultSoftSkills = "";
             string resultPosition = "";
+            string resultLocation = "";
 
             string searchDepartment = "";
             string searchJobTitle = "";
@@ -262,7 +270,7 @@ namespace TheMentorShip
             }
             else if (RadioButtonList1.SelectedValue != "None" && DropDownList1.SelectedValue != "None")
             {
-                searchJobTitle = " and JobTitle =" + DropDownList1.SelectedValue;
+                searchJobTitle = " and JobTitle ='" + DropDownList1.SelectedValue + "'";
             }
             else
             {
@@ -306,6 +314,8 @@ namespace TheMentorShip
                 resultEmployeeID = dtbl.Rows[i]["EmployeeID"].ToString();
                 resultName = dtbl.Rows[i]["EFName"].ToString() + " " + dtbl.Rows[i]["ELName"].ToString();
                 resultPosition = dtbl.Rows[i]["Position"].ToString();
+                resultPosition = dtbl.Rows[i]["OfficeLocation"].ToString();
+
                 if (Convert.ToInt32(dtbl.Rows[i]["Leadership"]) != 0)
                 {
                     resultSoftSkills += "Leadership";
@@ -454,6 +464,7 @@ namespace TheMentorShip
                 tmpEmp.ResultName = resultName;
                 tmpEmp.ResultPosition = resultPosition;
                 tmpEmp.ResultSoftSkills = resultSoftSkills;
+                tmpEmp.Location = resultLocation;
 
                 employees.Add(tmpEmp);
 
@@ -472,6 +483,7 @@ namespace TheMentorShip
                 resultRow["Name"] = resultName;
                 resultRow["Position"] = resultPosition;
                 resultRow["SoftSkills"] = resultSoftSkills;
+
                 resultRow["Indor"] = indorNumber;
 
                 //employeeId.Add(resultEmployeeID);
@@ -1128,49 +1140,49 @@ namespace TheMentorShip
 
             switch(tmp.SelectedIndex)
             {
-                case 0:
+                case 1:
                     DropDownList1.Items.Add("None");
                     for(int i = 0; i < accounting.Count(); i++)
                     {
                         DropDownList1.Items.Add(accounting[i]);
                     }
                     break;
-                case 1:
+                case 2:
                     DropDownList1.Items.Add("None");
                     for (int i = 0; i < finance.Count(); i++)
                     {
                         DropDownList1.Items.Add(finance[i]);
                     }
                     break;
-                case 2:
+                case 3:
                     DropDownList1.Items.Add("None");
                     for (int i = 0; i < it.Count(); i++)
                     {
                         DropDownList1.Items.Add(it[i]);
                     }
                     break;
-                case 3:
+                case 4:
                     DropDownList1.Items.Add("None");
                     for (int i = 0; i < customerService.Count(); i++)
                     {
                         DropDownList1.Items.Add(customerService[i]);
                     }
                     break;
-                case 4:
+                case 5:
                     DropDownList1.Items.Add("None");
                     for (int i = 0; i < executive.Count(); i++)
                     {
                         DropDownList1.Items.Add(executive[i]);
                     }
                     break;
-                case 5:
+                case 6:
                     DropDownList1.Items.Add("None");
                     for (int i = 0; i < insurance.Count(); i++)
                     {
                         DropDownList1.Items.Add(insurance[i]);
                     }
                     break;
-                case 6:
+                case 7:
                     DropDownList1.Items.Add("None");
                     for (int i = 0; i < baking.Count(); i++)
                     {
@@ -1178,6 +1190,7 @@ namespace TheMentorShip
                     }
                     break;
             }
+            Session["Searched"] = true;
         }
     }
 }
