@@ -314,7 +314,7 @@ namespace TheMentorShip
                 resultEmployeeID = dtbl.Rows[i]["EmployeeID"].ToString();
                 resultName = dtbl.Rows[i]["EFName"].ToString() + " " + dtbl.Rows[i]["ELName"].ToString();
                 resultPosition = dtbl.Rows[i]["Position"].ToString();
-                resultPosition = dtbl.Rows[i]["OfficeLocation"].ToString();
+                resultLocation = dtbl.Rows[i]["OfficeLocation"].ToString();
 
                 if (Convert.ToInt32(dtbl.Rows[i]["Leadership"]) != 0)
                 {
