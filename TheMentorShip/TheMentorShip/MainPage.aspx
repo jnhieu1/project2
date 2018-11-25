@@ -195,12 +195,32 @@
                                                            
                                                              
                                                                <tr>
-                                                                   <td><strong>Search by Department:</strong></td>
+                                                                   <td><strong>Search by Soft-Skill:</strong></td>
+                                                            </tr>
+                                                             
+                                                               <tr>
+                                                                   <td>
+                                                                       <asp:CheckBoxList ID="filterCheckBoxList" runat="server" CssClass="auto-style5">
+                                                                           <asp:ListItem> Communication</asp:ListItem>
+                                                                           <asp:ListItem Value="PublicSpeaking"> Public Speaking</asp:ListItem>
+                                                                           <asp:ListItem>Leadership</asp:ListItem>
+                                                                           <asp:ListItem Value="TimeManagement"> Time Management</asp:ListItem>
+                                                                           <asp:ListItem Value="TeamworkSkills"> Teamwork Skills</asp:ListItem>
+                                                                           <asp:ListItem Value="Persuasion_Negotiation"> Persuasion/Negotiation</asp:ListItem>
+                                                                           <asp:ListItem> Networking</asp:ListItem>
+                                                                           <asp:ListItem Value="ConflictResolution"> Conflict Resolution</asp:ListItem>
+                                                                           <asp:ListItem Value="PresentationSkills"> Presentation Skills</asp:ListItem>
+                                                                           <asp:ListItem Value="Mentoring_Coaching"> Mentoring/Coaching</asp:ListItem>
+                                                                       </asp:CheckBoxList>
+                                                                   </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><strong>Search by Department:</strong></td>
                                                             </tr>
                                                              
                                                                <tr> <td>
                                                                    <asp:RadioButtonList ID="RadioButtonList1" runat="server" AutoPostBack="True" OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged">
-                                                                       <asp:ListItem Value="0">None</asp:ListItem>
+                                                                       <asp:ListItem Value="None" Selected="True">None</asp:ListItem>
                                                                        <asp:ListItem>Accounting</asp:ListItem>
                                                                        <asp:ListItem>Finance</asp:ListItem>
                                                                        <asp:ListItem>Information Technology</asp:ListItem>
@@ -219,23 +239,25 @@
                                                                     </asp:DropDownList>
                                                                 </td>
                                                             </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <strong>Search by Soft-Skill:</strong></td>
-                                                                </tr>
                                                             <tr>
                                                                 <td>
-                                                                    <asp:CheckBoxList ID="filterCheckBoxList" runat="server" CssClass="auto-style5">
-                                                                        <asp:ListItem> Communication</asp:ListItem>
-                                                                        <asp:ListItem Value="PublicSpeaking"> Public Speaking</asp:ListItem>
-                                                                        <asp:ListItem>Leadership</asp:ListItem>
-                                                                        <asp:ListItem Value="TimeManagement"> Time Management</asp:ListItem>
-                                                                        <asp:ListItem Value="TeamworkSkills"> Teamwork Skills</asp:ListItem>
-                                                                        <asp:ListItem Value="Persuasion_Negotiation"> Persuasion/Negotiation</asp:ListItem>
-                                                                        <asp:ListItem> Networking</asp:ListItem>
-                                                                        <asp:ListItem Value="ConflictResolution"> Conflict Resolution</asp:ListItem>
-                                                                        <asp:ListItem Value="PresentationSkills"> Presentation Skills</asp:ListItem>
-                                                                        <asp:ListItem Value="Mentoring_Coaching"> Mentoring/Coaching</asp:ListItem>
+                                                                    <strong>Search by Location:</strong></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <asp:DropDownList ID="DropDownList2" runat="server">
+                                                                        <asp:ListItem>None</asp:ListItem>
+                                                                        <asp:ListItem>Phoenix</asp:ListItem>
+                                                                        <asp:ListItem>London</asp:ListItem>
+                                                                        <asp:ListItem>San Antonio</asp:ListItem>
+                                                                        <asp:ListItem>Berlin</asp:ListItem>
+                                                                    </asp:DropDownList>
+                                                                    <br />
+                                                                    <asp:CheckBoxList ID="CheckBoxList1" runat="server">
+                                                                        <asp:ListItem>Phoenix</asp:ListItem>
+                                                                        <asp:ListItem>London</asp:ListItem>
+                                                                        <asp:ListItem>San Antonio</asp:ListItem>
+                                                                        <asp:ListItem>Berlin</asp:ListItem>
                                                                     </asp:CheckBoxList>
                                                                 </td>
                                                             </tr>

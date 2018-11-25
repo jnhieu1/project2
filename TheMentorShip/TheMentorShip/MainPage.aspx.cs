@@ -251,29 +251,29 @@ namespace TheMentorShip
             {
                 if (softSkill.Selected)
                 {
-                    searchSoftSkill += "and " + softSkill.Value + " >= 1";
+                    searchSoftSkill += " and " + softSkill.Value + " >= 1";
                     
                 }
             }
 
-            if (departmentRadioList.Selected = "0")
+            if (RadioButtonList1.SelectedValue == "None")
             {
 
             }
-            else if (departmentRadioList.Selected != "0" && jobTitleDropDownList.Selected != "0")
+            else if (RadioButtonList1.SelectedValue != "None" && DropDownList1.SelectedValue != "None")
             {
-                searchJobTitle = "and JobTitle =" + jobTitleDropDownList.Selected;
+                searchJobTitle = " and JobTitle =" + DropDownList1.SelectedValue;
             }
             else
             {
-                searchDepartment = "and Department =" + departmentRadioButton.SelectedValue;
+                searchDepartment = " and Department ='" + RadioButtonList1.SelectedValue + "'";
             }
 
-            foreach (ListItem location in locationCheckBoxList.Items)
+            foreach (ListItem location in CheckBoxList1.Items)
             {
                 if (location.Selected)
                 {
-                    searchLocation += "and Location = " + location.Value;
+                    searchLocation += " and OfficeLocation = '" + location.Value + "'";
                 }
             }
 
@@ -1129,42 +1129,49 @@ namespace TheMentorShip
             switch(tmp.SelectedIndex)
             {
                 case 0:
+                    DropDownList1.Items.Add("None");
                     for(int i = 0; i < accounting.Count(); i++)
                     {
                         DropDownList1.Items.Add(accounting[i]);
                     }
                     break;
                 case 1:
+                    DropDownList1.Items.Add("None");
                     for (int i = 0; i < finance.Count(); i++)
                     {
                         DropDownList1.Items.Add(finance[i]);
                     }
                     break;
                 case 2:
+                    DropDownList1.Items.Add("None");
                     for (int i = 0; i < it.Count(); i++)
                     {
                         DropDownList1.Items.Add(it[i]);
                     }
                     break;
                 case 3:
+                    DropDownList1.Items.Add("None");
                     for (int i = 0; i < customerService.Count(); i++)
                     {
                         DropDownList1.Items.Add(customerService[i]);
                     }
                     break;
                 case 4:
+                    DropDownList1.Items.Add("None");
                     for (int i = 0; i < executive.Count(); i++)
                     {
                         DropDownList1.Items.Add(executive[i]);
                     }
                     break;
                 case 5:
+                    DropDownList1.Items.Add("None");
                     for (int i = 0; i < insurance.Count(); i++)
                     {
                         DropDownList1.Items.Add(insurance[i]);
                     }
                     break;
                 case 6:
+                    DropDownList1.Items.Add("None");
                     for (int i = 0; i < baking.Count(); i++)
                     {
                         DropDownList1.Items.Add(baking[i]);
