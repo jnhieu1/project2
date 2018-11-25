@@ -184,7 +184,7 @@
                                                         <caption>
                                                             &nbsp;
                                                             <tr>
-                                                                <td>Search by name:</td>
+                                                                <td><strong>Search by Name:</strong></td>
                                                             </tr>
                                                             <tr>
                                                                 <td>
@@ -194,23 +194,51 @@
                                                             </tr>
                                                            <%-- <caption>--%>
                                                              
-                                                               <tr> <td>&nbsp;</td>  </tr>
+                                                               <tr>
+                                                                   <td><strong>Search by Department:</strong></td>
+                                                            </tr>
+                                                             
+                                                               <tr> <td>
+                                                                   <asp:RadioButtonList ID="RadioButtonList1" runat="server" AutoPostBack="True" OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged">
+                                                                       <asp:ListItem Value="0">None</asp:ListItem>
+                                                                       <asp:ListItem>Accounting</asp:ListItem>
+                                                                       <asp:ListItem>Finance</asp:ListItem>
+                                                                       <asp:ListItem>Information Technology</asp:ListItem>
+                                                                       <asp:ListItem>Customer Service</asp:ListItem>
+                                                                       <asp:ListItem>Executive</asp:ListItem>
+                                                                       <asp:ListItem>Insurance</asp:ListItem>
+                                                                       <asp:ListItem>Banking</asp:ListItem>
+                                                                   </asp:RadioButtonList>
+                                                                   </td>  </tr>
+                                                                <tr>
+                                                                    <td><strong>Search by Job Title:</strong></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <asp:DropDownList ID="DropDownList1" runat="server">
+                                                                    </asp:DropDownList>
+                                                                </td>
+                                                            </tr>
                                                                 <tr>
                                                                     <td>
-                                                                        <asp:CheckBoxList ID="filterCheckBoxList" runat="server" CssClass="auto-style5">
-                                                                            <asp:ListItem> Communication</asp:ListItem>
-                                                                            <asp:ListItem Value="PublicSpeaking"> Public Speaking</asp:ListItem>
-                                                                            <asp:ListItem>Leadership</asp:ListItem>
-                                                                            <asp:ListItem Value="TimeManagement"> Time Management</asp:ListItem>
-                                                                            <asp:ListItem Value="TeamworkSkills"> Teamwork Skills</asp:ListItem>
-                                                                            <asp:ListItem Value="Persuasion_Negotiation"> Persuasion/Negotiation</asp:ListItem>
-                                                                            <asp:ListItem> Networking</asp:ListItem>
-                                                                            <asp:ListItem Value="ConflictResolution"> Conflict Resolution</asp:ListItem>
-                                                                            <asp:ListItem Value="PresentationSkills"> Presentation Skills</asp:ListItem>
-                                                                            <asp:ListItem Value="Mentoring_Coaching"> Mentoring/Coaching</asp:ListItem>
-                                                                        </asp:CheckBoxList>
-                                                                    </td>
+                                                                        <strong>Search by Soft-Skill:</strong></td>
                                                                 </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <asp:CheckBoxList ID="filterCheckBoxList" runat="server" CssClass="auto-style5">
+                                                                        <asp:ListItem> Communication</asp:ListItem>
+                                                                        <asp:ListItem Value="PublicSpeaking"> Public Speaking</asp:ListItem>
+                                                                        <asp:ListItem>Leadership</asp:ListItem>
+                                                                        <asp:ListItem Value="TimeManagement"> Time Management</asp:ListItem>
+                                                                        <asp:ListItem Value="TeamworkSkills"> Teamwork Skills</asp:ListItem>
+                                                                        <asp:ListItem Value="Persuasion_Negotiation"> Persuasion/Negotiation</asp:ListItem>
+                                                                        <asp:ListItem> Networking</asp:ListItem>
+                                                                        <asp:ListItem Value="ConflictResolution"> Conflict Resolution</asp:ListItem>
+                                                                        <asp:ListItem Value="PresentationSkills"> Presentation Skills</asp:ListItem>
+                                                                        <asp:ListItem Value="Mentoring_Coaching"> Mentoring/Coaching</asp:ListItem>
+                                                                    </asp:CheckBoxList>
+                                                                </td>
+                                                            </tr>
                                                             </caption>
                                                         </caption>
                                                     </table>

@@ -1031,5 +1031,121 @@ namespace TheMentorShip
         {
 
         }
+
+        protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DropDownList1.Items.Clear();
+
+            List<string> accounting = new List<string>
+            {
+                "Senior Accountant",
+                "Account Clerk",
+                "Staff Accountant",
+                "Senior Technical Accountant",
+                "Accounting Manager"
+            };
+
+            List<string> finance = new List<string>
+            {
+                "Business Operations",
+                "Financial Processor",
+                "Financial Investement Consultant",
+                "Financial Advisor",
+                "Financial Analyst"
+            };
+
+            List<string> it = new List<string>
+            {
+                "Desktop Support Specialist",
+                "Networking Director",
+                ".Net Developer",
+                "SQL Developer",
+                "Network Admin"
+            };
+
+            List<string> customerService = new List<string>
+            {
+                "Customer Service Representative",
+                "Teller",
+                "Collections Agent",
+                "Sales Representative",
+                "Customer Care Associate"
+            };
+
+            List<string> executive = new List<string>
+            {
+                "CEO",
+                "CFO",
+                "CIO",
+                "CTO",
+                "COO"
+            };
+
+            List<string> insurance = new List<string>
+            {
+                "Health Insurance Broker",
+                "Insurance Producer",
+                "Insurance Advisor",
+                "Compliance Director",
+                "Benefits Insurance Specialist"
+            };
+
+            List<string> baking = new List<string>
+            {
+                "Call Center Representative",
+                "Relationship Advisor",
+                "Spec Assistant",
+                "Personal Banker",
+                "Teller"
+            };
+
+            RadioButtonList tmp = sender as RadioButtonList;
+
+            switch(tmp.SelectedIndex)
+            {
+                case 0:
+                    for(int i = 0; i < accounting.Count(); i++)
+                    {
+                        DropDownList1.Items.Add(accounting[i]);
+                    }
+                    break;
+                case 1:
+                    for (int i = 0; i < finance.Count(); i++)
+                    {
+                        DropDownList1.Items.Add(finance[i]);
+                    }
+                    break;
+                case 2:
+                    for (int i = 0; i < it.Count(); i++)
+                    {
+                        DropDownList1.Items.Add(it[i]);
+                    }
+                    break;
+                case 3:
+                    for (int i = 0; i < customerService.Count(); i++)
+                    {
+                        DropDownList1.Items.Add(customerService[i]);
+                    }
+                    break;
+                case 4:
+                    for (int i = 0; i < executive.Count(); i++)
+                    {
+                        DropDownList1.Items.Add(executive[i]);
+                    }
+                    break;
+                case 5:
+                    for (int i = 0; i < insurance.Count(); i++)
+                    {
+                        DropDownList1.Items.Add(insurance[i]);
+                    }
+                    break;
+                case 6:
+                    for (int i = 0; i < baking.Count(); i++)
+                    {
+                        DropDownList1.Items.Add(baking[i]);
+                    }
+                    break;
+            }
+        }
     }
 }
