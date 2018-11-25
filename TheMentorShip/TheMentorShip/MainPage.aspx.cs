@@ -238,6 +238,10 @@ namespace TheMentorShip
             string resultName = "";
             string resultSoftSkills = "";
             string resultPosition = "";
+
+            string searchDepartment = "";
+            string searchJobTitle = "";
+            string searchLocation = "";
             
 
             string sqlSelect = "";
@@ -252,6 +256,27 @@ namespace TheMentorShip
                 }
             }
 
+            if (departmentRadioList.Selected = "0")
+            {
+
+            }
+            else if (departmentRadioList.Selected != "0" && jobTitleDropDownList.Selected != "0")
+            {
+                searchJobTitle = "and JobTitle =" + jobTitleDropDownList.Selected;
+            }
+            else
+            {
+                searchDepartment = "and Department =" + departmentRadioButton.SelectedValue;
+            }
+
+            foreach (ListItem location in locationCheckBoxList.Items)
+            {
+                if (location.Selected)
+                {
+                    searchLocation += "and Location = " + location.Value;
+                }
+            }
+
             string sqlConnectString = System.Configuration.ConfigurationManager.ConnectionStrings["myDB"].ConnectionString;
             if (searchName != "")
             {
@@ -259,7 +284,7 @@ namespace TheMentorShip
             }
             else
             {
-                sqlSelect = "select * from employees inner join mentoringskills ON employees.EmployeeID = mentoringskills.EmployeeID where available = 1" + searchSoftSkill + ";";
+                sqlSelect = "select * from employees inner join mentoringskills ON employees.EmployeeID = mentoringskills.EmployeeID where available = 1" + searchSoftSkill + searchDepartment + searchJobTitle + searchLocation + ";";
             }
             //string sqlSelect = "select * from employees inner join mentoringskills ON employees.EmployeeID = mentoringskills.EmployeeID where available = 1" + searchSoftSkill + ";";
 

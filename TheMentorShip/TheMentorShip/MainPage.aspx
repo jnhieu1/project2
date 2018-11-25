@@ -192,7 +192,7 @@
                                                                     <asp:Button ID="searchBUtton" runat="server" OnClick="searchBUtton_Click" Text="Search" Width="156" />
                                                                </td>
                                                             </tr>
-                                                           <%-- <caption>--%>
+                                                           
                                                              
                                                                <tr> <td>&nbsp;</td>  </tr>
                                                                 <tr>
@@ -212,7 +212,7 @@
                                                                     </td>
                                                                 </tr>
                                                             </caption>
-                                                        </caption>
+                                                        
                                                     </table>
                                                 </td>
                                                 
