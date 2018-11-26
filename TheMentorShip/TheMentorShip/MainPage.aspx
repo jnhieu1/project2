@@ -245,14 +245,6 @@
                                                             </tr>
                                                             <tr>
                                                                 <td>
-                                                                    <asp:DropDownList ID="DropDownList2" runat="server">
-                                                                        <asp:ListItem>None</asp:ListItem>
-                                                                        <asp:ListItem>Phoenix</asp:ListItem>
-                                                                        <asp:ListItem>London</asp:ListItem>
-                                                                        <asp:ListItem>San Antonio</asp:ListItem>
-                                                                        <asp:ListItem>Berlin</asp:ListItem>
-                                                                    </asp:DropDownList>
-                                                                    <br />
                                                                     <asp:CheckBoxList ID="CheckBoxList1" runat="server">
                                                                         <asp:ListItem>Phoenix</asp:ListItem>
                                                                         <asp:ListItem>London</asp:ListItem>

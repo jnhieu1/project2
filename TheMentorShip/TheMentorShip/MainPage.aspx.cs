@@ -270,7 +270,7 @@ namespace TheMentorShip
             }
             else if (RadioButtonList1.SelectedValue != "None" && DropDownList1.SelectedValue != "None")
             {
-                searchJobTitle = " and JobTitle ='" + DropDownList1.SelectedValue + "'";
+                searchJobTitle = " and Position ='" + DropDownList1.SelectedValue + "'";
             }
             else
             {
@@ -483,6 +483,7 @@ namespace TheMentorShip
                 resultRow["Name"] = resultName;
                 resultRow["Position"] = resultPosition;
                 resultRow["SoftSkills"] = resultSoftSkills;
+                resultRow["Location"] = resultLocation;
 
                 resultRow["Indor"] = indorNumber;
 
@@ -609,11 +610,13 @@ namespace TheMentorShip
             resultTable.Columns.Add("Name");
             resultTable.Columns.Add("Position");
             resultTable.Columns.Add("SoftSkills");
+            resultTable.Columns.Add("Location");
             resultTable.Columns.Add("Indor");
             string resultEmployeeID = "";
             string resultName = "";
             string resultSoftSkills = "";
             string resultPosition = "";
+            string resultLocation = "";
 
             string sqlSelect = "";
 
@@ -644,6 +647,7 @@ namespace TheMentorShip
                 resultEmployeeID = dtbl.Rows[i]["EmployeeID"].ToString();
                 resultName = dtbl.Rows[i]["EFName"].ToString() + " " + dtbl.Rows[i]["ELName"].ToString();
                 resultPosition = dtbl.Rows[i]["Position"].ToString();
+                resultLocation = dtbl.Rows[i]["OfficeLocation"].ToString();
                 if (Convert.ToInt32(dtbl.Rows[i]["Leadership"]) != 0)
                 {
                     resultSoftSkills += "Leadership";
@@ -790,6 +794,7 @@ namespace TheMentorShip
                 tmpEmp.ResultName = resultName;
                 tmpEmp.ResultPosition = resultPosition;
                 tmpEmp.ResultSoftSkills = resultSoftSkills;
+                tmpEmp.Location = resultLocation;
 
                 employees.Add(tmpEmp);
 
@@ -808,6 +813,7 @@ namespace TheMentorShip
                 resultRow["Name"] = resultName;
                 resultRow["Position"] = resultPosition;
                 resultRow["SoftSkills"] = resultSoftSkills;
+                resultRow["Location"] = resultLocation;
                 resultRow["Indor"] = indorNumber;
 
                 //employeeId.Add(resultEmployeeID);
@@ -1059,7 +1065,7 @@ namespace TheMentorShip
                 HyperLink tmpLink = new HyperLink();
                 tmpLink.NavigateUrl = "SearchResultProfile.aspx?EmployeeID=" + employees[i].ResultEmployeeID;
                 tmpLink.Text = "Profile";
-                tmp2.Rows[i + 1].Cells[3].Controls.Add(tmpLink);
+                tmp2.Rows[i + 1].Cells[4].Controls.Add(tmpLink);
                 hyperLinks.Add(tmpLink);
             }
         }
