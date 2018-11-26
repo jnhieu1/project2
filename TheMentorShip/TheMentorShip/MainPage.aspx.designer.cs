@@ -13,15 +13,6 @@ namespace TheMentorShip {
     public partial class MainPage {
         
         /// <summary>
-        /// Menu1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Menu Menu1;
-        
-        /// <summary>
         /// MultiView1 control.
         /// </summary>
         /// <remarks>
@@ -40,15 +31,6 @@ namespace TheMentorShip {
         protected global::System.Web.UI.WebControls.View View1;
         
         /// <summary>
-        /// Menu2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Menu Menu2;
-        
-        /// <summary>
         /// MultiView2 control.
         /// </summary>
         /// <remarks>
@@ -56,60 +38,6 @@ namespace TheMentorShip {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.MultiView MultiView2;
-        
-        /// <summary>
-        /// View3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View View3;
-        
-        /// <summary>
-        /// searchDepartmentTextbox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox searchDepartmentTextbox;
-        
-        /// <summary>
-        /// DepartmentDropDown control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DepartmentDropDown;
-        
-        /// <summary>
-        /// Button1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
-        
-        /// <summary>
-        /// Td1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableCell Td1;
-        
-        /// <summary>
-        /// DepartmentGridview control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView DepartmentGridview;
         
         /// <summary>
         /// View4 control.
@@ -200,15 +128,6 @@ namespace TheMentorShip {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.View View2;
-        
-        /// <summary>
-        /// Menu3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Menu Menu3;
         
         /// <summary>
         /// MultiView3 control.

@@ -86,95 +86,15 @@
             <tr>
                 <td class="break">&nbsp;</td>
                 <td>
-                    <asp:Menu ID="Menu1" Orientation="Horizontal" StaticMenuItemStyle-CssClass="tab" Font-Size="Large"
-                        StaticSelectedStyle-CssClass="selectedTab" StaticMenuItemStyle-HorizontalPadding="10px" StaticSelectedStyle-BackColor="#A8A8A8" StaticSelectedStyle-ForeColor="White" CssClass="tabs" runat="server" OnMenuItemClick="Menu1_MenuItemClick">
-                        <Items>
-                            <asp:MenuItem Text="Find a mentor" Value="0" Selected="true"></asp:MenuItem>
-                            <asp:MenuItem Text="Be a mentor" Value="1"></asp:MenuItem>
-                        </Items>
-                    </asp:Menu>
+                    
                     <div class="tabContents">
                         <asp:MultiView ID="MultiView1" ActiveViewIndex="0" runat="server">
                             <asp:View ID="View1" runat="server">
                                 
-                                <asp:Menu ID="Menu2" Orientation="Horizontal" StaticMenuItemStyle-CssClass="tab" Font-Size="Large"
-                                    StaticSelectedStyle-CssClass="selectedTab" StaticMenuItemStyle-HorizontalPadding="10px" StaticSelectedStyle-BackColor="#A8A8A8" StaticSelectedStyle-ForeColor="White" CssClass="tabs" runat="server" OnMenuItemClick="Menu2_MenuItemClick">
-                                    <Items>
-                                        <asp:MenuItem Text="Departments" Value="0" Selected="true"></asp:MenuItem>
-                                        <asp:MenuItem Text="Skills" Value="1"></asp:MenuItem>
-                                    </Items>
-                                    <StaticMenuItemStyle CssClass="tab" HorizontalPadding="10px" />
-                                    <StaticSelectedStyle BackColor="#A8A8A8" CssClass="selectedTab" ForeColor="White" />
-                                </asp:Menu>
+
                                 <div class="tabContents">
                                 <asp:MultiView ID="MultiView2" ActiveViewIndex="0" runat="server">
-                                    <asp:View ID="View3" runat="server">
-                                        <br /><strong>Search name or choose<br />department below</strong>
-                                       
-                                        <table style="width: 100%;">
-                                            <tr>
-                                                <td style="width:22%;" >
-                                                    <table style="width: 100%;">
-                                                        <tr><td>&nbsp;</td></tr>
-
-                                                           <tr>
-                                                            <td>Search by name:</td>
-                                                            
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <asp:TextBox ID="searchDepartmentTextbox" runat="server"></asp:TextBox>
-                      
-                                                            </td>
-                                                            
-                                                        </tr>
-                                                             <tr>
-                                                            <td>
-                                                               
-                                                                &nbsp;</td>
-                                                            
-                                                                 <tr>
-                                                                     <td>
-                                                                         <asp:DropDownList ID="DepartmentDropDown" runat="server">
-                                                                             <asp:ListItem>None</asp:ListItem>
-                                                                             <asp:ListItem>Accounting</asp:ListItem>
-                                                                             <asp:ListItem>Finance</asp:ListItem>
-                                                                             <asp:ListItem Value="Information Technology">Information Technology</asp:ListItem>
-                                                                             <asp:ListItem Value="Customer Service">Customer Service</asp:ListItem>
-                                                                             <asp:ListItem>Executive</asp:ListItem>
-                                                                             <asp:ListItem>Insurance</asp:ListItem>
-                                                                             <asp:ListItem>Banking</asp:ListItem>
-                                                                         </asp:DropDownList>
-                                                                     </td>
-                                                                 </tr>
-                                                                 <tr>
-                                                                     <td>
-                                                                         <asp:Button ID="Button1" runat="server" BackColor="White" Height="30px" OnClick="SearchResultButtonClick" Text="Search" Width="74px" />
-                                                                     </td>
-                                                                 </tr>
-                                                            
-                                                        </tr>
-                                                         
-                                                   
-                                                    </table>
-                                                </td>
-                                                <td ID="Td1" runat="server" style="width:70%; position:relative;">
-                                                    <asp:GridView ID="DepartmentGridview" runat="server" AutoGenerateColumns="False" OnRowDataBound="searchResultGridView_RowDataBound" OnSelectedIndexChanged="DepartmentGridview_SelectedIndexChanged" GridLines="None">
-                                                        <Columns>
-                                                            <asp:BoundField DataField="Name" HeaderText ="Full Name" ItemStyle-Width="120"/>
-                                                            <asp:BoundField DataField="Position" HeaderText ="Position" ItemStyle-Width="100"/>
-                                                            <asp:BoundField DataField="SoftSkills" HeaderText ="Soft Skills" ItemStyle-Width="350" />
-                                                            <asp:HyperLinkField NavigateUrl="~/SearchResultProfile.aspx" HeaderText="View profile" ItemStyle-Width="70"/>
-                                                        </Columns>
-                                                    </asp:GridView>
-                                                    
-                                                </td>
-                                                
-                                            </tr>
-                                            
-                                        </table>
-                                        &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp; 
-                                    </asp:View>
+                                    
                                     <asp:View ID="View4" runat="server">
                                         <br /><strong>Select desired skills or<br />search by name below</strong>
                                         <table style="width: 100%;">
@@ -241,7 +161,9 @@
                                                             </tr>
                                                             <tr>
                                                                 <td>
-                                                                    <strong>Search by Location:</strong></td>
+                                                                    <strong>Search by Location:</strong>
+
+                                                                </td>
                                                             </tr>
                                                             <tr>
                                                                 <td>
@@ -286,14 +208,7 @@
                             </asp:View>
                             
                             <asp:View ID="View2" runat="server">
-                                <asp:Menu ID="Menu3" Orientation="Horizontal" StaticMenuItemStyle-CssClass="tab" Font-Size="Large"
-                                    StaticSelectedStyle-CssClass="selectedTab" StaticMenuItemStyle-HorizontalPadding="10px" StaticSelectedStyle-BackColor="#808080" StaticSelectedStyle-ForeColor="White" CssClass="tabs" runat="server" OnMenuItemClick="Menu3_MenuItemClick">
-                                    <Items>
-                                        <asp:MenuItem Text="Profile" Value="0"></asp:MenuItem>
-                                    </Items>
-                                    <StaticMenuItemStyle CssClass="tab" HorizontalPadding="10px" />
-                                    <StaticSelectedStyle BackColor="Gray" CssClass="selectedTab" ForeColor="White" />
-                                </asp:Menu>
+                                
                                 <div class="tabContents">
                                 <asp:MultiView ID="MultiView3" ActiveViewIndex="0" runat="server">
                                     <asp:View ID="View6" runat="server">
