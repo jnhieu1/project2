@@ -288,13 +288,13 @@ namespace TheMentorShip
             string sqlConnectString = System.Configuration.ConfigurationManager.ConnectionStrings["myDB"].ConnectionString;
             if (searchName != "")
             {
-                sqlSelect = "select * from employees inner join mentoringskills ON employees.EmployeeID = mentoringskills.EmployeeID where available = 1" + searchSoftSkill + "and ELName ='" + searchName + "';";
+                sqlSelect = "select * from employees inner join Employee_Names ON employees.EmployeeID = Employee_Names.EmployeeID inner join mentoringskills ON employees.EmployeeID = mentoringskills.EmployeeID where EName" + " like " + "\'%" + searchName + "%\';" ;
             }
             else
             {
                 sqlSelect = "select * from employees inner join mentoringskills ON employees.EmployeeID = mentoringskills.EmployeeID where available = 1" + searchSoftSkill + searchDepartment + searchJobTitle + searchLocation + ";";
             }
-            //string sqlSelect = "select * from employees inner join mentoringskills ON employees.EmployeeID = mentoringskills.EmployeeID where available = 1" + searchSoftSkill + ";";
+            
 
             SqlConnection sqlConnection = new SqlConnection(sqlConnectString);
             //SqlCommand sqlCommand = new SqlCommand(sqlSelect, sqlConnection);
