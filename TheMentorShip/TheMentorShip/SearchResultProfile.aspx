@@ -108,6 +108,9 @@
                                                                 <strong>Phone Number:</strong>
                                                                 <asp:Label ID="PhoneNumber" runat="server"></asp:Label>
                                                                 <br />
+                                                                <strong>Email:</strong>
+                                                                <asp:Label ID="Email" runat="server"></asp:Label>
+                                                                <br />
                                                                 <strong>Department: </strong>
                                                                 <asp:Label ID="Department" runat="server"></asp:Label>
 &nbsp;-

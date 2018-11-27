@@ -162,6 +162,7 @@ namespace TheMentorShip
             lNameLable.Text = dtbl.Rows[0]["ELName"].ToString();
             jobTitleLabel.Text = dtbl.Rows[0]["Position"].ToString();
             phoneNumLabel.Text = dtbl.Rows[0]["CellPhone"].ToString();
+            emailLabel.Text = dtbl.Rows[0]["Email"].ToString();
             locationLabel.Text = dtbl.Rows[0]["OfficeLocation"].ToString();
             departmentLabel.Text = dtbl.Rows[0]["Department"].ToString();
             TextBox1.Text = dtbl.Rows[0]["bio"].ToString();
@@ -574,6 +575,12 @@ namespace TheMentorShip
 
         protected void searchResultGridView_RowDataBound(object sender, GridViewRowEventArgs e)
         {
+
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                e.Row.Attributes.Add("onmouseover", "MouseEvents(this, event)");
+                e.Row.Attributes.Add("onmouseout", "MouseEvents(this, event)");
+            }
             //GridView tmp = sender as GridView;
             //Table tmp2 = (Table)tmp.Controls[0];
 

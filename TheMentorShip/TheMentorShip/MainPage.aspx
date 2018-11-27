@@ -286,6 +286,9 @@
                                                                 <strong>Phone Number:</strong>
                                                                 <asp:Label ID="phoneNumLabel" runat="server" Text="[PhoneNumber]"></asp:Label>
                                                                 <br />
+                                                                <strong>Email:</strong>
+                                                                <asp:Label ID="emailLabel" runat="server" Text="[Email]"></asp:Label>
+                                                                <br />
                                                                 <strong>Department:</strong>
                                                                 <asp:Label ID="departmentLabel" runat="server" Text="[Department]"></asp:Label>
                                                                 &nbsp;-
@@ -360,4 +363,25 @@
         
         
     </div>
+
+        <script>
+
+        function MouseEvents(objRef, evt)
+        {
+            if (evt.type == "mouseover")
+            {
+                objRef.style.cursor = 'pointer';
+                objRef.style.backgroundColor = "#EEEED1";
+            }
+            else
+            {
+                if (evt.type == "mouseout") objRef.style.backgroundColor = "#FFF";
+            }
+        }
+
+
+
+
+    </script>
+
 </asp:Content>
