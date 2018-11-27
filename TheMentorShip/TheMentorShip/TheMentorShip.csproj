@@ -135,6 +135,9 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Image\10Endorcements.png" />
+    <Content Include="Image\25Endorcements.png" />
+    <Content Include="Image\50Endorcements.png" />
     <Content Include="Image\blueLogoPic.png" />
     <Content Include="Image\ContentBackground.JPG" />
     <Content Include="Image\defaultIcon.jpg" />

@@ -185,11 +185,23 @@
                                                 <td ID="tableDataForSearchResults" runat="server" style="width:70%; position:relative;">
                                                     <asp:GridView ID="searchResultGridView" runat="server" AutoGenerateColumns="False" OnRowDataBound="searchResultGridView_RowDataBound" OnDataBound="searchResultGridView_DataBound" OnSelectedIndexChanged="searchResultGridView_SelectedIndexChanged" GridLines="None">
                                                         <Columns>
-                                                            <asp:BoundField DataField="Name" HeaderText ="Full Name" ItemStyle-Width="125"/>
-                                                            <asp:BoundField DataField="Position" HeaderText ="Position" ItemStyle-Width="100" />
-                                                            <asp:BoundField DataField="SoftSkills" HeaderText ="Soft Skills" ItemStyle-Width="350"/>
-                                                            <asp:BoundField DataField="Location" HeaderText ="Location" ItemStyle-Width="100"/>
-                                                            <asp:HyperLinkField NavigateUrl="~/SearchResultProfile.aspx" HeaderText ="View profile" ItemStyle-Width="70"/>
+                                                            <asp:ImageField HeaderText="Badges">
+                                                            </asp:ImageField>
+                                                            <asp:BoundField DataField="Name" HeaderText="Full Name" ItemStyle-Width="125">
+                                                            <ItemStyle Width="125px" />
+                                                            </asp:BoundField>
+                                                            <asp:BoundField DataField="Position" HeaderText="Position" ItemStyle-Width="100">
+                                                            <ItemStyle Width="100px" />
+                                                            </asp:BoundField>
+                                                            <asp:BoundField DataField="SoftSkills" HeaderText="Soft Skills" ItemStyle-Width="350">
+                                                            <ItemStyle Width="350px" />
+                                                            </asp:BoundField>
+                                                            <asp:BoundField DataField="Location" HeaderText="Location" ItemStyle-Width="100">
+                                                            <ItemStyle Width="100px" />
+                                                            </asp:BoundField>
+                                                            <asp:HyperLinkField HeaderText="View profile" ItemStyle-Width="70" NavigateUrl="~/SearchResultProfile.aspx">
+                                                            <ItemStyle Width="70px" />
+                                                            </asp:HyperLinkField>
                                                         </Columns>
                                                     </asp:GridView>
 
