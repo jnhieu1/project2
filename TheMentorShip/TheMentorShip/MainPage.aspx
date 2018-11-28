@@ -185,7 +185,7 @@
                                                 <td ID="tableDataForSearchResults" runat="server" style="width:70%; position:relative;">
                                                     <asp:GridView ID="searchResultGridView" runat="server" AutoGenerateColumns="False" OnRowDataBound="searchResultGridView_RowDataBound" OnDataBound="searchResultGridView_DataBound" OnSelectedIndexChanged="searchResultGridView_SelectedIndexChanged" GridLines="None">
                                                         <Columns>
-                                                            <asp:ImageField HeaderText="Badges">
+                                                            <asp:ImageField HeaderText="Badges" DataImageUrlField="badgesImage">
                                                             </asp:ImageField>
                                                             <asp:BoundField DataField="Name" HeaderText="Full Name" ItemStyle-Width="125">
                                                             <ItemStyle Width="125px" />

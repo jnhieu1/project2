@@ -32,13 +32,16 @@ namespace TheMentorShip
 
             SqlConnection sqlConnection = new SqlConnection(sqlConnectString);
 
-            string sqlSelect = "select * from Employees where EmployeeID =" + employeeId;
+            string sqlSelect = "select * from Employees e, mentoringskills m where e.EmployeeID = m.EmployeeID and e.EmployeeID = " + employeeId;
 
             SqlDataAdapter sqlDa = new SqlDataAdapter(sqlSelect, sqlConnection);
 
             DataTable dtbl = new DataTable();
 
             sqlDa.Fill(dtbl);
+
+            int totalEndorcements = Convert.ToInt32(dtbl.Rows[0]["Leadership"]) + Convert.ToInt32(dtbl.Rows[0]["Communication"]) + Convert.ToInt32(dtbl.Rows[0]["PublicSpeaking"]) + Convert.ToInt32(dtbl.Rows[0]["TimeManagement"]) + Convert.ToInt32(dtbl.Rows[0]["TeamworkSkills"]) + Convert.ToInt32(dtbl.Rows[0]["Persuasion_Negotiation"]) + Convert.ToInt32(dtbl.Rows[0]["Networking"]) + Convert.ToInt32(dtbl.Rows[0]["ConflictResolution"]) + Convert.ToInt32(dtbl.Rows[0]["PresentationSkills"]) + Convert.ToInt32(dtbl.Rows[0]["Mentoring_Coaching"]);
+
 
             FirstName.Text = dtbl.Rows[0]["EFName"].ToString();
             LastName.Text = dtbl.Rows[0]["ELName"].ToString();
@@ -48,6 +51,26 @@ namespace TheMentorShip
             Location.Text = dtbl.Rows[0]["OfficeLocation"].ToString();
             Department.Text = dtbl.Rows[0]["Department"].ToString();
             Biography.Text = dtbl.Rows[0]["bio"].ToString();
+
+            if (totalEndorcements >=10 && totalEndorcements < 25)
+            {
+                endorcementImage.ImageUrl = "~/Image/10Endorcements.png";
+                endorcementImage.Visible = true;
+            }
+            else if (totalEndorcements >= 25 && totalEndorcements < 50)
+            {
+                endorcementImage.ImageUrl = "~/Image/25Endorcements.png";
+                endorcementImage.Visible = true;
+            }
+            else if (totalEndorcements >= 50)
+            {
+                endorcementImage.ImageUrl = "~/Image/50Endorcements.png";
+                endorcementImage.Visible = true;
+            }
+            else
+            {
+                endorcementImage.Visible = false;
+            }
 
             //Start of Employee endorsements
             sqlSelect = "select * from mentoringskills where EmployeeID =" + employeeId;

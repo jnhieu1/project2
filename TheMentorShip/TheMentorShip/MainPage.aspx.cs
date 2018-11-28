@@ -244,6 +244,7 @@ namespace TheMentorShip
             resultTable.Columns.Add("Position");
             resultTable.Columns.Add("SoftSkills");
             resultTable.Columns.Add("Location");
+            resultTable.Columns.Add("BadgesImage");
             resultTable.Columns.Add("Indor");
             string resultEmployeeID = "";
             string resultName = "";
@@ -502,18 +503,22 @@ namespace TheMentorShip
                 DataRow resultRow = resultTable.NewRow();
                 //resultRow["EmployeeID"] = resultEmployeeID;
 
-                //if (totalEndorcements >= 10 && totalEndorcements < 20)
-                //{
-                //    resultRow["Badges"] = "~\\Image\\10Endorcements.png";
-                //}
-                //else if (totalEndorcements >= 20 && totalEndorcements < 50)
-                //{
-                //    resultRow["Badges"] = "~\\Image\\20Endorcements.png";
-                //}
-                //else if (totalEndorcements > 50)
-                //{
-                //    resultRow["Badges"] = "~\\Image\\50Endorcements.png";
-                //}
+                if (totalEndorcements >= 10 && totalEndorcements < 20)
+                {
+                    resultRow["badgesImage"] = ResolveUrl("~/Image/10Endorcements.png");
+                }
+                else if (totalEndorcements >= 20 && totalEndorcements < 50)
+                {
+                    resultRow["badgesImage"] = ResolveUrl("~/Image/25Endorcements.png");
+                }
+                else if (totalEndorcements > 50)
+                {
+                    resultRow["badgesImage"] = ResolveUrl("~/Image/50Endorcements.png");
+                }
+                else
+                {
+                    resultRow["badgesImage"] = ResolveUrl("");
+                }
 
                 resultRow["Name"] = resultName;
                 resultRow["Position"] = resultPosition;
