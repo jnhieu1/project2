@@ -10,7 +10,6 @@
             border: solid;
             border-color: #808080;
             color: black;
-            background-size: 20px
         
         /*.auto-style5 {*/
             /*text-align: center;
