@@ -70,7 +70,7 @@ namespace TheMentorShip
         {
             employees = new List<Employee>();
             string tab = (string)(Session["Tab"]);
-            if((bool)Session["MainLoaded"] == false)
+            if ((bool)Session["MainLoaded"] == false)
             {
                 if (tab == "0")
                 {
@@ -84,13 +84,13 @@ namespace TheMentorShip
                 }
                 Session["MainLoaded"] = true;
             }
-            else if((bool)Session["FromSetting"] == true)
+            else if ((bool)Session["FromSetting"] == true)
             {
                 //Menu1.Items[1].Selected = true;
                 MultiView1.ActiveViewIndex = 1;
                 Session["FromSetting"] = false;
             }
-            else if((bool)Session["Searched"] == true && MultiView2.ActiveViewIndex == 0)
+            else if ((bool)Session["Searched"] == true && MultiView2.ActiveViewIndex == 0)
             {
                 employees = (List<Employee>)ViewState["EmployeeList"];
 
@@ -180,6 +180,7 @@ namespace TheMentorShip
             locationLabel.Text = dtbl.Rows[0]["OfficeLocation"].ToString();
             departmentLabel.Text = dtbl.Rows[0]["Department"].ToString();
             TextBox1.Text = dtbl.Rows[0]["bio"].ToString();
+            personalImage.ImageUrl = dtbl.Rows[0]["ProfilePic"].ToString();
 
             sqlSelect = "select * from mentoringskills where EmployeeID = 9999";
             sqlDa = new SqlDataAdapter(sqlSelect, sqlConnection);
@@ -551,7 +552,7 @@ namespace TheMentorShip
                     DataRow resultRow = resultTable.NewRow();
                     //resultRow["EmployeeID"] = resultEmployeeID;
 
-                    if (totalEndorcements >= 10 && totalEndorcements < 20)
+                    if (totalEndorcements >= 10 && totalEndorcements < 25)
                     {
                         resultRow["badgesImage"] = ResolveUrl("~/Image/10Endorcements.png");
                     }
