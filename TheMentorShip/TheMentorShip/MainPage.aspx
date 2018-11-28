@@ -203,7 +203,8 @@
                                                      
                                                                  <strong>Search by Job Title:</strong>
                                                          <br /> 
-                                                                    <asp:DropDownList ID="DropDownList1" runat="server">
+                                                                    <asp:DropDownList ID="DropDownList1" runat="server" Width="150px">
+                                                                        <asp:ListItem>None</asp:ListItem>
                                                                   </asp:DropDownList>
                                                              
                                                       <%--</div>--%>
@@ -352,7 +353,7 @@
                                                             </td>
                                                             <td>
                                                                 <p>
-                                                                    <asp:TextBox ID="TextBox1" runat="server" Height="109px" Width=98%></asp:TextBox>
+                                                                    <asp:TextBox ID="TextBox1" runat="server" Height="109px" Width=98% TextMode="MultiLine"></asp:TextBox>
                                                                     
                                                                 </p>
                                                             </td>
