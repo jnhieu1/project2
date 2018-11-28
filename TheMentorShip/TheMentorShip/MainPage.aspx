@@ -214,7 +214,7 @@
                                                                     <strong>Search by Location:</strong>
 
                                                              
-                                                                    <asp:CheckBoxList ID="CheckBoxList1" runat="server">
+                                                                    <asp:CheckBoxList ID="CheckBoxList1" runat="server" OnSelectedIndexChanged="searchBUtton_Click">
                                                                         <asp:ListItem>Phoenix</asp:ListItem>
                                                                         <asp:ListItem>London</asp:ListItem>
                                                                         <asp:ListItem>San Antonio</asp:ListItem>

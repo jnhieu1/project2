@@ -96,7 +96,7 @@ namespace TheMentorShip
 
                 if (employees != null)
                 {
-                    if (employees.Count() > 0)
+                    if (employees.Count() > 0 && searchResultGridView.Controls.Count > 0)
                     {
                         //DataTable resultTable = new DataTable();
                         //resultTable.Columns.Add("EmployeeID");
