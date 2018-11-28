@@ -13,5 +13,11 @@ namespace TheMentorShip
         {
 
         }
+
+        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.BufferOutput = true;
+            Response.Redirect("WelcomePage.aspx");
+        }
     }
 }

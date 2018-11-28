@@ -90,7 +90,7 @@
             <table style="width:100%; ">
                 <tr>
                     <td class="auto-style2" style="width:25%; vertical-align:top;" >
-                         <asp:Image ID="Image1" runat="server" ImageUrl="~/Image/logoNew.png" Height="110px" Width="255px" href="WelcomePage.aspx"/>
+                         <asp:ImageButton ID="ImageButton1" ImageUrl="~/Image/logoNew.png" Height="110px" Width="255px" runat="server" OnClick="ImageButton1_Click"/>
                     </td>
                     <td class="auto-style1" style="top:0px;">
                         <%--<h1 class="auto-style3"><em>The Mentor Ship</em></h1>--%>
