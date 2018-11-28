@@ -96,38 +96,50 @@ namespace TheMentorShip
                 {
                     if (employees.Count() > 0)
                     {
-                        DataTable resultTable = new DataTable();
-                        resultTable.Columns.Add("EmployeeID");
-                        resultTable.Columns.Add("Name");
-                        resultTable.Columns.Add("Position");
-                        resultTable.Columns.Add("SoftSkills");
-                        resultTable.Columns.Add("Location");
-                        resultTable.Columns.Add("Indor");
+                        //DataTable resultTable = new DataTable();
+                        //resultTable.Columns.Add("EmployeeID");
+                        //resultTable.Columns.Add("Name");
+                        //resultTable.Columns.Add("Position");
+                        //resultTable.Columns.Add("SoftSkills");
+                        //resultTable.Columns.Add("Location");
+                        //resultTable.Columns.Add("Indor");
 
-                        for (int i = 0; i < employees.Count(); i++)
+                        //for (int i = 0; i < employees.Count(); i++)
+                        //{
+                        //    HyperLink tmp = new HyperLink();
+                        //    tmp.ID = "hyperlink";
+                        //    tmp.Text = "View Profile";
+                        //    tmp.NavigateUrl = "SearchResultProfile.apsx?EmployeeID=" + employees[i].ResultEmployeeID;
+
+                        //    DataRow resultRow = resultTable.NewRow();
+                        //    //resultRow["EmployeeID"] = resultEmployeeID;
+                        //    resultRow["Name"] = employees[i].ResultName;
+                        //    resultRow["Position"] = employees[i].ResultPosition;
+                        //    resultRow["SoftSkills"] = employees[i].ResultSoftSkills;
+                        //    resultRow["Location"] = employees[i].Location;
+
+                        //    resultRow["Indor"] = employees[i].EndorsementNum;
+
+                        //    resultRow["EmployeeID"] = tmp;
+
+                        //    resultTable.Rows.Add(resultRow);
+                        //    searchResultGridView.Controls.Add(tmp);
+                        //}
+                        ////resultTable.DefaultView.Sort = "Indor desc";
+                        //searchResultGridView.DataSource = resultTable;
+
+                        Table tmpTable = searchResultGridView.Controls[0] as Table;
+
+                        for (int j = 1; j < employees.Count() + 1; j++)
                         {
                             HyperLink tmp = new HyperLink();
-                            tmp.ID = "hyperlink";
                             tmp.Text = "Profile";
-                            tmp.NavigateUrl = "SearchResultProfile.apsx?C=" + employees[i].ResultEmployeeID;
+                            tmp.NavigateUrl = "~/SearchResultProfile.apsx?EmployeeID=" + employees[j - 1].ResultEmployeeID;
 
-                            DataRow resultRow = resultTable.NewRow();
-                            //resultRow["EmployeeID"] = resultEmployeeID;
-                            resultRow["Name"] = employees[i].ResultName;
-                            resultRow["Position"] = employees[i].ResultPosition;
-                            resultRow["SoftSkills"] = employees[i].ResultSoftSkills;
-                            resultRow["Location"] = employees[i].Location;
+                            tmpTable.Rows[j].Cells[4].Controls.Add(tmp);
 
-                            //resultRow["Indor"] = indorNumber;
-
-                            //employeeId.Add(resultEmployeeID);
-                            resultRow["EmployeeID"] = tmp;
-
-                            resultTable.Rows.Add(resultRow);
-                            //gridViewMaster.Controls.Add(tmp);
                         }
-                        //resultTable.DefaultView.Sort = "Indor desc";
-                        searchResultGridView.DataSource = resultTable;
+
                     }
                 }
                 //for(int i =1; i < hyperLinks.Count() + 1; i ++)
@@ -477,7 +489,7 @@ namespace TheMentorShip
                 HyperLink tmp = new HyperLink();
                 tmp.ID = "hyperlink";
                 tmp.Text = "Profile";
-                tmp.NavigateUrl = "SearchResulProfile.apsx?C=" + resultEmployeeID;
+                tmp.NavigateUrl = "SearchResultProfile.apsx?EmployeeID=" + resultEmployeeID;
 
                 DataRow resultRow = resultTable.NewRow();
                 //resultRow["EmployeeID"] = resultEmployeeID;
