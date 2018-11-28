@@ -9,15 +9,15 @@
             background-color: white;
             border: solid;
             border-color: #808080;
-            color: #585858;
+            color: black;
             background-size: 20px
         
         /*.auto-style5 {*/
-            text-align: center;
+            /*text-align: center;
             font-family: "Comfortaa";
             font-size: x-large;
             background-color: white;
-        }
+        }*/
 
       
 
@@ -51,8 +51,8 @@
          <tr><td>&nbsp;</td></tr>
         <tr>
             <td>&nbsp;</td>
-            <td style="width:25%;"><asp:Button ID="findAMentor" runat="server" Text="FIND A MENTOR" Height="320px" Width="82%" CssClass="newStyle3" Font-Bold="True" OnClick="findAMentor_Click" Style="background-image: url(https://www.clrchs.co.uk/wp-content/uploads/2018/02/magnifying-glass-clipart.png); "/></td>
-            <td style="width:25%;"><asp:Button ID="beAMentor" runat="server" Text="BE A MENTOR" align="right" Height="320px" Width="82%" CssClass="newStyle3" Font-Bold="True" OnClick="beAMentor_Click" Style="background-image: url(http://www.upl.co/uploads/hands27159763401543346164.png); "/></td>
+            <td style="width:25%;"><asp:Button ID="findAMentor" runat="server" Text="FIND A MENTOR" Height="320px" Width="82%" CssClass="newStyle3" Font-Bold="True" OnClick="findAMentor_Click" Style="background-image: url(http://www.upl.co/uploads/rszimageedit578664870851543381548.png); background-repeat: no-repeat; "/></td>
+            <td style="width:25%;"><asp:Button ID="beAMentor" runat="server" Text="BE A MENTOR" align="right" Height="320px" Width="82%" CssClass="newStyle3" Font-Bold="True" OnClick="beAMentor_Click" Style="background-image: url(http://www.upl.co/uploads/rszimageedit284984003041543381685.png); background-repeat: no-repeat; "/></td>
             <td>&nbsp;</td>
         </tr>
         <tr>

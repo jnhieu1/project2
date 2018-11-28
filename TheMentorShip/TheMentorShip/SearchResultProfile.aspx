@@ -94,7 +94,7 @@
                                                  
                                                 </td>
                                                 
-                                                <td style="width:75%;">
+                                                <td style="width:75%; vertical-align: top;">
                                                     <table style="width: 100%; height:300px; margin-top: 0px; ">
                                                         <tr>
                                                             <td class="auto-style1" style=" width: 200px;">

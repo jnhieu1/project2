@@ -96,7 +96,7 @@ namespace TheMentorShip
 
                 if (employees != null)
                 {
-                    if (employees.Count() > 0)
+                    if (employees.Count() > 0 && searchResultGridView.Controls.Count > 0)
                     {
                         //DataTable resultTable = new DataTable();
                         //resultTable.Columns.Add("EmployeeID");
@@ -351,275 +351,285 @@ namespace TheMentorShip
             SqlDataAdapter sqlDa = new SqlDataAdapter(sqlSelect, sqlConnection);
             DataTable dtbl = new DataTable();
             sqlDa.Fill(dtbl);
-            DataRow[] row = dtbl.Select();
 
-
-
-            for (int i = 0; i < row.Length; i++)
+            if (dtbl.Rows.Count > 0)
             {
-                resultSoftSkills = "";
-                int indorNumber = 0;
 
-                resultEmployeeID = dtbl.Rows[i]["EmployeeID"].ToString();
-                resultName = dtbl.Rows[i]["EFName"].ToString() + " " + dtbl.Rows[i]["ELName"].ToString();
-                resultPosition = dtbl.Rows[i]["Position"].ToString();
-                resultLocation = dtbl.Rows[i]["OfficeLocation"].ToString();
+                DataRow[] row = dtbl.Select();
 
 
-                if (Convert.ToInt32(dtbl.Rows[i]["Leadership"]) != 0)
+
+                for (int i = 0; i < row.Length; i++)
                 {
-                    resultSoftSkills += "Leadership";
-                    
-                    if (resultSoftSkills != "")
+                    resultSoftSkills = "";
+                    int indorNumber = 0;
+
+                    resultEmployeeID = dtbl.Rows[i]["EmployeeID"].ToString();
+                    resultName = dtbl.Rows[i]["EFName"].ToString() + " " + dtbl.Rows[i]["ELName"].ToString();
+                    resultPosition = dtbl.Rows[i]["Position"].ToString();
+                    resultLocation = dtbl.Rows[i]["OfficeLocation"].ToString();
+
+
+                    if (Convert.ToInt32(dtbl.Rows[i]["Leadership"]) != 0)
                     {
-                        resultSoftSkills += ", ";
+                        resultSoftSkills += "Leadership";
+
+                        if (resultSoftSkills != "")
+                        {
+                            resultSoftSkills += ", ";
+                        }
+
+                        if (filterCheckBoxList.SelectedIndex == 2)
+                        {
+                            indorNumber += Convert.ToInt32(dtbl.Rows[i]["Leadership"]);
+                        }
+                    }
+                    if (Convert.ToInt32(dtbl.Rows[i]["Communication"]) != 0)
+                    {
+                        resultSoftSkills += "Communication";
+
+                        if (resultSoftSkills != "")
+                        {
+                            resultSoftSkills += ", ";
+                        }
+
+                        if (filterCheckBoxList.SelectedIndex == 0)
+                        {
+                            indorNumber += Convert.ToInt32(dtbl.Rows[i]["Communication"]);
+                        }
+                    }
+                    if (Convert.ToInt32(dtbl.Rows[i]["PublicSpeaking"]) != 0)
+                    {
+                        resultSoftSkills += "Public Speaking";
+
+                        if (resultSoftSkills != "")
+                        {
+                            resultSoftSkills += ", ";
+                        }
+
+                        if (filterCheckBoxList.SelectedIndex == 1)
+                        {
+                            indorNumber += Convert.ToInt32(dtbl.Rows[i]["PublicSpeaking"]);
+                        }
+                    }
+                    if (Convert.ToInt32(dtbl.Rows[i]["TimeManagement"]) != 0)
+                    {
+                        resultSoftSkills += "Time Management";
+
+                        if (resultSoftSkills != "")
+                        {
+                            resultSoftSkills += ", ";
+                        }
+
+                        if (filterCheckBoxList.SelectedIndex == 3)
+                        {
+                            indorNumber += Convert.ToInt32(dtbl.Rows[i]["TimeManagement"]);
+                        }
+                    }
+                    if (Convert.ToInt32(dtbl.Rows[i]["TeamworkSkills"]) != 0)
+                    {
+                        resultSoftSkills += "Teamwork Skills";
+
+                        if (resultSoftSkills != "")
+                        {
+                            resultSoftSkills += ", ";
+                        }
+
+                        if (filterCheckBoxList.SelectedIndex == 4)
+                        {
+                            indorNumber += Convert.ToInt32(dtbl.Rows[i]["TeamworkSkills"]);
+                        }
+                    }
+                    if (Convert.ToInt32(dtbl.Rows[i]["Persuasion_Negotiation"]) != 0)
+                    {
+                        resultSoftSkills += "Persuasion/Negotiation";
+
+                        if (resultSoftSkills != "")
+                        {
+                            resultSoftSkills += ", ";
+                        }
+
+                        if (filterCheckBoxList.SelectedIndex == 5)
+                        {
+                            indorNumber += Convert.ToInt32(dtbl.Rows[i]["Persuasion_Negotiation"]);
+                        }
+                    }
+                    if (Convert.ToInt32(dtbl.Rows[i]["Networking"]) != 0)
+                    {
+                        resultSoftSkills += "Networking";
+
+                        if (resultSoftSkills != "")
+                        {
+                            resultSoftSkills += ", ";
+                        }
+
+                        if (filterCheckBoxList.SelectedIndex == 6)
+                        {
+                            indorNumber += Convert.ToInt32(dtbl.Rows[i]["Networking"]);
+                        }
+                    }
+                    if (Convert.ToInt32(dtbl.Rows[i]["ConflictResolution"]) != 0)
+                    {
+                        resultSoftSkills += "Conflicat Resolution";
+
+                        if (resultSoftSkills != "")
+                        {
+                            resultSoftSkills += ", ";
+                        }
+
+                        if (filterCheckBoxList.SelectedIndex == 7)
+                        {
+                            indorNumber += Convert.ToInt32(dtbl.Rows[i]["ConflictResolution"]);
+                        }
+                    }
+                    if (Convert.ToInt32(dtbl.Rows[i]["PresentationSkills"]) != 0)
+                    {
+                        resultSoftSkills += "Presentation Skills";
+
+                        if (resultSoftSkills != "")
+                        {
+                            resultSoftSkills += ", ";
+                        }
+
+                        if (filterCheckBoxList.SelectedIndex == 8)
+                        {
+                            indorNumber += Convert.ToInt32(dtbl.Rows[i]["PresentationSkills"]);
+                        }
+                    }
+                    if (Convert.ToInt32(dtbl.Rows[i]["Mentoring_Coaching"]) != 0)
+                    {
+                        resultSoftSkills += "Mentoring/Coaching";
+
+                        if (resultSoftSkills != "")
+                        {
+                            resultSoftSkills += ", ";
+                        }
+
+                        if (filterCheckBoxList.SelectedIndex == 9)
+                        {
+                            indorNumber += Convert.ToInt32(dtbl.Rows[i]["Mentoring_Coaching"]);
+                        }
                     }
 
-                    if (filterCheckBoxList.SelectedIndex == 2)
+                    int totalEndorcements = Convert.ToInt32(dtbl.Rows[i]["Leadership"]) + Convert.ToInt32(dtbl.Rows[i]["Communication"]) + Convert.ToInt32(dtbl.Rows[i]["PublicSpeaking"]) + Convert.ToInt32(dtbl.Rows[i]["TimeManagement"]) + Convert.ToInt32(dtbl.Rows[i]["TeamworkSkills"]) + Convert.ToInt32(dtbl.Rows[i]["Persuasion_Negotiation"]) + Convert.ToInt32(dtbl.Rows[i]["Networking"]) + Convert.ToInt32(dtbl.Rows[i]["ConflictResolution"]) + Convert.ToInt32(dtbl.Rows[i]["PresentationSkills"]) + Convert.ToInt32(dtbl.Rows[i]["Mentoring_Coaching"]);
+
+                    //if (totalEndorcements >= 10 && totalEndorcements < 20)
+                    //{
+
+                    //}
+                    //else if (totalEndorcements >= 20 && totalEndorcements < 50)
+                    //{
+
+                    //}
+                    //else if (totalEndorcements > 50)
+                    //{
+
+                    //}
+
+                    Employee tmpEmp = new Employee();
+
+                    tmpEmp.EndorsementNum = indorNumber;
+                    tmpEmp.TotalEndorsments = totalEndorcements;
+                    tmpEmp.ResultEmployeeID = resultEmployeeID;
+                    tmpEmp.ResultName = resultName;
+                    tmpEmp.ResultPosition = resultPosition;
+                    tmpEmp.ResultSoftSkills = resultSoftSkills;
+                    tmpEmp.Location = resultLocation;
+
+                    employees.Add(tmpEmp);
+
+                    //LinkButton tmp = new LinkButton();
+                    //tmp.Text = "Profile";
+                    //tmp.Attributes.Add("EmployeeID", resultEmployeeID);
+                    //tmp.OnClientClick = "SearchResultButtonClick";
+                    //tmp.Click += new EventHandler(SearchResultButtonClick);
+                    HyperLink tmp = new HyperLink();
+                    tmp.ID = "hyperlink";
+                    tmp.Text = "Profile";
+                    tmp.NavigateUrl = "SearchResultProfile.apsx?EmployeeID=" + resultEmployeeID;
+
+                    DataRow resultRow = resultTable.NewRow();
+                    //resultRow["EmployeeID"] = resultEmployeeID;
+
+                    if (totalEndorcements >= 10 && totalEndorcements < 20)
                     {
-                        indorNumber += Convert.ToInt32(dtbl.Rows[i]["Leadership"]);
+                        resultRow["badgesImage"] = ResolveUrl("~/Image/10Endorcements.png");
                     }
+                    else if (totalEndorcements >= 20 && totalEndorcements < 50)
+                    {
+                        resultRow["badgesImage"] = ResolveUrl("~/Image/25Endorcements.png");
+                    }
+                    else if (totalEndorcements > 50)
+                    {
+                        resultRow["badgesImage"] = ResolveUrl("~/Image/50Endorcements.png");
+                    }
+                    else
+                    {
+                        resultRow["badgesImage"] = ResolveUrl("");
+                    }
+
+                    resultRow["Name"] = resultName;
+                    resultRow["Position"] = resultPosition;
+                    resultRow["SoftSkills"] = resultSoftSkills;
+                    resultRow["Location"] = resultLocation;
+
+                    resultRow["Indor"] = indorNumber;
+
+                    //employeeId.Add(resultEmployeeID);
+                    resultRow["EmployeeID"] = tmp;
+
+                    //hyperLinks.Add(tmp);
+
+                    resultTable.Rows.Add(resultRow);
+                    //gridViewMaster.Controls.Add(tmp);
                 }
-                if (Convert.ToInt32(dtbl.Rows[i]["Communication"]) != 0)
+                employees.Sort(delegate (Employee x, Employee y)
                 {
-                    resultSoftSkills += "Communication";
-                    
-                    if (resultSoftSkills != "")
-                    {
-                        resultSoftSkills += ", ";
-                    }
+                    return y.EndorsementNum.CompareTo(x.EndorsementNum);
+                });
 
-                    if (filterCheckBoxList.SelectedIndex == 0)
-                    {
-                        indorNumber += Convert.ToInt32(dtbl.Rows[i]["Communication"]);
-                    }
-                }
-                if (Convert.ToInt32(dtbl.Rows[i]["PublicSpeaking"]) != 0)
-                {
-                    resultSoftSkills += "Public Speaking";
-                    
-                    if (resultSoftSkills != "")
-                    {
-                        resultSoftSkills += ", ";
-                    }
+                resultTable.DefaultView.Sort = "Indor desc";
+                searchResultGridView.DataSource = resultTable;
 
-                    if (filterCheckBoxList.SelectedIndex == 1)
-                    {
-                        indorNumber += Convert.ToInt32(dtbl.Rows[i]["PublicSpeaking"]);
-                    }
-                }
-                if (Convert.ToInt32(dtbl.Rows[i]["TimeManagement"]) != 0)
-                {
-                    resultSoftSkills += "Time Management";
-                    
-                    if (resultSoftSkills != "")
-                    {
-                        resultSoftSkills += ", ";
-                    }
-
-                    if (filterCheckBoxList.SelectedIndex == 3)
-                    {
-                        indorNumber += Convert.ToInt32(dtbl.Rows[i]["TimeManagement"]);
-                    }
-                }
-                if (Convert.ToInt32(dtbl.Rows[i]["TeamworkSkills"]) != 0)
-                {
-                    resultSoftSkills += "Teamwork Skills";
-                    
-                    if (resultSoftSkills != "")
-                    {
-                        resultSoftSkills += ", ";
-                    }
-
-                    if (filterCheckBoxList.SelectedIndex == 4)
-                    {
-                        indorNumber += Convert.ToInt32(dtbl.Rows[i]["TeamworkSkills"]);
-                    }
-                }
-                if (Convert.ToInt32(dtbl.Rows[i]["Persuasion_Negotiation"]) != 0)
-                {
-                    resultSoftSkills += "Persuasion/Negotiation";
-                    
-                    if (resultSoftSkills != "")
-                    {
-                        resultSoftSkills += ", ";
-                    }
-
-                    if (filterCheckBoxList.SelectedIndex == 5)
-                    {
-                        indorNumber += Convert.ToInt32(dtbl.Rows[i]["Persuasion_Negotiation"]);
-                    }
-                }
-                if (Convert.ToInt32(dtbl.Rows[i]["Networking"]) != 0)
-                {
-                    resultSoftSkills += "Networking";
-                    
-                    if (resultSoftSkills != "")
-                    {
-                        resultSoftSkills += ", ";
-                    }
-
-                    if (filterCheckBoxList.SelectedIndex == 6)
-                    {
-                        indorNumber += Convert.ToInt32(dtbl.Rows[i]["Networking"]);
-                    }
-                }
-                if (Convert.ToInt32(dtbl.Rows[i]["ConflictResolution"]) != 0)
-                {
-                    resultSoftSkills += "Conflicat Resolution";
-                    
-                    if (resultSoftSkills != "")
-                    {
-                        resultSoftSkills += ", ";
-                    }
-
-                    if (filterCheckBoxList.SelectedIndex == 7)
-                    {
-                        indorNumber += Convert.ToInt32(dtbl.Rows[i]["ConflictResolution"]);
-                    }
-                }
-                if (Convert.ToInt32(dtbl.Rows[i]["PresentationSkills"]) != 0)
-                {
-                    resultSoftSkills += "Presentation Skills";
-                    
-                    if (resultSoftSkills != "")
-                    {
-                        resultSoftSkills += ", ";
-                    }
-
-                    if (filterCheckBoxList.SelectedIndex == 8)
-                    {
-                        indorNumber += Convert.ToInt32(dtbl.Rows[i]["PresentationSkills"]);
-                    }
-                }
-                if (Convert.ToInt32(dtbl.Rows[i]["Mentoring_Coaching"]) != 0)
-                {
-                    resultSoftSkills += "Mentoring/Coaching";
-                    
-                    if (resultSoftSkills != "")
-                    {
-                        resultSoftSkills += ", ";
-                    }
-
-                    if (filterCheckBoxList.SelectedIndex == 9)
-                    {
-                        indorNumber += Convert.ToInt32(dtbl.Rows[i]["Mentoring_Coaching"]);
-                    }
-                }
-
-                int totalEndorcements = Convert.ToInt32(dtbl.Rows[i]["Leadership"]) + Convert.ToInt32(dtbl.Rows[i]["Communication"]) + Convert.ToInt32(dtbl.Rows[i]["PublicSpeaking"]) + Convert.ToInt32(dtbl.Rows[i]["TimeManagement"]) + Convert.ToInt32(dtbl.Rows[i]["TeamworkSkills"]) + Convert.ToInt32(dtbl.Rows[i]["Persuasion_Negotiation"]) + Convert.ToInt32(dtbl.Rows[i]["Networking"]) + Convert.ToInt32(dtbl.Rows[i]["ConflictResolution"]) + Convert.ToInt32(dtbl.Rows[i]["PresentationSkills"]) + Convert.ToInt32(dtbl.Rows[i]["Mentoring_Coaching"]);
-
-                //if (totalEndorcements >= 10 && totalEndorcements < 20)
+                //for(int i = 1; i < hyperLinks.Count(); i++)
                 //{
+                //    searchResultGridView.Rows[i].Cells[3].Controls.Add(hyperLinks[i - 1]);
 
                 //}
-                //else if (totalEndorcements >= 20 && totalEndorcements < 50)
+                searchResultGridView.DataBind();
+
+                //tc2.Controls.Add(gridViewMaster);
+
+                if (row.Length == 0)
+                {
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "Alert", "<script type=\"text/javascript\">alert('No Results Found');</script>");
+                }
+
+                sqlConnection.Open();
+                //sqlCommand.ExecuteNonQuery();
+
+                //var reader = sqlCommand.ExecuteReader();
+                //int count = 0;
+
+                //while (reader.Read())
                 //{
+                //    string result = Convert.ToString(reader["EFName"]);
+                //    resultLabel.Text = result;
 
                 //}
-                //else if (totalEndorcements > 50)
-                //{
 
-                //}
+                sqlConnection.Close();
 
-                Employee tmpEmp = new Employee();
+                //postBack = true;
+                Session["Searched"] = true;
 
-                tmpEmp.EndorsementNum = indorNumber;
-                tmpEmp.TotalEndorsments = totalEndorcements;
-                tmpEmp.ResultEmployeeID = resultEmployeeID;
-                tmpEmp.ResultName = resultName;
-                tmpEmp.ResultPosition = resultPosition;
-                tmpEmp.ResultSoftSkills = resultSoftSkills;
-                tmpEmp.Location = resultLocation;
-
-                employees.Add(tmpEmp);
-
-                //LinkButton tmp = new LinkButton();
-                //tmp.Text = "Profile";
-                //tmp.Attributes.Add("EmployeeID", resultEmployeeID);
-                //tmp.OnClientClick = "SearchResultButtonClick";
-                //tmp.Click += new EventHandler(SearchResultButtonClick);
-                HyperLink tmp = new HyperLink();
-                tmp.ID = "hyperlink";
-                tmp.Text = "Profile";
-                tmp.NavigateUrl = "SearchResultProfile.apsx?EmployeeID=" + resultEmployeeID;
-
-                DataRow resultRow = resultTable.NewRow();
-                //resultRow["EmployeeID"] = resultEmployeeID;
-
-                if (totalEndorcements >= 10 && totalEndorcements < 20)
-                {
-                    resultRow["badgesImage"] = ResolveUrl("~/Image/10Endorcements.png");
-                }
-                else if (totalEndorcements >= 20 && totalEndorcements < 50)
-                {
-                    resultRow["badgesImage"] = ResolveUrl("~/Image/25Endorcements.png");
-                }
-                else if (totalEndorcements > 50)
-                {
-                    resultRow["badgesImage"] = ResolveUrl("~/Image/50Endorcements.png");
-                }
-                else
-                {
-                    resultRow["badgesImage"] = ResolveUrl("");
-                }
-
-                resultRow["Name"] = resultName;
-                resultRow["Position"] = resultPosition;
-                resultRow["SoftSkills"] = resultSoftSkills;
-                resultRow["Location"] = resultLocation;
-
-                resultRow["Indor"] = indorNumber;
-
-                //employeeId.Add(resultEmployeeID);
-                resultRow["EmployeeID"] = tmp;
-
-                //hyperLinks.Add(tmp);
-
-                resultTable.Rows.Add(resultRow);
-                //gridViewMaster.Controls.Add(tmp);
+                ViewState["EmployeeList"] = employees;
             }
-            employees.Sort(delegate (Employee x, Employee y)
+            else
             {
-                return y.EndorsementNum.CompareTo(x.EndorsementNum);
-            });
-
-            resultTable.DefaultView.Sort = "Indor desc";
-            searchResultGridView.DataSource = resultTable;
-
-            //for(int i = 1; i < hyperLinks.Count(); i++)
-            //{
-            //    searchResultGridView.Rows[i].Cells[3].Controls.Add(hyperLinks[i - 1]);
-
-            //}
-            searchResultGridView.DataBind();
-
-            //tc2.Controls.Add(gridViewMaster);
-
-            if (row.Length == 0)
-            {
-                ClientScript.RegisterClientScriptBlock(this.GetType(), "Alert", "<script type=\"text/javascript\">alert('No Results Found');</script>");
+                searchResultGridView.DataSource = null;
+                searchResultGridView.DataBind();
             }
-
-            sqlConnection.Open();
-            //sqlCommand.ExecuteNonQuery();
-
-            //var reader = sqlCommand.ExecuteReader();
-            //int count = 0;
-
-            //while (reader.Read())
-            //{
-            //    string result = Convert.ToString(reader["EFName"]);
-            //    resultLabel.Text = result;
-                
-            //}
-            
-            sqlConnection.Close();
-
-            //postBack = true;
-            Session["Searched"] = true;
-
-            ViewState["EmployeeList"] = employees;
         }
 
         protected void searchResultGridView_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -630,8 +640,6 @@ namespace TheMentorShip
                 e.Row.Attributes.Add("onmouseover", "MouseEvents(this, event)");
                 e.Row.Attributes.Add("onmouseout", "MouseEvents(this, event)");
             }
-
-
             //GridView tmp = sender as GridView;
             //Table tmp2 = (Table)tmp.Controls[0];
 
@@ -1150,16 +1158,24 @@ namespace TheMentorShip
         protected void searchResultGridView_DataBound(object sender, EventArgs e)
         {
             GridView tmp = searchResultGridView;
-            Table tmp2 = (Table)tmp.Controls[0];
-
-            for (int i = 0; i < employees.Count(); i++)
+            if (tmp.DataSource != null)
             {
-                HyperLink tmpLink = new HyperLink();
-                tmpLink.NavigateUrl = "SearchResultProfile.aspx?EmployeeID=" + employees[i].ResultEmployeeID;
-                tmpLink.Text = "Profile";
-                tmp2.Rows[i + 1].Cells[5].Controls.Add(tmpLink);
-                hyperLinks.Add(tmpLink);
+                Table tmp2 = (Table)tmp.Controls[0];
+
+                for (int i = 0; i < employees.Count(); i++)
+                {
+                    HyperLink tmpLink = new HyperLink();
+                    tmpLink.NavigateUrl = "SearchResultProfile.aspx?EmployeeID=" + employees[i].ResultEmployeeID;
+                    tmpLink.Text = "Profile";
+                    tmp2.Rows[i + 1].Cells[5].Controls.Add(tmpLink);
+                    hyperLinks.Add(tmpLink);
+                }
             }
+        }
+
+        protected void searchResultGridView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
@@ -1233,6 +1249,9 @@ namespace TheMentorShip
 
             switch(tmp.SelectedIndex)
             {
+                case 0:
+                    DropDownList1.Items.Add("None");
+                    break;
                 case 1:
                     DropDownList1.Items.Add("None");
                     for(int i = 0; i < accounting.Count(); i++)
@@ -1283,6 +1302,7 @@ namespace TheMentorShip
                     }
                     break;
             }
+            searchBUtton_Click(sender, e);
             Session["Searched"] = true;
         }
     }
