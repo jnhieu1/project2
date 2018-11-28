@@ -166,6 +166,36 @@ namespace TheMentorShip
             locationLabel.Text = dtbl.Rows[0]["OfficeLocation"].ToString();
             departmentLabel.Text = dtbl.Rows[0]["Department"].ToString();
             TextBox1.Text = dtbl.Rows[0]["bio"].ToString();
+
+            sqlSelect = "select * from mentoringskills where EmployeeID = 9999";
+            sqlDa = new SqlDataAdapter(sqlSelect, sqlConnection);
+
+            dtbl = new DataTable();
+
+            sqlDa.Fill(dtbl);
+
+            int totalEndorcements = Convert.ToInt32(dtbl.Rows[0]["Leadership"]) + Convert.ToInt32(dtbl.Rows[0]["Communication"]) + Convert.ToInt32(dtbl.Rows[0]["PublicSpeaking"]) + Convert.ToInt32(dtbl.Rows[0]["TimeManagement"]) + Convert.ToInt32(dtbl.Rows[0]["TeamworkSkills"]) + Convert.ToInt32(dtbl.Rows[0]["Persuasion_Negotiation"]) + Convert.ToInt32(dtbl.Rows[0]["Networking"]) + Convert.ToInt32(dtbl.Rows[0]["ConflictResolution"]) + Convert.ToInt32(dtbl.Rows[0]["PresentationSkills"]) + Convert.ToInt32(dtbl.Rows[0]["Mentoring_Coaching"]);
+
+            if (totalEndorcements >= 10 && totalEndorcements < 25)
+            {
+                profileEndorcementImage.ImageUrl = "~/Image/10Endorcements.png";
+                profileEndorcementImage.Visible = true;
+            }
+            else if (totalEndorcements >= 25 && totalEndorcements < 50)
+            {
+                profileEndorcementImage.ImageUrl = "~/Image/25Endorcements.png";
+                profileEndorcementImage.Visible = true;
+            }
+            else if (totalEndorcements >= 50)
+            {
+                profileEndorcementImage.ImageUrl = "~/Image/50Endorcements.png";
+                profileEndorcementImage.Visible = true;
+            }
+            else
+            {
+                profileEndorcementImage.Visible = false;
+            }
+
         }
 
         protected void Menu1_MenuItemClick(object sender, MenuEventArgs e)

@@ -186,6 +186,7 @@
                                                     <asp:GridView ID="searchResultGridView" runat="server" AutoGenerateColumns="False" OnRowDataBound="searchResultGridView_RowDataBound" OnDataBound="searchResultGridView_DataBound" OnSelectedIndexChanged="searchResultGridView_SelectedIndexChanged" GridLines="None">
                                                         <Columns>
                                                             <asp:ImageField HeaderText="Badges" DataImageUrlField="badgesImage">
+                                                                <ControlStyle Height="50px" />
                                                             </asp:ImageField>
                                                             <asp:BoundField DataField="Name" HeaderText="Full Name" ItemStyle-Width="125">
                                                             <ItemStyle Width="125px" />
@@ -231,6 +232,7 @@
                                                         <tr>
                                                             <td>
                                                                 <asp:Image ID="personalImage" runat="server" ImageUrl="~/Image/defaultIcon.jpg" Width="180" />
+                                                                <asp:Image ID="profileEndorcementImage" runat="server" Height="100px" Visible="False" />
                                                             </td>                                                          
                                                         </tr>
                                                         <tr>
