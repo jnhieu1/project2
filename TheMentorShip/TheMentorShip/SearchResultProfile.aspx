@@ -20,6 +20,7 @@
                                                         <tr>
                                                             <td>
                                                                 <asp:Image ID="Image1" runat="server" ImageUrl="~/Image/defaultIcon.jpg" Height="180px" />
+                                                                <asp:Image ID="endorcementImage" runat="server" Height="125px" Visible="False" />
                                                             </td>                                                          
                                                         </tr>
                                                         <tr>
@@ -107,6 +108,9 @@
                                                                 <br />
                                                                 <strong>Phone Number:</strong>
                                                                 <asp:Label ID="PhoneNumber" runat="server"></asp:Label>
+                                                                <br />
+                                                                <strong>Email:</strong>
+                                                                <asp:Label ID="Email" runat="server"></asp:Label>
                                                                 <br />
                                                                 <strong>Department: </strong>
                                                                 <asp:Label ID="Department" runat="server"></asp:Label>

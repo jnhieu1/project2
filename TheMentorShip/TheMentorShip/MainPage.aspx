@@ -185,11 +185,24 @@
                                                 <td ID="tableDataForSearchResults" runat="server" style="width:70%; position:relative;">
                                                     <asp:GridView ID="searchResultGridView" runat="server" AutoGenerateColumns="False" OnRowDataBound="searchResultGridView_RowDataBound" OnDataBound="searchResultGridView_DataBound" OnSelectedIndexChanged="searchResultGridView_SelectedIndexChanged" GridLines="None">
                                                         <Columns>
-                                                            <asp:BoundField DataField="Name" HeaderText ="Full Name" ItemStyle-Width="125"/>
-                                                            <asp:BoundField DataField="Position" HeaderText ="Position" ItemStyle-Width="100" />
-                                                            <asp:BoundField DataField="SoftSkills" HeaderText ="Soft Skills" ItemStyle-Width="350"/>
-                                                            <asp:BoundField DataField="Location" HeaderText ="Location" ItemStyle-Width="100"/>
-                                                            <asp:HyperLinkField NavigateUrl="~/SearchResultProfile.aspx" HeaderText ="View profile" ItemStyle-Width="70"/>
+                                                            <asp:ImageField HeaderText="Badges" DataImageUrlField="badgesImage">
+                                                                <ControlStyle Height="50px" />
+                                                            </asp:ImageField>
+                                                            <asp:BoundField DataField="Name" HeaderText="Full Name" ItemStyle-Width="125">
+                                                            <ItemStyle Width="125px" />
+                                                            </asp:BoundField>
+                                                            <asp:BoundField DataField="Position" HeaderText="Position" ItemStyle-Width="100">
+                                                            <ItemStyle Width="100px" />
+                                                            </asp:BoundField>
+                                                            <asp:BoundField DataField="SoftSkills" HeaderText="Soft Skills" ItemStyle-Width="350">
+                                                            <ItemStyle Width="350px" />
+                                                            </asp:BoundField>
+                                                            <asp:BoundField DataField="Location" HeaderText="Location" ItemStyle-Width="100">
+                                                            <ItemStyle Width="100px" />
+                                                            </asp:BoundField>
+                                                            <asp:HyperLinkField HeaderText="View profile" ItemStyle-Width="70" NavigateUrl="~/SearchResultProfile.aspx">
+                                                            <ItemStyle Width="70px" />
+                                                            </asp:HyperLinkField>
                                                         </Columns>
                                                     </asp:GridView>
 
@@ -219,6 +232,7 @@
                                                         <tr>
                                                             <td>
                                                                 <asp:Image ID="personalImage" runat="server" ImageUrl="~/Image/defaultIcon.jpg" Width="180" />
+                                                                <asp:Image ID="profileEndorcementImage" runat="server" Height="100px" Visible="False" />
                                                             </td>                                                          
                                                         </tr>
                                                         <tr>
@@ -273,6 +287,9 @@
                                                                 <br />
                                                                 <strong>Phone Number:</strong>
                                                                 <asp:Label ID="phoneNumLabel" runat="server" Text="[PhoneNumber]"></asp:Label>
+                                                                <br />
+                                                                <strong>Email:</strong>
+                                                                <asp:Label ID="emailLabel" runat="server" Text="[Email]"></asp:Label>
                                                                 <br />
                                                                 <strong>Department:</strong>
                                                                 <asp:Label ID="departmentLabel" runat="server" Text="[Department]"></asp:Label>
@@ -348,4 +365,25 @@
         
         
     </div>
+
+        <script>
+
+        function MouseEvents(objRef, evt)
+        {
+            if (evt.type == "mouseover")
+            {
+                objRef.style.cursor = 'pointer';
+                objRef.style.backgroundColor = "#EEEED1";
+            }
+            else
+            {
+                if (evt.type == "mouseout") objRef.style.backgroundColor = "#FFF";
+            }
+        }
+
+
+
+
+    </script>
+
 </asp:Content>

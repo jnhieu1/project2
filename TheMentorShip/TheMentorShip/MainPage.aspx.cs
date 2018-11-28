@@ -29,6 +29,7 @@ namespace TheMentorShip
             private string resultSoftSkills;
             private string resultPosition;
             private int endorsementNum;
+            private int totalEndorsments;
             private string location;
 
             //Properties
@@ -38,6 +39,7 @@ namespace TheMentorShip
             public string ResultPosition { get => resultPosition; set => resultPosition = value; }
             public int EndorsementNum { get => endorsementNum; set => endorsementNum = value; }
             public string Location { get => location; set => location = value; }
+            public int TotalEndorsments { get => totalEndorsments; set => totalEndorsments = value; }
 
             //Constructors
             public Employee()
@@ -156,25 +158,56 @@ namespace TheMentorShip
                 Session["Searched"] = false;
             }
 
-            //string sqlConnectString = System.Configuration.ConfigurationManager.ConnectionStrings["myDB"].ConnectionString;
+            string sqlConnectString = System.Configuration.ConfigurationManager.ConnectionStrings["myDB"].ConnectionString;
 
-            //SqlConnection sqlConnection = new SqlConnection(sqlConnectString);
+            SqlConnection sqlConnection = new SqlConnection(sqlConnectString);
 
-            //string sqlSelect = "select * from Employees where EmployeeID = 9999";
+            string sqlSelect = "select * from Employees where EmployeeID = 9999";
 
-            //SqlDataAdapter sqlDa = new SqlDataAdapter(sqlSelect, sqlConnection);
+            SqlDataAdapter sqlDa = new SqlDataAdapter(sqlSelect, sqlConnection);
 
-            //DataTable dtbl = new DataTable();
+            DataTable dtbl = new DataTable();
 
-            //sqlDa.Fill(dtbl);
+            sqlDa.Fill(dtbl);
 
-            //fNameLabel.Text = dtbl.Rows[0]["EFName"].ToString();
-            //lNameLable.Text = dtbl.Rows[0]["ELName"].ToString();
-            //jobTitleLabel.Text = dtbl.Rows[0]["Position"].ToString();
-            //phoneNumLabel.Text = dtbl.Rows[0]["CellPhone"].ToString();
-            //locationLabel.Text = dtbl.Rows[0]["OfficeLocation"].ToString();
-            //departmentLabel.Text = dtbl.Rows[0]["Department"].ToString();
-            //TextBox1.Text = dtbl.Rows[0]["bio"].ToString();
+            fNameLabel.Text = dtbl.Rows[0]["EFName"].ToString();
+            lNameLable.Text = dtbl.Rows[0]["ELName"].ToString();
+            jobTitleLabel.Text = dtbl.Rows[0]["Position"].ToString();
+            phoneNumLabel.Text = dtbl.Rows[0]["CellPhone"].ToString();
+            emailLabel.Text = dtbl.Rows[0]["Email"].ToString();
+            locationLabel.Text = dtbl.Rows[0]["OfficeLocation"].ToString();
+            departmentLabel.Text = dtbl.Rows[0]["Department"].ToString();
+            TextBox1.Text = dtbl.Rows[0]["bio"].ToString();
+
+            sqlSelect = "select * from mentoringskills where EmployeeID = 9999";
+            sqlDa = new SqlDataAdapter(sqlSelect, sqlConnection);
+
+            dtbl = new DataTable();
+
+            sqlDa.Fill(dtbl);
+
+            int totalEndorcements = Convert.ToInt32(dtbl.Rows[0]["Leadership"]) + Convert.ToInt32(dtbl.Rows[0]["Communication"]) + Convert.ToInt32(dtbl.Rows[0]["PublicSpeaking"]) + Convert.ToInt32(dtbl.Rows[0]["TimeManagement"]) + Convert.ToInt32(dtbl.Rows[0]["TeamworkSkills"]) + Convert.ToInt32(dtbl.Rows[0]["Persuasion_Negotiation"]) + Convert.ToInt32(dtbl.Rows[0]["Networking"]) + Convert.ToInt32(dtbl.Rows[0]["ConflictResolution"]) + Convert.ToInt32(dtbl.Rows[0]["PresentationSkills"]) + Convert.ToInt32(dtbl.Rows[0]["Mentoring_Coaching"]);
+
+            if (totalEndorcements >= 10 && totalEndorcements < 25)
+            {
+                profileEndorcementImage.ImageUrl = "~/Image/10Endorcements.png";
+                profileEndorcementImage.Visible = true;
+            }
+            else if (totalEndorcements >= 25 && totalEndorcements < 50)
+            {
+                profileEndorcementImage.ImageUrl = "~/Image/25Endorcements.png";
+                profileEndorcementImage.Visible = true;
+            }
+            else if (totalEndorcements >= 50)
+            {
+                profileEndorcementImage.ImageUrl = "~/Image/50Endorcements.png";
+                profileEndorcementImage.Visible = true;
+            }
+            else
+            {
+                profileEndorcementImage.Visible = false;
+            }
+
         }
 
         protected void Menu1_MenuItemClick(object sender, MenuEventArgs e)
@@ -253,6 +286,7 @@ namespace TheMentorShip
             resultTable.Columns.Add("Position");
             resultTable.Columns.Add("SoftSkills");
             resultTable.Columns.Add("Location");
+            resultTable.Columns.Add("BadgesImage");
             resultTable.Columns.Add("Indor");
             string resultEmployeeID = "";
             string resultName = "";
@@ -328,6 +362,7 @@ namespace TheMentorShip
                 resultName = dtbl.Rows[i]["EFName"].ToString() + " " + dtbl.Rows[i]["ELName"].ToString();
                 resultPosition = dtbl.Rows[i]["Position"].ToString();
                 resultLocation = dtbl.Rows[i]["OfficeLocation"].ToString();
+
 
                 if (Convert.ToInt32(dtbl.Rows[i]["Leadership"]) != 0)
                 {
@@ -470,9 +505,25 @@ namespace TheMentorShip
                     }
                 }
 
+                int totalEndorcements = Convert.ToInt32(dtbl.Rows[i]["Leadership"]) + Convert.ToInt32(dtbl.Rows[i]["Communication"]) + Convert.ToInt32(dtbl.Rows[i]["PublicSpeaking"]) + Convert.ToInt32(dtbl.Rows[i]["TimeManagement"]) + Convert.ToInt32(dtbl.Rows[i]["TeamworkSkills"]) + Convert.ToInt32(dtbl.Rows[i]["Persuasion_Negotiation"]) + Convert.ToInt32(dtbl.Rows[i]["Networking"]) + Convert.ToInt32(dtbl.Rows[i]["ConflictResolution"]) + Convert.ToInt32(dtbl.Rows[i]["PresentationSkills"]) + Convert.ToInt32(dtbl.Rows[i]["Mentoring_Coaching"]);
+
+                //if (totalEndorcements >= 10 && totalEndorcements < 20)
+                //{
+
+                //}
+                //else if (totalEndorcements >= 20 && totalEndorcements < 50)
+                //{
+
+                //}
+                //else if (totalEndorcements > 50)
+                //{
+
+                //}
+
                 Employee tmpEmp = new Employee();
 
                 tmpEmp.EndorsementNum = indorNumber;
+                tmpEmp.TotalEndorsments = totalEndorcements;
                 tmpEmp.ResultEmployeeID = resultEmployeeID;
                 tmpEmp.ResultName = resultName;
                 tmpEmp.ResultPosition = resultPosition;
@@ -493,6 +544,24 @@ namespace TheMentorShip
 
                 DataRow resultRow = resultTable.NewRow();
                 //resultRow["EmployeeID"] = resultEmployeeID;
+
+                if (totalEndorcements >= 10 && totalEndorcements < 20)
+                {
+                    resultRow["badgesImage"] = ResolveUrl("~/Image/10Endorcements.png");
+                }
+                else if (totalEndorcements >= 20 && totalEndorcements < 50)
+                {
+                    resultRow["badgesImage"] = ResolveUrl("~/Image/25Endorcements.png");
+                }
+                else if (totalEndorcements > 50)
+                {
+                    resultRow["badgesImage"] = ResolveUrl("~/Image/50Endorcements.png");
+                }
+                else
+                {
+                    resultRow["badgesImage"] = ResolveUrl("");
+                }
+
                 resultRow["Name"] = resultName;
                 resultRow["Position"] = resultPosition;
                 resultRow["SoftSkills"] = resultSoftSkills;
@@ -553,6 +622,12 @@ namespace TheMentorShip
 
         protected void searchResultGridView_RowDataBound(object sender, GridViewRowEventArgs e)
         {
+
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                e.Row.Attributes.Add("onmouseover", "MouseEvents(this, event)");
+                e.Row.Attributes.Add("onmouseout", "MouseEvents(this, event)");
+            }
             //GridView tmp = sender as GridView;
             //Table tmp2 = (Table)tmp.Controls[0];
 
