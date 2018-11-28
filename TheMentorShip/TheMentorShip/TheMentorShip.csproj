@@ -138,6 +138,7 @@
     <Content Include="Image\blueLogoPic.png" />
     <Content Include="Image\ContentBackground.JPG" />
     <Content Include="Image\defaultIcon.jpg" />
+    <Content Include="Image\johndoe.png" />
     <Content Include="Image\logo.png" />
     <Content Include="Image\logoNew.png" />
     <Content Include="Image\logoPic.png" />

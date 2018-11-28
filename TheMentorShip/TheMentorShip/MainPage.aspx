@@ -78,6 +78,45 @@
             font-weight: bold;
         }
 
+        #tableDataForSearchResults{
+            vertical-align: top;
+            align-content: initial;
+        }
+
+        #filters1 {
+       display: inline-block;
+         
+        }
+
+        #softskills {
+            display: inline-block;
+            border: solid 0.5px;
+            border-color: lightgrey;
+            height: 230px;
+
+        }
+
+        #location {
+            display: inline-block;
+            border: solid 0.5px;
+            border-color: lightgrey;
+            height: 230px;
+        }
+
+        #department {
+            display: inline-block;
+            border: solid 0.5px;
+            border-color: lightgrey;
+            height: 230px;
+        }
+
+        #jobtitle {
+            display: inline-block;
+            border: solid 0.5px;
+            border-color: lightgrey;
+            height: 230px;
+        }
+
     </style>
 
     <div>
@@ -96,50 +135,40 @@
                                 <asp:MultiView ID="MultiView2" ActiveViewIndex="0" runat="server">
                                     
                                     <asp:View ID="View4" runat="server">
-                                        <br /><strong>Select desired skills or<br />search by name below</strong>
-                                        <table style="width: 100%;">
+                                       
+                                        <table style="width: 110%;">
                                             <tr>
-                                                <td ID="filterTable" style="width:22%; vertical-align:top;" >
-                                                    <table style="width: 100%; position:relative; height:100%; ">
-                                                        <caption>
-                                                            &nbsp;
-                                                            <tr>
-                                                                <td><strong>Search by Name:</strong></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <asp:TextBox ID="searchTextBox" runat="server" Width="150"></asp:TextBox>
-                                                                    <asp:Button ID="searchBUtton" runat="server" OnClick="searchBUtton_Click" Text="Search" Width="156" />
-                                                               </td>
-                                                            </tr>
+                                                
+                                                
+
+                                               
+                                                <td ID="tableDataForSearchResults" runat="server" style="width:100%;">
+                                                    <br />
+                                                   <p><strong>Search by name:</strong></p> <asp:TextBox ID="searchTextBox" runat="server" Width="530"></asp:TextBox>&nbsp;&nbsp;&nbsp;<asp:Button ID="searchBUtton" runat="server" OnClick="searchBUtton_Click" Text="Search" Width="156" />
+                                                    <br />
+                                                    <br />
+                                                  <div id="filters1">
+                                                      <div id="softskills">
+                                                                  <strong>Search by soft skill:</strong>
                                                            
-                                                             
-                                                               <tr>
-                                                                   <td><strong>Search by Soft-Skill:</strong></td>
-                                                            </tr>
-                                                             
-                                                               <tr>
-                                                                   <td>
-                                                                       <asp:CheckBoxList ID="filterCheckBoxList" runat="server" CssClass="auto-style5">
+                                                                       <asp:CheckBoxList ID="filterCheckBoxList" runat="server" CssClass="auto-style5" CellPadding="5" CellSpacing="5" RepeatColumns="2" RepeatDirection="Vertical" >
                                                                            <asp:ListItem> Communication</asp:ListItem>
                                                                            <asp:ListItem Value="PublicSpeaking"> Public Speaking</asp:ListItem>
                                                                            <asp:ListItem>Leadership</asp:ListItem>
                                                                            <asp:ListItem Value="TimeManagement"> Time Management</asp:ListItem>
-                                                                           <asp:ListItem Value="TeamworkSkills"> Teamwork Skills</asp:ListItem>
+                                                                           <asp:ListItem Value="TeamworkSkills"> Teamwork Skills</asp:ListItem> 
                                                                            <asp:ListItem Value="Persuasion_Negotiation"> Persuasion/Negotiation</asp:ListItem>
                                                                            <asp:ListItem> Networking</asp:ListItem>
                                                                            <asp:ListItem Value="ConflictResolution"> Conflict Resolution</asp:ListItem>
                                                                            <asp:ListItem Value="PresentationSkills"> Presentation Skills</asp:ListItem>
                                                                            <asp:ListItem Value="Mentoring_Coaching"> Mentoring/Coaching</asp:ListItem>
                                                                        </asp:CheckBoxList>
-                                                                   </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td><strong>Search by Department:</strong></td>
-                                                            </tr>
+                                                                </div>
+                                                      <div id="department">
+                                                           
+                                                           <strong>Search by Department:</strong>
                                                              
-                                                               <tr> <td>
-                                                                   <asp:RadioButtonList ID="RadioButtonList1" runat="server" AutoPostBack="True" OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged">
+                                                                   <asp:RadioButtonList ID="RadioButtonList1" runat="server" AutoPostBack="True" OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged"  CellPadding="5" CellSpacing="5" RepeatColumns="2" RepeatDirection="Vertical">
                                                                        <asp:ListItem Value="None" Selected="True">None</asp:ListItem>
                                                                        <asp:ListItem>Accounting</asp:ListItem>
                                                                        <asp:ListItem>Finance</asp:ListItem>
@@ -149,40 +178,32 @@
                                                                        <asp:ListItem>Insurance</asp:ListItem>
                                                                        <asp:ListItem>Banking</asp:ListItem>
                                                                    </asp:RadioButtonList>
-                                                                   </td>  </tr>
-                                                                <tr>
-                                                                    <td><strong>Search by Job Title:</strong></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
+
+                                                      </div>
+
+                                                      <div id="jobtitle">
+                                                     
+                                                                 <strong>Search by Job Title:</strong>
+                                                         <br /> 
                                                                     <asp:DropDownList ID="DropDownList1" runat="server">
-                                                                    </asp:DropDownList>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
+                                                                  </asp:DropDownList>
+                                                             
+                                                      </div>
+                                                                
+                                                      <div id ="location">
                                                                     <strong>Search by Location:</strong>
 
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
+                                                             
                                                                     <asp:CheckBoxList ID="CheckBoxList1" runat="server">
                                                                         <asp:ListItem>Phoenix</asp:ListItem>
                                                                         <asp:ListItem>London</asp:ListItem>
                                                                         <asp:ListItem>San Antonio</asp:ListItem>
                                                                         <asp:ListItem>Berlin</asp:ListItem>
                                                                     </asp:CheckBoxList>
-                                                                </td>
-                                                            </tr>
-                                                            </caption>
-                                                        
-                                                    </table>
-                                                </td>
-                                                
-
-                                               
-                                                <td ID="tableDataForSearchResults" runat="server" style="width:70%; position:relative;">
+                                                                
+                                                          </div>
+                                                         </div>
+                                                    <br />
                                                     <asp:GridView ID="searchResultGridView" runat="server" AutoGenerateColumns="False" OnRowDataBound="searchResultGridView_RowDataBound" OnDataBound="searchResultGridView_DataBound" OnSelectedIndexChanged="searchResultGridView_SelectedIndexChanged" GridLines="None">
                                                         <Columns>
                                                             <asp:BoundField DataField="Name" HeaderText ="Full Name" ItemStyle-Width="125"/>
@@ -344,6 +365,7 @@
             <tr><td>&nbsp;</td></tr>
             <tr><td>&nbsp;</td></tr>
             <tr><td>&nbsp;</td></tr>
+             <tr><td>&nbsp;</td></tr>
         </table>
         
         

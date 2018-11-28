@@ -14,7 +14,7 @@
             /*background-image: url(Image/header.jpg);*/
             background-color: #3895D3;
             background-repeat: repeat-x;
-            height: 185px;
+            height: 110px;
             top: 0;
         }
         div#content { 
@@ -60,6 +60,9 @@
         #bottom1{
             background-color: #3895D3;
             height: 65px;
+            bottom: 0;
+            /*position: absolute;*/
+            width: 100%;
         }
 
 
@@ -67,7 +70,7 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <%--<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#"><img style ="width: 40px; height: 40px" src="/Image/blueLogoPic.png"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -79,23 +82,24 @@
       </li>
     </ul>
   </div>
-</nav>
+</nav>--%>
     <form id="form1" runat="server">
         <div id="top">
        
             
             <table style="width:100%; ">
                 <tr>
-                    <td class="auto-style2" style="width:25%;" >
-                         
+                    <td class="auto-style2" style="width:25%; vertical-align:top;" >
+                         <asp:Image ID="Image1" runat="server" ImageUrl="~/Image/logoNew.png" Height="110px" Width="255px" href="WelcomePage.aspx"/>
                     </td>
                     <td class="auto-style1" style="top:0px;">
                         <%--<h1 class="auto-style3"><em>The Mentor Ship</em></h1>--%>
-                        <asp:Image ID="Image1" runat="server" ImageUrl="~/Image/logoNew.png" Height="220px" Width="460px" />
+                        
                     </td>
-                    <td style="width:25%;" class="auto-style1">
+                    <td style="width:25%; text-align: right; font-size: 20px; font-weight:bold;" class="auto-style1">
                        <%-- <h4><span class="newStyle2">Sign in</span></h4>--%>
-                       
+                      <p style="color: black;">John Doe &nbsp<img src="~/Image/johndoe.png" runat="server" width="30" height="30" /> &nbsp </p> 
+                        
                     </td>
                 </tr>
                 
@@ -111,7 +115,7 @@
 
         
     </form>
-
+ 
     <footer id="bottom1" class="auto-style4">
                 <br />
                 <%--<strong>--%><em>Made by Breadscrums</em><%--</strong>--%>

@@ -49,6 +49,15 @@ namespace TheMentorShip {
         protected global::System.Web.UI.WebControls.View View4;
         
         /// <summary>
+        /// tableDataForSearchResults control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell tableDataForSearchResults;
+        
+        /// <summary>
         /// searchTextBox control.
         /// </summary>
         /// <remarks>
@@ -101,15 +110,6 @@ namespace TheMentorShip {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxList1;
-        
-        /// <summary>
-        /// tableDataForSearchResults control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableCell tableDataForSearchResults;
         
         /// <summary>
         /// searchResultGridView control.
