@@ -82,6 +82,9 @@
             vertical-align: top;
             align-content: initial;
         }
+        .searchFilter {
+            border:1px;
+        }
 
         #filters1 {
        display: inline-block;
@@ -117,6 +120,10 @@
             height: 230px;
         }
 
+        .border {
+            border: solid 0.5px;
+        }
+
     </style>
 
     <div>
@@ -134,21 +141,29 @@
                                 <div class="tabContents">
                                 <asp:MultiView ID="MultiView2" ActiveViewIndex="0" runat="server">
                                     
-                                    <asp:View ID="View4" runat="server">
-                                       
-                                        <table style="width: 110%;">
+                                    <asp:View ID="View4" runat="server" >
+                                        <div style="width:100%; align-items:center;">
+                                        <table style="margin:auto;">
                                             <tr>
                                                 
                                                 
 
                                                
-                                                <td ID="tableDataForSearchResults" runat="server" style="width:100%;">
-                                                    <br />
+                                                <td ID="tableDataForSearchResults" runat="server">
+                                                    
                                                    <p><strong>Search by name:</strong></p> <asp:TextBox ID="searchTextBox" runat="server" Width="530"></asp:TextBox>&nbsp;&nbsp;&nbsp;<asp:Button ID="searchBUtton" runat="server" OnClick="searchBUtton_Click" Text="Search" Width="156" />
-                                                    <br />
-                                                    <br />
-                                                  <div id="filters1">
-                                                      <div id="softskills">
+                                                   
+                                                </td>
+                                             
+                                            </tr>
+                                        </table>
+                                        </div>
+                                        <div style="width:100%; align-items:center;">
+                                        <table id="searchFilter" style="margin:auto;">
+                                            <tr>
+                                                <td class="border" style="vertical-align:top">
+                                                  <%--<div id="filters1">--%>
+                                                      <%--<div id="softskills">--%>
                                                                   <strong>Search by soft skill:</strong>
                                                            
                                                                        <asp:CheckBoxList ID="filterCheckBoxList" runat="server" CssClass="auto-style5" CellPadding="5" CellSpacing="5" RepeatColumns="2" RepeatDirection="Vertical" >
@@ -163,8 +178,10 @@
                                                                            <asp:ListItem Value="PresentationSkills"> Presentation Skills</asp:ListItem>
                                                                            <asp:ListItem Value="Mentoring_Coaching"> Mentoring/Coaching</asp:ListItem>
                                                                        </asp:CheckBoxList>
-                                                                </div>
-                                                      <div id="department">
+                                                       <%--</div>--%>
+                                                </td>
+                                                <td class="border" style="vertical-align:top">
+                                                      <%--<div id="department">--%>
                                                            
                                                            <strong>Search by Department:</strong>
                                                              
@@ -179,18 +196,20 @@
                                                                        <asp:ListItem>Banking</asp:ListItem>
                                                                    </asp:RadioButtonList>
 
-                                                      </div>
-
-                                                      <div id="jobtitle">
+                                                      <%--</div>--%>
+                                                </td>
+                                                <td class="border" style="vertical-align:top">
+                                                      <%--<div id="jobtitle">--%>
                                                      
                                                                  <strong>Search by Job Title:</strong>
                                                          <br /> 
                                                                     <asp:DropDownList ID="DropDownList1" runat="server">
                                                                   </asp:DropDownList>
                                                              
-                                                      </div>
-                                                                
-                                                      <div id ="location">
+                                                      <%--</div>--%>
+                                                </td>
+                                                <td class="border" style="vertical-align:top">
+                                                      <%--<div id ="location">--%>
                                                                     <strong>Search by Location:</strong>
 
                                                              
@@ -201,9 +220,17 @@
                                                                         <asp:ListItem>Berlin</asp:ListItem>
                                                                     </asp:CheckBoxList>
                                                                 
-                                                          </div>
-                                                         </div>
-                                                    <br />
+                                                      <%--</div>--%>
+                                                         <%--</div>--%>
+                                                    <%--<br />--%>
+                                                </td>
+                                            </tr>
+                                </table>
+                                </div>
+                                <div style="width:100%; align-items:center;">
+                                <table style="margin:auto">
+                                            <tr>
+                                                <td>
                                                     <asp:GridView ID="searchResultGridView" runat="server" AutoGenerateColumns="False" OnRowDataBound="searchResultGridView_RowDataBound" OnDataBound="searchResultGridView_DataBound" OnSelectedIndexChanged="searchResultGridView_SelectedIndexChanged" GridLines="None">
                                                         <Columns>
                                                             <asp:ImageField HeaderText="Badges" DataImageUrlField="badgesImage">
@@ -226,16 +253,11 @@
                                                             </asp:HyperLinkField>
                                                         </Columns>
                                                     </asp:GridView>
-
-                                                    
                                                 </td>
-                                                
-                                                
-                                                
                                             </tr>
                                             
                                         </table>
-
+                                    </div>
                                     </asp:View>
                                 </asp:MultiView>
                                 </div>
@@ -345,6 +367,7 @@
                                                                 <asp:Label ID="errorMessageProfile" CssClass="errorMessage" runat="server" Text="Label" Visible="False"></asp:Label>
                                                                 <asp:Label ID="successMessageProfile" CssClass="successMessage" runat="server" Text="Label" Visible="False"></asp:Label>
                                                             </td>
+                                                        </tr>
                                                             <tr>
                                                                 <td class="auto-style10"></td>
                                                                 <td></td>
@@ -354,7 +377,7 @@
                                                                     <asp:Button ID="Button4" runat="server" BackColor="White" Height="35px" OnClick="Button4_Click" Text="Settings" Width="45%" />
                                                                 </td>
                                                             </tr>
-                                                        </tr>
+                                                        
                                                         
                                                     </table>
                                                 </td>
@@ -363,6 +386,7 @@
                                             <tr><td> &nbsp;</td></tr>
                                                         <tr><td> &nbsp;</td></tr>
                                         </table>
+                                        
                                     </asp:View>
                                 </asp:MultiView>
                                 </div>

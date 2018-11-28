@@ -1155,7 +1155,7 @@ namespace TheMentorShip
                 HyperLink tmpLink = new HyperLink();
                 tmpLink.NavigateUrl = "SearchResultProfile.aspx?EmployeeID=" + employees[i].ResultEmployeeID;
                 tmpLink.Text = "Profile";
-                tmp2.Rows[i + 1].Cells[4].Controls.Add(tmpLink);
+                tmp2.Rows[i + 1].Cells[5].Controls.Add(tmpLink);
                 hyperLinks.Add(tmpLink);
             }
         }

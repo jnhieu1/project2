@@ -13,11 +13,11 @@
             background-size: 20px
         
         /*.auto-style5 {*/
-            text-align: center;
+            /*text-align: center;
             font-family: "Comfortaa";
             font-size: x-large;
             background-color: white;
-        }
+        }*/
 
       
 
