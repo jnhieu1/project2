@@ -1236,6 +1236,9 @@ namespace TheMentorShip
 
             switch(tmp.SelectedIndex)
             {
+                case 0:
+                    DropDownList1.Items.Add("None");
+                    break;
                 case 1:
                     DropDownList1.Items.Add("None");
                     for(int i = 0; i < accounting.Count(); i++)

@@ -185,7 +185,8 @@
                                                      
                                                                  <strong>Search by Job Title:</strong>
                                                          <br /> 
-                                                                    <asp:DropDownList ID="DropDownList1" runat="server">
+                                                                    <asp:DropDownList ID="DropDownList1" runat="server" Width="150px">
+                                                                        <asp:ListItem>None</asp:ListItem>
                                                                   </asp:DropDownList>
                                                              
                                                       </div>
