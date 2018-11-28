@@ -191,12 +191,12 @@ namespace TheMentorShip
 
             int totalEndorcements = Convert.ToInt32(dtbl.Rows[0]["Leadership"]) + Convert.ToInt32(dtbl.Rows[0]["Communication"]) + Convert.ToInt32(dtbl.Rows[0]["PublicSpeaking"]) + Convert.ToInt32(dtbl.Rows[0]["TimeManagement"]) + Convert.ToInt32(dtbl.Rows[0]["TeamworkSkills"]) + Convert.ToInt32(dtbl.Rows[0]["Persuasion_Negotiation"]) + Convert.ToInt32(dtbl.Rows[0]["Networking"]) + Convert.ToInt32(dtbl.Rows[0]["ConflictResolution"]) + Convert.ToInt32(dtbl.Rows[0]["PresentationSkills"]) + Convert.ToInt32(dtbl.Rows[0]["Mentoring_Coaching"]);
 
-            if (totalEndorcements >= 10 && totalEndorcements < 25)
+            if (totalEndorcements >= 25 && totalEndorcements < 30)
             {
                 profileEndorcementImage.ImageUrl = "~/Image/10Endorcements.png";
                 profileEndorcementImage.Visible = true;
             }
-            else if (totalEndorcements >= 25 && totalEndorcements < 50)
+            else if (totalEndorcements >= 35 && totalEndorcements < 50)
             {
                 profileEndorcementImage.ImageUrl = "~/Image/25Endorcements.png";
                 profileEndorcementImage.Visible = true;
@@ -582,11 +582,11 @@ namespace TheMentorShip
                     DataRow resultRow = resultTable.NewRow();
                     //resultRow["EmployeeID"] = resultEmployeeID;
 
-                    if (totalEndorcements >= 10 && totalEndorcements < 25)
+                    if (totalEndorcements >= 25 && totalEndorcements < 30)
                     {
                         resultRow["badgesImage"] = ResolveUrl("~/Image/10Endorcements.png");
                     }
-                    else if (totalEndorcements >= 20 && totalEndorcements < 50)
+                    else if (totalEndorcements >= 30 && totalEndorcements < 50)
                     {
                         resultRow["badgesImage"] = ResolveUrl("~/Image/25Endorcements.png");
                     }
