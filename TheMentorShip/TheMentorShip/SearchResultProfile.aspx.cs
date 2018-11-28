@@ -53,12 +53,12 @@ namespace TheMentorShip
             Biography.Text = dtbl.Rows[0]["bio"].ToString();
             Image1.ImageUrl = dtbl.Rows[0]["ProfilePic"].ToString();
 
-            if (totalEndorcements >=10 && totalEndorcements < 25)
+            if (totalEndorcements >=25 && totalEndorcements < 30)
             {
                 endorcementImage.ImageUrl = "~/Image/10Endorcements.png";
                 endorcementImage.Visible = true;
             }
-            else if (totalEndorcements >= 25 && totalEndorcements < 50)
+            else if (totalEndorcements >= 35 && totalEndorcements < 50)
             {
                 endorcementImage.ImageUrl = "~/Image/25Endorcements.png";
                 endorcementImage.Visible = true;
@@ -154,23 +154,34 @@ namespace TheMentorShip
             SqlConnection sqlConnection = new SqlConnection(sqlConnectString);
 
             sqlConnection.Open();
+            string sqlSelect;
+            SqlCommand sqlDa;
 
-            string sqlSelect = "update MENTORINGSKILLS set " + DropDownList1.SelectedValue + " = " + DropDownList1.SelectedValue + " + 1 where EmployeeID =" + employeeId;
-            SqlCommand sqlDa = new SqlCommand(sqlSelect, sqlConnection);
+            if (DropDownList1.SelectedValue != "None")
+            {
+                sqlSelect = "update MENTORINGSKILLS set " + DropDownList1.SelectedValue + " = " + DropDownList1.SelectedValue + " + 1 where EmployeeID =" + employeeId;
+                sqlDa = new SqlCommand(sqlSelect, sqlConnection);
 
-            sqlDa.ExecuteNonQuery();
+                sqlDa.ExecuteNonQuery();
+            }
 
-            sqlSelect = "update MENTORINGSKILLS set " + DropDownList2.SelectedValue + " = " + DropDownList2.SelectedValue + " + 1 where EmployeeID =" + employeeId;
+            if (DropDownList2.SelectedValue != "None")
+            {
+                sqlSelect = "update MENTORINGSKILLS set " + DropDownList2.SelectedValue + " = " + DropDownList2.SelectedValue + " + 1 where EmployeeID =" + employeeId;
 
-             sqlDa = new SqlCommand(sqlSelect, sqlConnection);
+                sqlDa = new SqlCommand(sqlSelect, sqlConnection);
 
-            sqlDa.ExecuteNonQuery();
+                sqlDa.ExecuteNonQuery();
+            }
 
-            sqlSelect = "update MENTORINGSKILLS set " + DropDownList3.SelectedValue + " = " + DropDownList3.SelectedValue + " + 1 where EmployeeID =" + employeeId;
+            if (DropDownList3.SelectedValue != "None")
+            {
+                sqlSelect = "update MENTORINGSKILLS set " + DropDownList3.SelectedValue + " = " + DropDownList3.SelectedValue + " + 1 where EmployeeID =" + employeeId;
 
-            sqlDa = new SqlCommand(sqlSelect, sqlConnection);
+                sqlDa = new SqlCommand(sqlSelect, sqlConnection);
 
-            sqlDa.ExecuteNonQuery();
+                sqlDa.ExecuteNonQuery();
+            }
             sqlConnection.Close();
             //DataTable dtbl = new DataTable();
 
