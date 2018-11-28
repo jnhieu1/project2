@@ -51,6 +51,7 @@ namespace TheMentorShip
             Location.Text = dtbl.Rows[0]["OfficeLocation"].ToString();
             Department.Text = dtbl.Rows[0]["Department"].ToString();
             Biography.Text = dtbl.Rows[0]["bio"].ToString();
+            Image1.ImageUrl = dtbl.Rows[0]["ProfilePic"].ToString();
 
             if (totalEndorcements >=10 && totalEndorcements < 25)
             {

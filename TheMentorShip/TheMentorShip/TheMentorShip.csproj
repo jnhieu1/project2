@@ -145,6 +145,10 @@
     <Content Include="Image\logo.png" />
     <Content Include="Image\logoNew.png" />
     <Content Include="Image\logoPic.png" />
+    <Content Include="Image\roundman1.png" />
+    <Content Include="Image\roundman2.png" />
+    <Content Include="Image\roundwoman1.png" />
+    <Content Include="Image\roundwoman2.png" />
     <Content Include="Image\TopBackground.jpg" />
     <Content Include="MainPage.aspx" />
     <Content Include="MasterPage.Master" />
