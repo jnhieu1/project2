@@ -166,7 +166,7 @@
                                                       <%--<div id="softskills">--%>
                                                                   <strong>Search by soft skill:</strong>
                                                            
-                                                                       <asp:CheckBoxList ID="filterCheckBoxList" runat="server" CssClass="auto-style5" CellPadding="5" CellSpacing="5" RepeatColumns="2" RepeatDirection="Vertical" >
+                                                                       <asp:CheckBoxList ID="filterCheckBoxList" runat="server" CssClass="auto-style5" CellPadding="5" CellSpacing="5" RepeatColumns="2" RepeatDirection="Vertical" AutoPostBack="True" OnSelectedIndexChanged="searchBUtton_Click" >
                                                                            <asp:ListItem> Communication</asp:ListItem>
                                                                            <asp:ListItem Value="PublicSpeaking"> Public Speaking</asp:ListItem>
                                                                            <asp:ListItem>Leadership</asp:ListItem>
@@ -203,7 +203,7 @@
                                                      
                                                                  <strong>Search by Job Title:</strong>
                                                          <br /> 
-                                                                    <asp:DropDownList ID="DropDownList1" runat="server" Width="150px">
+                                                                    <asp:DropDownList ID="DropDownList1" runat="server" Width="150px" AutoPostBack="True" OnSelectedIndexChanged="searchBUtton_Click">
                                                                         <asp:ListItem>None</asp:ListItem>
                                                                   </asp:DropDownList>
                                                              
@@ -214,7 +214,7 @@
                                                                     <strong>Search by Location:</strong>
 
                                                              
-                                                                    <asp:CheckBoxList ID="CheckBoxList1" runat="server" OnSelectedIndexChanged="searchBUtton_Click">
+                                                                    <asp:CheckBoxList ID="CheckBoxList1" runat="server" AutoPostBack="true" OnSelectedIndexChanged="searchBUtton_Click">
                                                                         <asp:ListItem>Phoenix</asp:ListItem>
                                                                         <asp:ListItem>London</asp:ListItem>
                                                                         <asp:ListItem>San Antonio</asp:ListItem>

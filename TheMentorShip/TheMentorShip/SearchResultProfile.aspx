@@ -110,7 +110,7 @@
                                                                 <asp:Label ID="PhoneNumber" runat="server"></asp:Label>
                                                                 <br />
                                                                 <strong>Email:</strong>
-                                                                <asp:Label ID="Email" runat="server"></asp:Label>
+                                                                <asp:LinkButton ID="EmailButton" runat="server" OnClick="EmailButton_Click"></asp:LinkButton>
                                                                 <br />
                                                                 <strong>Department: </strong>
                                                                 <asp:Label ID="Department" runat="server"></asp:Label>
