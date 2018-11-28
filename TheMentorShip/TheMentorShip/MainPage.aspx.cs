@@ -326,13 +326,43 @@ namespace TheMentorShip
                 searchDepartment = " and Department ='" + RadioButtonList1.SelectedValue + "'";
             }
 
+            bool locationChecked = false;
+            int locationCount = 0;
+            int count = 1;
             foreach (ListItem location in CheckBoxList1.Items)
             {
                 if (location.Selected)
                 {
-                    searchLocation += " and OfficeLocation = '" + location.Value + "'";
+                    locationCount++;
+                    locationChecked = true;
                 }
             }
+
+            if(locationChecked == true)
+            {
+                searchLocation += " and (";
+                foreach (ListItem location in CheckBoxList1.Items)
+                {
+                    if (location.Selected && locationCount == 1)
+                    {
+                        searchLocation += " OfficeLocation = '" + location.Value + "'";
+                        count++;
+                    }
+                    else if (location.Selected && locationCount >= 2 && count < locationCount)
+                    {
+                        searchLocation += " OfficeLocation = '" + location.Value + "' or ";
+                        count++;
+                    }
+                    else if (location.Selected && locationCount >= 2 && count == locationCount)
+                    {
+                        searchLocation += " OfficeLocation = '" + location.Value + "'";
+                    }
+                }
+                searchLocation += ")";
+            }
+
+            
+            
 
             string sqlConnectString = System.Configuration.ConfigurationManager.ConnectionStrings["myDB"].ConnectionString;
             if (searchName != "")
