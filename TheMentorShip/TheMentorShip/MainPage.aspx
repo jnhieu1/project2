@@ -331,7 +331,7 @@
                                                             </td>
                                                             <td>
                                                                 <p>
-                                                                    <asp:TextBox ID="TextBox1" runat="server" Height="109px" Width=98%></asp:TextBox>
+                                                                    <asp:TextBox ID="TextBox1" runat="server" Height="109px" Width=98% TextMode="MultiLine"></asp:TextBox>
                                                                     
                                                                 </p>
                                                             </td>
