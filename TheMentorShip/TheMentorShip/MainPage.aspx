@@ -312,8 +312,8 @@
                                                         </tr>
                                                     </table>
                                                 </td>
-                                                <td style="width:75%;">
-                                                    <table style="width: 100%; height:inherit; margin-top: 0px;">
+                                                <td style="width:75%;vertical-align:top">
+                                                    <table style="width: 100%; height:inherit; vertical-align:top">
                                                         <tr>
                                                             <td class="auto-style9" style="text-align: left;">
                                                                 <br />
