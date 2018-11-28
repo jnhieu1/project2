@@ -204,7 +204,7 @@
                                                           </div>
                                                          </div>
                                                     <br />
-                                                    <asp:GridView ID="searchResultGridView" runat="server" AutoGenerateColumns="False" OnRowDataBound="searchResultGridView_RowDataBound" OnDataBound="searchResultGridView_DataBound" OnSelectedIndexChanged="searchResultGridView_SelectedIndexChanged" GridLines="None">
+                                                    <asp:GridView ID="searchResultGridView" runat="server" AutoGenerateColumns="False" OnRowDataBound="searchResultGridView_RowDataBound" OnDataBound="searchResultGridView_DataBound" GridLines="None">
                                                         <Columns>
                                                             <asp:ImageField HeaderText="Badges" DataImageUrlField="badgesImage">
                                                                 <ControlStyle Height="50px" />

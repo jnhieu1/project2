@@ -47,7 +47,7 @@ namespace TheMentorShip
             LastName.Text = dtbl.Rows[0]["ELName"].ToString();
             JobTitle.Text = dtbl.Rows[0]["Position"].ToString();
             PhoneNumber.Text = dtbl.Rows[0]["CellPhone"].ToString();
-            Email.Text = dtbl.Rows[0]["Email"].ToString();
+            EmailButton.Text = dtbl.Rows[0]["Email"].ToString();
             Location.Text = dtbl.Rows[0]["OfficeLocation"].ToString();
             Department.Text = dtbl.Rows[0]["Department"].ToString();
             Biography.Text = dtbl.Rows[0]["bio"].ToString();
@@ -202,6 +202,12 @@ namespace TheMentorShip
             {
                 DropDownList3.SelectedIndex = 0;
             }
+        }
+
+        protected void EmailButton_Click(object sender, EventArgs e)
+        {
+            string email = EmailButton.Text;
+            ClientScript.RegisterStartupScript(this.GetType(), "mailto", "parent.location='mailto:" + email + "'", true);
         }
     }
 }

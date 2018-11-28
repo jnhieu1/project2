@@ -630,6 +630,8 @@ namespace TheMentorShip
                 e.Row.Attributes.Add("onmouseover", "MouseEvents(this, event)");
                 e.Row.Attributes.Add("onmouseout", "MouseEvents(this, event)");
             }
+
+
             //GridView tmp = sender as GridView;
             //Table tmp2 = (Table)tmp.Controls[0];
 
@@ -1155,14 +1157,9 @@ namespace TheMentorShip
                 HyperLink tmpLink = new HyperLink();
                 tmpLink.NavigateUrl = "SearchResultProfile.aspx?EmployeeID=" + employees[i].ResultEmployeeID;
                 tmpLink.Text = "Profile";
-                tmp2.Rows[i + 1].Cells[4].Controls.Add(tmpLink);
+                tmp2.Rows[i + 1].Cells[5].Controls.Add(tmpLink);
                 hyperLinks.Add(tmpLink);
             }
-        }
-
-        protected void searchResultGridView_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)

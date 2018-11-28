@@ -121,13 +121,13 @@ namespace TheMentorShip {
         protected global::System.Web.UI.WebControls.Label PhoneNumber;
         
         /// <summary>
-        /// Email control.
+        /// EmailButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Email;
+        protected global::System.Web.UI.WebControls.LinkButton EmailButton;
         
         /// <summary>
         /// Department control.
