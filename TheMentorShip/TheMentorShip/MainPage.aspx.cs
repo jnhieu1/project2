@@ -136,10 +136,12 @@ namespace TheMentorShip
                         {
                             HyperLink tmp = new HyperLink();
                             tmp.Text = "Profile";
-                            tmp.NavigateUrl = "~/SearchResultProfile.apsx?EmployeeID=" + employees[j - 1].ResultEmployeeID;
+                            tmp.NavigateUrl = "SearchResultProfile.apsx?EmployeeID=" + employees[j - 1].ResultEmployeeID;
 
-                            tmpTable.Rows[j].Cells[4].Controls.Add(tmp);
-
+                            HyperLink tmp2 = (tmpTable.Rows[j].Cells[5].Controls[0]) as HyperLink;
+                            tmp2.NavigateUrl += "?EmployeeID=" + employees[j - 1].ResultEmployeeID;
+                            tmp2.Text = "Profile";
+                            //tmpTable.Rows[j].Cells[4].Controls.Add(tmp);
                         }
 
                     }
