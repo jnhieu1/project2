@@ -1302,6 +1302,7 @@ namespace TheMentorShip
                     }
                     break;
             }
+            searchBUtton_Click(sender, e);
             Session["Searched"] = true;
         }
     }
