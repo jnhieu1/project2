@@ -269,15 +269,28 @@
                                 <div class="tabContents">
                                 <asp:MultiView ID="MultiView3" ActiveViewIndex="0" runat="server">
                                     <asp:View ID="View6" runat="server">
-                                        <table style="width: 100%;">
-                                            <tr>
-                                                <td style="width:20%;">
+                                        <%--<table style="width: 100%;">
+                                            <tr>--%>
+                                                <%--<td style="width:20%;">--%>
                                                     <table style="width: 100%; height:inherit; margin-top: 0px;">
                                                         <tr>
                                                             <td>
-                                                                <asp:Image ID="personalImage" runat="server" ImageUrl="~/Image/defaultIcon.jpg" Width="180" />
+                                                                <%--<asp:Image ID="personalImage" runat="server" ImageUrl="~/Image/defaultIcon.jpg" Width="180" />--%>
                                                                 <asp:Image ID="profileEndorcementImage" runat="server" Height="100px" Visible="False" />
-                                                            </td>                                                          
+                                                            </td>
+                                                            <td>
+                                                                <table style="width:100%">
+                                                                    <tr>
+                                                                        <td style="width:18%">
+
+                                                                        </td>
+                                                                        <td>
+                                                                            <asp:Image ID="personalImage" runat="server" ImageUrl="~/Image/johndoe.png" Width="180" />
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                                
+                                                            </td>
                                                         </tr>
                                                         <tr>
                                                             <td class="auto-style11">
@@ -303,7 +316,75 @@
                                                                 <br />
                                                                 <asp:CheckBox ID="Mentoring_Coaching" runat="server" Text="Mentoring/Coaching" />
                                                             </td>
-                                                            
+                                                            <td style="width:75%;vertical-align:top">
+                                                    <table style="width: 100%; height:inherit; vertical-align:top">
+                                                        <tr>
+                                                            <td class="auto-style9" style="text-align: left; vertical-align: top;">
+                                                                
+                                                                <strong>Employee Information:</strong>
+                                                                <br />
+                                                                <br />
+                                                                &nbsp;</td>
+                                                            <td>
+                                                                <strong>First Name:</strong>
+                                                                <asp:Label ID="fNameLabel" runat="server" Text="[FirstName]"></asp:Label>
+                                                                <br />
+                                                                <strong>Last Name:</strong>
+                                                                <asp:Label ID="lNameLable" runat="server" Text="[LastName]"></asp:Label>
+                                                                <br />
+                                                                <strong>Phone Number:</strong>
+                                                                <asp:Label ID="phoneNumLabel" runat="server" Text="[PhoneNumber]"></asp:Label>
+                                                                <br />
+                                                                <strong>Email:</strong>
+                                                                <asp:Label ID="emailLabel" runat="server" Text="[Email]"></asp:Label>
+                                                                <br />
+                                                                <strong>Department:</strong>
+                                                                <asp:Label ID="departmentLabel" runat="server" Text="[Department]"></asp:Label>
+                                                                &nbsp;-
+                                                                <asp:Label ID="jobTitleLabel" runat="server" Text="[JobTitle]"></asp:Label>
+                                                                <br />
+                                                                <strong>Location:</strong>
+                                                                <asp:Label ID="locationLabel" runat="server" Text="[Location]"></asp:Label>
+                                                            </td>
+                                                            <td class="auto-style1">
+                                                                <asp:CheckBox ID="CheckBox1" runat="server" Text="Currently available" OnCheckedChanged="CheckBox1_CheckedChanged" />
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="auto-style10" style="text-align: left; vertical-align: top;">
+                                                                <strong>Biography:</strong>
+                                                            </td>
+                                                            <td>
+                                                                <p>
+                                                                    <asp:TextBox ID="TextBox1" runat="server" Height="109px" Width=98% TextMode="MultiLine"></asp:TextBox>
+                                                                    
+                                                                </p>
+                                                            </td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                
+                                                                &nbsp;</td>
+                                                            <td>&nbsp;</td>
+                                                            <td>
+                                                                <asp:Label ID="errorMessageProfile" CssClass="errorMessage" runat="server" Text="Label" Visible="False"></asp:Label>
+                                                                <asp:Label ID="successMessageProfile" CssClass="successMessage" runat="server" Text="Label" Visible="False"></asp:Label>
+                                                            </td>
+                                                        </tr>
+                                                            <tr>
+                                                                <td class="auto-style10"></td>
+                                                                <td></td>
+                                                                <td style="width:25%;">
+                                                                    <asp:Button ID="Button3" runat="server" BackColor="White" Height="35px" OnClick="Button3_Click" Text="Save" Width="45%" />
+                                                                    &nbsp;
+                                                                    <asp:Button ID="Button4" runat="server" BackColor="White" Height="35px" OnClick="Button4_Click" Text="Settings" Width="45%" />
+                                                                </td>
+                                                            </tr>
+                                                        
+                                                        
+                                                    </table>
+                                                </td>
                                                         </tr>
                                                         <tr>
                                                             <td> &nbsp;</td>
@@ -311,8 +392,8 @@
                                                             
                                                         </tr>
                                                     </table>
-                                                </td>
-                                                <td style="width:75%;vertical-align:top">
+                                                <%--</td>--%>
+                                                <%--<td style="width:75%;vertical-align:top">
                                                     <table style="width: 100%; height:inherit; vertical-align:top">
                                                         <tr>
                                                             <td class="auto-style9" style="text-align: left;">
@@ -381,12 +462,12 @@
                                                         
                                                         
                                                     </table>
-                                                </td>
+                                                </td>--%>
                                                 
-                                            </tr>
+<%--                                            </tr>
                                             <tr><td> &nbsp;</td></tr>
                                                         <tr><td> &nbsp;</td></tr>
-                                        </table>
+                                        </table>--%>
                                         
                                     </asp:View>
                                 </asp:MultiView>
