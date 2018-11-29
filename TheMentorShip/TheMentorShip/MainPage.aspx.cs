@@ -134,13 +134,17 @@ namespace TheMentorShip
 
                         for (int j = 1; j < employees.Count() + 1; j++)
                         {
-                            HyperLink tmp = new HyperLink();
-                            tmp.Text = "Profile";
-                            tmp.NavigateUrl = "SearchResultProfile.apsx?EmployeeID=" + employees[j - 1].ResultEmployeeID;
+                            //HyperLink tmp = new HyperLink();
+                            //tmp.Text = "Profile";
+                            //tmp.NavigateUrl = "SearchResultProfile.apsx?EmployeeID=" + employees[j - 1].ResultEmployeeID;
 
-                            HyperLink tmp2 = (tmpTable.Rows[j].Cells[5].Controls[0]) as HyperLink;
-                            tmp2.NavigateUrl += "?EmployeeID=" + employees[j - 1].ResultEmployeeID;
-                            tmp2.Text = "Profile";
+                            //HyperLink tmp2 = (tmpTable.Rows[j].Cells[5].Controls[0]) as HyperLink;
+                            //tmp2.NavigateUrl += "?EmployeeID=" + employees[j - 1].ResultEmployeeID;
+                            //tmp2.Text = "Profile";
+
+                            //TableRow tmp3 = (tmpTable.Rows[j]);
+                            //tmp3.Attributes["onclick"] = "OnRowClick";
+                            //tmp3.Attributes.Add("EmployeeID", employees[j - 1].ResultEmployeeID);
                             //tmpTable.Rows[j].Cells[4].Controls.Add(tmp);
                         }
 
@@ -211,6 +215,12 @@ namespace TheMentorShip
                 profileEndorcementImage.Visible = false;
             }
 
+        }
+
+        protected void OnRowClick(object sender, EventArgs e)
+        {
+            TableRow tmp = sender as TableRow;
+            Response.Redirect("SearchResultProfile.aspx?EmployeeID" + tmp.Attributes["EmployeedID"]);
         }
 
         protected void Menu1_MenuItemClick(object sender, MenuEventArgs e)
@@ -621,13 +631,15 @@ namespace TheMentorShip
 
                 resultTable.DefaultView.Sort = "Indor desc";
                 searchResultGridView.DataSource = resultTable;
-
-                //for(int i = 1; i < hyperLinks.Count(); i++)
-                //{
-                //    searchResultGridView.Rows[i].Cells[3].Controls.Add(hyperLinks[i - 1]);
-
-                //}
                 searchResultGridView.DataBind();
+
+                for (int i = 1; i < employees.Count() - 1; i++)
+                {
+                    //searchResultGridView.Rows[i].Attributes["onclick"] = "OnRowClick()";
+                    searchResultGridView.Rows[i].Attributes.Add("EmployeeID", employees[i - 1].ResultEmployeeID);
+
+                }
+
 
                 //tc2.Controls.Add(gridViewMaster);
 
@@ -670,7 +682,13 @@ namespace TheMentorShip
             {
                 e.Row.Attributes.Add("onmouseover", "MouseEvents(this, event)");
                 e.Row.Attributes.Add("onmouseout", "MouseEvents(this, event)");
+                e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(searchResultGridView, "Select$" + (e.Row.RowIndex + 1));
             }
+
+            //for(int i = 1; i < employees.Count(); i++)
+            //{
+            //    searchResultGridView.Rows[i].Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(searchResultGridView, "Select$" + e.Row.RowIndex);
+            //}
             //GridView tmp = sender as GridView;
             //Table tmp2 = (Table)tmp.Controls[0];
 
@@ -1176,11 +1194,6 @@ namespace TheMentorShip
             }
         }
 
-        protected void DepartmentGridview_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         public void SortSearchResults(List<Employee> employees)
         {
 
@@ -1193,20 +1206,15 @@ namespace TheMentorShip
             {
                 Table tmp2 = (Table)tmp.Controls[0];
 
-                for (int i = 0; i < employees.Count(); i++)
-                {
-                    HyperLink tmpLink = new HyperLink();
-                    tmpLink.NavigateUrl = "SearchResultProfile.aspx?EmployeeID=" + employees[i].ResultEmployeeID;
-                    tmpLink.Text = "Profile";
-                    tmp2.Rows[i + 1].Cells[5].Controls.Add(tmpLink);
-                    hyperLinks.Add(tmpLink);
-                }
+                //for (int i = 0; i < employees.Count(); i++)
+                //{
+                //    HyperLink tmpLink = new HyperLink();
+                //    tmpLink.NavigateUrl = "SearchResultProfile.aspx?EmployeeID=" + employees[i].ResultEmployeeID;
+                //    tmpLink.Text = "Profile";
+                //    tmp2.Rows[i + 1].Cells[5].Controls.Add(tmpLink);
+                //    hyperLinks.Add(tmpLink);
+                //}
             }
-        }
-
-        protected void searchResultGridView_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
@@ -1335,6 +1343,12 @@ namespace TheMentorShip
             }
             searchBUtton_Click(sender, e);
             Session["Searched"] = true;
+        }
+
+        protected void searchResultGridView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Response.BufferOutput = true;
+            Response.Redirect("SearchResultProfile.aspx?EmployeeID=" + searchResultGridView.SelectedRow.Attributes["EmployeeID"]);
         }
     }
 }

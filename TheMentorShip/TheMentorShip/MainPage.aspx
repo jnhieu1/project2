@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="MainPage.aspx.cs" Inherits="TheMentorShip.MainPage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="MainPage.aspx.cs" Inherits="TheMentorShip.MainPage" EnableEventValidation = "false" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -249,9 +249,6 @@
                                                             <asp:BoundField DataField="Location" HeaderText="Location" ItemStyle-Width="100">
                                                             <ItemStyle Width="100px" />
                                                             </asp:BoundField>
-                                                            <asp:HyperLinkField HeaderText="View profile" ItemStyle-Width="70" NavigateUrl="~/SearchResultProfile.aspx">
-                                                            <ItemStyle Width="70px" />
-                                                            </asp:HyperLinkField>
                                                         </Columns>
                                                     </asp:GridView>
                                                 </td>
