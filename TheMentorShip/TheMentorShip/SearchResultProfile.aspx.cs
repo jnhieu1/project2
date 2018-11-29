@@ -58,7 +58,7 @@ namespace TheMentorShip
                 endorcementImage.ImageUrl = "~/Image/10Endorcements.png";
                 endorcementImage.Visible = true;
             }
-            else if (totalEndorcements >= 35 && totalEndorcements < 50)
+            else if (totalEndorcements >= 30 && totalEndorcements < 50)
             {
                 endorcementImage.ImageUrl = "~/Image/25Endorcements.png";
                 endorcementImage.Visible = true;

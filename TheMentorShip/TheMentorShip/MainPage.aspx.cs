@@ -590,7 +590,7 @@ namespace TheMentorShip
                     {
                         resultRow["badgesImage"] = ResolveUrl("~/Image/25Endorcements.png");
                     }
-                    else if (totalEndorcements > 50)
+                    else if (totalEndorcements >= 50)
                     {
                         resultRow["badgesImage"] = ResolveUrl("~/Image/50Endorcements.png");
                     }

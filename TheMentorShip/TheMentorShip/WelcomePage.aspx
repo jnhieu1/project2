@@ -38,14 +38,16 @@
             <td style="width:25%;">&nbsp;</td>
         </tr>
          <tr><td>&nbsp;</td></tr>
-        <tr><td>&nbsp;</td></tr>
+        <tr><td>
+            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+            </td></tr>
         <tr><td>&nbsp;</td></tr>
         <tr><td>&nbsp;</td></tr>
          <tr><td>&nbsp;</td></tr>
         <tr>
             <td>&nbsp;</td>
-            <td style="width:25%;"><asp:Button ID="findAMentor" runat="server" Text="FIND A MENTOR" Height="320px" Width="83%" CssClass="newStyle3" Font-Bold="True" OnClick="findAMentor_Click" Style="background-image: url(http://www.upl.co/uploads/rszimageedit578664870851543381548.png); background-repeat: no-repeat; font-size: 21px; "/></td>
-            <td style="width:25%;"><asp:Button ID="beAMentor" runat="server" Text="BE A MENTOR" align="right" Height="320px" Width="83%" CssClass="newStyle3" Font-Bold="True" OnClick="beAMentor_Click" Style="background-image: url(http://www.upl.co/uploads/komman1543419752.png); background-repeat: no-repeat; font-size: 21px; "/></td>
+            <td style="width:25%;"><asp:Button ID="findAMentor" runat="server" Text="FIND A MENTOR" Height="320px" Width="83%" CssClass="newStyle3" Font-Bold="True" OnClick="findAMentor_Click" Style="background-image: url(http://www.upl.co/uploads/rszimageedit578664870851543381548.png); background-repeat: no-repeat; font-size: 23px; "/></td>
+            <td style="width:25%;"><asp:Button ID="beAMentor" runat="server" Text="BE A MENTOR" align="right" Height="320px" Width="83%" CssClass="newStyle3" Font-Bold="True" OnClick="beAMentor_Click" Style="background-image: url(http://www.upl.co/uploads/Please1543460274.png); background-repeat: no-repeat; font-size: 23px; "/></td>
             <td>&nbsp;</td>
         </tr>
         <tr>
