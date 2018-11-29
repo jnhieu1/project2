@@ -633,10 +633,10 @@ namespace TheMentorShip
                 searchResultGridView.DataSource = resultTable;
                 searchResultGridView.DataBind();
 
-                for (int i = 1; i < employees.Count() - 1; i++)
+                for (int i = 0; i < employees.Count(); i++)
                 {
                     //searchResultGridView.Rows[i].Attributes["onclick"] = "OnRowClick()";
-                    searchResultGridView.Rows[i].Attributes.Add("EmployeeID", employees[i - 1].ResultEmployeeID);
+                    searchResultGridView.Rows[i].Attributes.Add("EmployeeID", employees[i].ResultEmployeeID);
 
                 }
 
@@ -682,7 +682,7 @@ namespace TheMentorShip
             {
                 e.Row.Attributes.Add("onmouseover", "MouseEvents(this, event)");
                 e.Row.Attributes.Add("onmouseout", "MouseEvents(this, event)");
-                e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(searchResultGridView, "Select$" + (e.Row.RowIndex + 1));
+                e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(searchResultGridView, "Select$" + (e.Row.RowIndex));
             }
 
             //for(int i = 1; i < employees.Count(); i++)
