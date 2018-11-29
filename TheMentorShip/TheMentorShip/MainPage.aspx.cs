@@ -501,7 +501,7 @@ namespace TheMentorShip
                     }
                     if (Convert.ToInt32(dtbl.Rows[i]["ConflictResolution"]) != 0)
                     {
-                        resultSoftSkills += "Conflicat Resolution";
+                        resultSoftSkills += "Conflict Resolution";
 
                         if (resultSoftSkills != "")
                         {
