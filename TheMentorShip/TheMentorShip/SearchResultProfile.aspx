@@ -21,6 +21,7 @@
                                     <%--<table style="width: 100%;">
                                             <tr>--%>
                                                 <%--<td style="width:20%;">--%>
+            <br />
                                                     <table style="width: 100%; height:inherit; margin-top: 0px;">
                                                         <tr>
                                                             <td style="width:8%;">
@@ -45,11 +46,13 @@
                                                             <td>
                                                                 <asp:Image ID="Image1" runat="server" ImageUrl="~/Image/defaultIcon.jpg" Height="180px" />
                                                             </td>
+                                                       
                                                         </tr>
                                                         <tr>
                                                             <td>
-
+                                                          
                                                             </td>
+                                                     
                                                             <td style="vertical-align: top;">
                                                                 <strong>Top Endorsements
                                                                 </strong>

@@ -152,12 +152,13 @@
                                                 <td ID="tableDataForSearchResults" runat="server">
                                                     
                                                    <p><strong>Search by name:</strong></p> <asp:TextBox ID="searchTextBox" runat="server" Width="530"></asp:TextBox>&nbsp;&nbsp;&nbsp;<asp:Button ID="searchBUtton" runat="server" OnClick="searchBUtton_Click" Text="Search" Width="156" />
-                                                   
+                                                 
                                                 </td>
                                              
                                             </tr>
                                         </table>
                                         </div>
+                                          <br />
                                         <div style="width:100%; align-items:center;">
                                         <table id="searchFilter" style="margin:auto;">
                                             <tr>
@@ -228,6 +229,7 @@
                                             </tr>
                                 </table>
                                 </div>
+                                        <br />
                                 <div style="width:100%; align-items:center;">
                                 <table style="margin:auto">
                                             <tr>
@@ -292,6 +294,7 @@
                                                         <tr>
                                                             <td class="auto-style11">
                                                                 <asp:Label ID="skillsyouwantMentor" runat="server" Text="Skills you would like to <br/> mentor in:"></asp:Label>
+                                                                <br />
                                                                 <br />
                                                                 <asp:CheckBox ID="Communication" runat="server" Text="Communication" />
                                                                 <br />
