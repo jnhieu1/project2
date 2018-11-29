@@ -1065,10 +1065,10 @@ namespace TheMentorShip
                 SqlCommand sqlDa = new SqlCommand(sqlSelect, sqlConnection);
                 sqlDa.ExecuteNonQuery();
 
-                sqlSelect = "update employees set bio = '" + TextBox1.Text + "' where EmployeeID = 9999";
+                //sqlSelect = "update employees set bio = '" + TextBox1.Text + "' where EmployeeID = 9999";
 
-                sqlDa = new SqlCommand(sqlSelect, sqlConnection);
-                sqlDa.ExecuteNonQuery();
+                //sqlDa = new SqlCommand(sqlSelect, sqlConnection);
+                //sqlDa.ExecuteNonQuery();
 
 
                 if (Communication.Checked)
