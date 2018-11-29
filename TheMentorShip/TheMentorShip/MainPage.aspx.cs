@@ -183,7 +183,7 @@ namespace TheMentorShip
             emailLabel.Text = dtbl.Rows[0]["Email"].ToString();
             locationLabel.Text = dtbl.Rows[0]["OfficeLocation"].ToString();
             departmentLabel.Text = dtbl.Rows[0]["Department"].ToString();
-            TextBox1.Text = dtbl.Rows[0]["bio"].ToString();
+            //TextBox1.Text = dtbl.Rows[0]["bio"].ToString();
             personalImage.ImageUrl = dtbl.Rows[0]["ProfilePic"].ToString();
 
             sqlSelect = "select * from mentoringskills where EmployeeID = 9999";
@@ -1033,12 +1033,12 @@ namespace TheMentorShip
                 errorMessageProfile.Text = "Please select a skill to mentor in";
                 errorMessageProfile.Visible = true;
             }
-            else if (TextBox1.Text == "")
-            {
-                successMessageProfile.Visible = false;
-                errorMessageProfile.Text = "Please Enter a Bio";
-                errorMessageProfile.Visible = true;
-            }
+            //else if (TextBox1.Text == "")
+            //{
+            //    successMessageProfile.Visible = false;
+            //    errorMessageProfile.Text = "Please Enter a Bio";
+            //    errorMessageProfile.Visible = true;
+            //}
             else
             {
                 errorMessageProfile.Visible = false;
